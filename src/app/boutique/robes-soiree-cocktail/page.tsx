@@ -6,7 +6,7 @@ export const revalidate = 600
 
 export const metadata: Metadata = {
   title: 'Robe de soirée & cocktail femme – Guadeloupe | Odyssée',
-  description: 'Robes de soirée et de cocktail pour femme en Guadeloupe. Pièces élégantes à Jarry, Baie-Mahault. Essayage en showroom privé sur rendez-vous.',
+  description: 'Robes de soirée et de cocktail pour femme en Guadeloupe. Pièces élégantes à Jarry, Baie-Mahault. Conseil personnalisé par Béatrice.',
   alternates: { canonical: 'https://odysseebybea.fr/boutique/robes-soiree-cocktail' },
   openGraph: {
     title: 'Robe de soirée & cocktail femme – Guadeloupe | Odyssée',
@@ -21,8 +21,8 @@ const faqItems = [
     answer: 'Odyssée Showroom Privé, situé à Jarry (Baie-Mahault), propose une sélection exclusive de robes de soirée et de cocktail pour femme. Prenez rendez-vous pour un essayage personnalisé dans notre showroom.',
   },
   {
-    question: 'Faut-il prendre rendez-vous pour visiter le showroom ?',
-    answer: 'Oui, Odyssée fonctionne sur rendez-vous uniquement, ce qui garantit une attention 100% personnalisée lors de votre visite. Réservez en ligne ou par WhatsApp au ' + SITE_CONFIG.whatsappDisplay + '.',
+    question: 'Comment bénéficier d\'un conseil personnalisé chez Odyssée ?',
+    answer: 'Prenez rendez-vous en ligne ou par WhatsApp au ' + SITE_CONFIG.whatsappDisplay + '. Béatrice vous reçoit à Jarry, Baie-Mahault pour un conseil personnalisé selon votre morphologie et votre occasion.',
   },
   {
     question: 'Quels types de robes trouvez-vous chez Odyssée ?',
@@ -74,17 +74,19 @@ export default function RobesSoireePage() {
       </nav>
 
       {/* Hero page */}
-      <section className="bg-charcoal py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal to-tropical/20 opacity-80" />
+      <section
+        className="py-20 md:py-28 relative overflow-hidden"
+        style={{ backgroundColor: '#C45B3A', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='%23F5EDD6' stroke-width='1' opacity='0.2'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='%232D6A4F' stroke-width='1' opacity='0.2'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%23C9A84C' stroke-width='0.5' opacity='0.15'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%23C9A84C' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E\")" }}
+      >
         <div className="relative container-luxury text-center">
-          <p className="section-subtitle text-dore">Boutique Guadeloupe</p>
+          <p className="section-subtitle text-warm-white/80">Boutique Guadeloupe</p>
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-warm-white leading-tight">
             Robes de soirée &amp;<br />
             <span className="italic text-dore">de cocktail</span><br />
             pour femme en Guadeloupe
           </h1>
-          <p className="font-sans text-warm-white/60 mt-6 max-w-xl mx-auto leading-relaxed">
-            Pièces élégantes à Jarry, Baie-Mahault. Essayage en showroom privé sur rendez-vous.
+          <p className="font-sans text-warm-white/80 mt-6 max-w-xl mx-auto leading-relaxed">
+            Pièces élégantes à Jarry, Baie-Mahault. Conseil personnalisé à Jarry, Baie-Mahault.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
@@ -116,12 +118,14 @@ export default function RobesSoireePage() {
           <h2 className="section-title mb-10">Nos robes de soirée</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className={`aspect-[3/4] relative overflow-hidden group cursor-pointer ${
-                i % 4 === 0 ? 'bg-gradient-to-b from-charcoal/80 to-charcoal' :
-                i % 4 === 1 ? 'bg-gradient-to-b from-tropical/40 to-charcoal/80' :
-                i % 4 === 2 ? 'bg-gradient-to-b from-terracotta/30 to-charcoal/80' :
-                'bg-gradient-to-b from-dore/30 to-charcoal/80'
-              }`}>
+              <div
+                key={i}
+                className="aspect-[3/4] relative overflow-hidden group cursor-pointer"
+                style={{
+                  backgroundColor: i % 4 === 0 ? '#C45B3A' : i % 4 === 1 ? '#2D6A4F' : i % 4 === 2 ? '#F5EDD6' : '#C9A84C',
+                  backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='%23C45B3A' stroke-width='1' opacity='0.3'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='%232D6A4F' stroke-width='1' opacity='0.3'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E\")"
+                }}
+              >
                 <div className="absolute inset-0 flex items-end p-4">
                   <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer"
                     className="w-full btn-primary text-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -180,25 +184,24 @@ export default function RobesSoireePage() {
         </div>
       </section>
 
-      {/* Showroom privé */}
+      {/* Conseil personnalisé */}
       <section className="py-16 bg-charcoal">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="section-subtitle text-dore">L&apos;expérience Odyssée</p>
               <h2 className="font-serif text-3xl md:text-4xl font-light text-warm-white mb-6">
-                L&apos;essayage<br />
-                <span className="italic text-dore">en showroom privé</span>
+                Le conseil personnalisé<br />
+                <span className="italic text-dore">chez Odyssée</span>
               </h2>
               <p className="font-sans text-warm-white/60 leading-relaxed mb-6">
-                Chez Odyssée, pas de rush ni de regard extérieur : vous bénéficiez d&apos;un showroom 
-                entièrement dédié à votre session. Béatrice vous reçoit sur rendez-vous, écoute vos 
-                besoins, votre occasion, votre style — et sélectionne les pièces susceptibles de vous 
-                correspondre avant même votre arrivée.
+                Béatrice vous reçoit pour un conseil personnalisé, sur place ou sur rendez-vous
+                selon votre disponibilité. Elle écoute vos besoins, votre occasion, votre style —
+                et sélectionne les pièces susceptibles de vous correspondre.
               </p>
               <p className="font-sans text-warm-white/60 leading-relaxed mb-8">
-                Ce service personnalisé, rare en Guadeloupe, fait toute la différence sur votre 
-                expérience d&apos;achat. Fini le stress des cabines d&apos;essayage partagées.
+                Ce service personnalisé, ancré en Guadeloupe, fait toute la différence.
+                Profitez d&apos;une attention 100% dédiée dans notre boutique de Jarry.
               </p>
               <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Réserver ma séance
@@ -208,7 +211,7 @@ export default function RobesSoireePage() {
               <h3 className="font-serif text-2xl text-warm-white mb-6">En pratique</h3>
               <ul className="space-y-4 font-sans text-sm text-warm-white/60">
                 <li className="flex gap-3"><span className="text-dore">✦</span> Prise de rendez-vous en ligne ou par WhatsApp</li>
-                <li className="flex gap-3"><span className="text-dore">✦</span> Showroom réservé pour vous pendant 1h</li>
+                <li className="flex gap-3"><span className="text-dore">✦</span> Temps dédié pour vous pendant 1h</li>
                 <li className="flex gap-3"><span className="text-dore">✦</span> Présélection de pièces selon votre occasion</li>
                 <li className="flex gap-3"><span className="text-dore">✦</span> Conseil morphologie et colorimétrie inclus</li>
                 <li className="flex gap-3"><span className="text-dore">✦</span> Parking gratuit à Jarry, Baie-Mahault</li>
