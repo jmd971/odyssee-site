@@ -8,11 +8,11 @@ export const revalidate = 600
 
 export const metadata: Metadata = {
   title: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
-  description: 'Boutique de prêt-à-porter et robes de soirée femme à Jarry, Guadeloupe. Showroom privé sur rendez-vous. Collections tendance et conseil personnalisé.',
+  description: 'Boutique de mode femme à Jarry, Guadeloupe. Collections tendance, robes de soirée, conseil personnalisé par Béatrice.',
   alternates: { canonical: 'https://odysseebybea.fr' },
   openGraph: {
     title: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
-    description: 'Boutique de prêt-à-porter et robes de soirée femme à Jarry, Guadeloupe. Showroom privé sur rendez-vous.',
+    description: 'Boutique de mode femme à Jarry, Guadeloupe. Collections tendance, robes de soirée, conseil personnalisé par Béatrice.',
     url: 'https://odysseebybea.fr',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -24,7 +24,7 @@ const categories = [
     subtitle: '& cocktail',
     href: '/boutique/robes-soiree-cocktail',
     description: 'Pièces élégantes pour chaque occasion',
-    bg: 'bg-charcoal',
+    bg: 'bg-terracotta',
     text: 'text-warm-white',
   },
   {
@@ -40,8 +40,8 @@ const categories = [
     subtitle: '& bijoux',
     href: '/boutique/accessoires-bijoux',
     description: 'Pièces uniques et artisanales',
-    bg: 'bg-dore',
-    text: 'text-charcoal',
+    bg: 'bg-tropical',
+    text: 'text-warm-white',
   },
 ]
 
@@ -74,29 +74,22 @@ export default function HomePage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative h-[90vh] min-h-[600px] bg-charcoal overflow-hidden flex items-end">
-        {/* Fond couleur caribéenne en attendant la vraie photo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal/90 to-tropical/40" />
-        
-        {/* Motif tropical subtil */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 right-20 w-96 h-96 rounded-full border border-dore" />
-          <div className="absolute top-40 right-40 w-64 h-64 rounded-full border border-dore" />
-          <div className="absolute bottom-20 left-10 w-48 h-48 rounded-full border border-sable" />
-        </div>
-
+      <section
+        className="relative h-[90vh] min-h-[600px] overflow-hidden flex items-end"
+        style={{ backgroundColor: '#F5EDD6', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%23F5EDD6'/%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='%23C45B3A' stroke-width='1' opacity='0.3'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='%232D6A4F' stroke-width='1' opacity='0.3'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E\")" }}
+      >
         <div className="relative z-10 container-luxury pb-16 md:pb-24 w-full">
           <div className="max-w-2xl">
-            <p className="font-sans text-dore text-xs tracking-luxury uppercase mb-6">
+            <p className="font-sans text-terracotta text-xs tracking-luxury uppercase mb-6">
               Jarry · Baie-Mahault · Guadeloupe
             </p>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-warm-white leading-none mb-6">
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-charcoal leading-none mb-6">
               L&apos;élégance<br />
-              <span className="italic text-dore">caribéenne</span>
+              <span className="italic text-terracotta">caribéenne,</span><br />
+              <span className="text-4xl md:text-5xl">à Jarry</span>
             </h1>
-            <p className="font-sans text-warm-white/70 text-base md:text-lg max-w-md leading-relaxed mb-10">
-              Robes de soirée, prêt-à-porter chic et accessoires d&apos;exception. 
-              Conseil personnalisé dans notre showroom privé sur rendez-vous.
+            <p className="font-sans text-charcoal/70 text-base md:text-lg max-w-md leading-relaxed mb-10">
+              Boutique de mode femme à Jarry, Guadeloupe. Collections tendance, robes de soirée, conseil personnalisé par Béatrice.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -107,34 +100,34 @@ export default function HomePage() {
               >
                 Prendre rendez-vous
               </a>
-              <Link href="/boutique" className="btn-outline border-warm-white/40 text-warm-white hover:bg-warm-white hover:text-charcoal">
-                Découvrir la boutique
+              <Link href="/boutique" className="btn-outline border-charcoal/40 text-charcoal hover:bg-charcoal hover:text-warm-white">
+                Venez nous découvrir
               </Link>
             </div>
           </div>
         </div>
 
         {/* Rating flottant */}
-        <div className="absolute top-8 right-8 bg-warm-white/10 backdrop-blur-sm border border-warm-white/20 rounded px-4 py-3 hidden md:block">
+        <div className="absolute top-8 right-8 bg-charcoal/10 backdrop-blur-sm border border-charcoal/20 rounded px-4 py-3 hidden md:block">
           <div className="flex items-center gap-1 mb-1">
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={12} className="fill-dore text-dore" />
             ))}
           </div>
-          <p className="font-sans text-warm-white text-sm font-medium">{SITE_CONFIG.rating.value}/5</p>
-          <p className="font-sans text-warm-white/60 text-xs">{SITE_CONFIG.rating.count} avis Google</p>
+          <p className="font-sans text-charcoal text-sm font-medium">{SITE_CONFIG.rating.value}/5</p>
+          <p className="font-sans text-charcoal/60 text-xs">{SITE_CONFIG.rating.count} avis Google</p>
         </div>
       </section>
 
       {/* ─── BANDEAU DÉFILANT ─── */}
       <div className="bg-dore py-3 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
-          {['Showroom Privé', 'Sur Rendez-vous', 'Robes de Soirée', 'Prêt-à-Porter', 'Accessoires', 'Bijoux Artisanaux', 'Relooking', 'Stylisme', 'Guadeloupe'].map((item, i) => (
+          {['Boutique de Mode', 'Robes de Soirée', 'Prêt-à-Porter', 'Accessoires', 'Bijoux Artisanaux', 'Relooking', 'Stylisme', 'Guadeloupe', 'Antilles', 'Jarry'].map((item, i) => (
             <span key={i} className="font-sans text-xs tracking-luxury uppercase text-charcoal mx-8">
               {item} <span className="mx-4">·</span>
             </span>
           ))}
-          {['Showroom Privé', 'Sur Rendez-vous', 'Robes de Soirée', 'Prêt-à-Porter', 'Accessoires', 'Bijoux Artisanaux', 'Relooking', 'Stylisme', 'Guadeloupe'].map((item, i) => (
+          {['Boutique de Mode', 'Robes de Soirée', 'Prêt-à-Porter', 'Accessoires', 'Bijoux Artisanaux', 'Relooking', 'Stylisme', 'Guadeloupe', 'Antilles', 'Jarry'].map((item, i) => (
             <span key={`b-${i}`} className="font-sans text-xs tracking-luxury uppercase text-charcoal mx-8">
               {item} <span className="mx-4">·</span>
             </span>
@@ -148,13 +141,14 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center">
             <p className="section-subtitle">Notre histoire</p>
             <h2 className="section-title mb-6">
-              Un showroom unique,<br />
-              <span className="italic">une expérience exclusive</span>
+              Une boutique ancrée<br />
+              <span className="italic">en Guadeloupe</span>
             </h2>
             <p className="font-sans text-charcoal/70 leading-relaxed text-base md:text-lg">
-              Odyssée Showroom Privé, c&apos;est l&apos;univers mode de Béatrice — une sélection pointue 
-              de robes de soirée, vêtements et accessoires pensée pour la femme guadeloupéenne moderne. 
-              Chaque pièce est choisie avec soin pour allier élégance, caractère et authenticité caribéenne.
+              Odyssée, c&apos;est l&apos;univers mode de Béatrice — une femme guadeloupéenne passionnée de mode,
+              installée à Jarry, Baie-Mahault. Sa sélection pointue de robes de soirée, vêtements et accessoires
+              est pensée pour la femme des Antilles : élégante, authentique, moderne.
+              Chaque pièce est choisie avec soin pour allier style caribéen et tendances contemporaines.
             </p>
             <div className="flex items-center justify-center gap-3 mt-8">
               <div className="h-px bg-dore w-16" />
@@ -178,6 +172,7 @@ export default function HomePage() {
                 key={cat.href}
                 href={cat.href}
                 className={`group relative ${cat.bg} aspect-[3/4] flex flex-col justify-end p-8 overflow-hidden transition-transform duration-300 hover:-translate-y-1`}
+                style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='%23C45B3A' stroke-width='1' opacity='0.2'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='%232D6A4F' stroke-width='1' opacity='0.2'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%23C9A84C' stroke-width='0.5' opacity='0.15'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%23C9A84C' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E\")" }}
               >
                 {/* Effet hover */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
@@ -238,11 +233,13 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="relative aspect-square bg-sable group overflow-hidden"
               >
-                <div className={`absolute inset-0 flex items-end p-3 ${
-                  i % 3 === 0 ? 'bg-gradient-to-br from-charcoal/80 to-tropical/60' :
-                  i % 3 === 1 ? 'bg-gradient-to-br from-terracotta/60 to-dore/40' :
-                  'bg-gradient-to-br from-charcoal/60 to-dore/30'
-                }`}>
+                <div
+                  className="absolute inset-0 flex items-end p-3"
+                  style={{
+                    backgroundColor: i % 4 === 0 ? '#C45B3A' : i % 4 === 1 ? '#2D6A4F' : i % 4 === 2 ? '#F5EDD6' : '#C9A84C',
+                    backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='%23C45B3A' stroke-width='1' opacity='0.3'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='%232D6A4F' stroke-width='1' opacity='0.3'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E\")"
+                  }}
+                >
                   <Instagram size={20} className="text-warm-white/60 group-hover:text-warm-white transition-colors" />
                 </div>
               </a>
@@ -297,7 +294,7 @@ export default function HomePage() {
             </div>
 
             {/* Carte cadeau */}
-            <div className="bg-charcoal p-10 md:p-12">
+            <div className="bg-terracotta p-10 md:p-12">
               <p className="font-sans text-xs tracking-luxury uppercase text-dore mb-4">Idée cadeau</p>
               <h3 className="font-serif text-3xl md:text-4xl font-light text-warm-white mb-4">
                 La carte cadeau<br />
@@ -323,7 +320,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── AVIS ─── */}
-      <section className="py-20 bg-sable/30">
+      <section className="py-20 bg-sable">
         <div className="container-luxury">
           <p className="section-subtitle text-center">Avis clientes</p>
           <h2 className="section-title text-center mb-12">
@@ -367,8 +364,8 @@ export default function HomePage() {
             <div>
               <p className="section-subtitle">Nous rendre visite</p>
               <h2 className="section-title mb-8">
-                Showroom privé<br />
-                <span className="italic">sur rendez-vous</span>
+                Ouvert à Jarry,<br />
+                <span className="italic">Baie-Mahault</span>
               </h2>
               <div className="space-y-5">
                 <div className="flex gap-4 items-start">
@@ -385,7 +382,7 @@ export default function HomePage() {
                   <div>
                     <p className="font-sans text-sm font-medium text-charcoal mb-1">Horaires</p>
                     <p className="font-sans text-sm text-charcoal/70">{SITE_CONFIG.hours}</p>
-                    <p className="font-sans text-xs text-charcoal/50 mt-1">Sur rendez-vous uniquement · Parking gratuit</p>
+                    <p className="font-sans text-xs text-charcoal/50 mt-1">Parking gratuit</p>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
