@@ -1,0 +1,28 @@
+export const SITE_CONFIG = {
+  name: 'Odyssée Showroom Privé',
+  nameFull: 'Odyssée Showroom Privé – by Béa',
+  url: 'https://odysseebybea.fr',
+  description: 'Boutique de prêt-à-porter et robes de soirée femme à Jarry, Guadeloupe. Showroom privé sur rendez-vous.',
+  address: {
+    street: 'Immeuble Les Lilas, Impasse Guy Cornély',
+    city: 'Baie-Mahault',
+    postalCode: '97122',
+    region: 'Guadeloupe',
+    country: 'FR',
+    full: 'Immeuble Les Lilas, Impasse Guy Cornély, 97122 Baie-Mahault, Guadeloupe',
+  },
+  phone: '+590590981881',
+  phoneDisplay: '0590 98 18 81',
+  whatsapp: 'https://wa.me/590690087377',
+  whatsappDisplay: '0690 087 377',
+  hours: 'Mardi–Samedi : 10h–19h',
+  hoursSchema: ['Tu-Sa 10:00-19:00'],
+  booking: 'https://link.siboard-consulting.fr/widget/booking/9GoysJn1UJxEaNb5qN2y',
+  social: {
+    instagram: 'https://instagram.com/odyssee.boutique',
+    facebook: 'https://facebook.com/odysseebybea',
+    youtube: 'https://youtube.com/@odysseebybea',
+  },
+  geo: { latitude: 16.2650, longitude: -61.5770 },
+  rating: { value: 4.9, count: 87 },
+}
