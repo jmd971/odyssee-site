@@ -9,14 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        sable: '#F5EDD6',
-        'sable-light': '#FDFAF4',
-        dore: '#C9A84C',
-        'dore-dark': '#A8892E',
-        tropical: '#2D6A4F',
-        terracotta: '#C45B3A',
-        charcoal: '#2C2C2C',
-        'warm-white': '#FDFAF4',
+        noir: '#1A1A1A',
+        'noir-alt': '#2A2A2A',
+        or: '#C9A84C',
+        'or-clair': '#E8C870',
+        creme: '#F8F3EC',
+        'blanc-casse': '#FDFAF4',
+        orange: '#E8572A',
+        rose: '#D63578',
+        magenta: '#C4359A',
       },
       fontFamily: {
         serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
@@ -25,6 +26,10 @@ const config: Config = {
       letterSpacing: {
         luxury: '0.2em',
         wide: '0.1em',
+      },
+      backgroundImage: {
+        'gradient-odyssee': 'linear-gradient(135deg, #E8572A 0%, #D63578 50%, #C4359A 100%)',
+        'gradient-odyssee-h': 'linear-gradient(90deg, #E8572A 0%, #D63578 50%, #C4359A 100%)',
       },
     },
   },
