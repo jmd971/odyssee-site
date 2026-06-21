@@ -4,20 +4,14 @@
 
 @layer base {
   :root {
-    --color-sable: #F5EDD6;
-    --color-dore: #C9A84C;
-    --color-tropical: #2D6A4F;
-    --color-terracotta: #C45B3A;
-    --color-charcoal: #2C2C2C;
-    --color-warm-white: #FDFAF4;
+    --gradient-odyssee: linear-gradient(135deg, #E8572A 0%, #D63578 50%, #C4359A 100%);
+    --gradient-odyssee-h: linear-gradient(90deg, #E8572A 0%, #D63578 50%, #C4359A 100%);
   }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
+
+  html { scroll-behavior: smooth; }
+
   body {
-    @apply bg-warm-white text-charcoal;
+    @apply bg-noir text-blanc-casse font-sans antialiased;
   }
 
   h1, h2, h3, h4 {
@@ -26,30 +20,85 @@
 }
 
 @layer components {
+  /* Bouton principal — dégradé signature */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3 bg-terracotta text-warm-white font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-dore hover:text-charcoal;
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-sans text-sm tracking-luxury uppercase text-blanc-casse overflow-hidden transition-all duration-300;
+    background: var(--gradient-odyssee);
   }
-  
-  .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-3 border border-charcoal text-charcoal font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-charcoal hover:text-warm-white;
-  }
-  
-  .section-title {
-    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-light italic text-charcoal leading-tight;
-  }
-  
-  .section-subtitle {
-    @apply font-sans text-xs tracking-luxury uppercase text-dore mb-4;
+  .btn-primary:hover {
+    @apply opacity-90 scale-[1.02];
   }
 
+  /* Bouton outline — bordure or */
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 border border-or text-or font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-or hover:text-noir;
+  }
+
+  /* Bouton outline blanc — sur fond noir */
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center px-8 py-3 border border-blanc-casse/30 text-blanc-casse font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:border-or hover:text-or;
+  }
+
+  /* Titres de section */
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight;
+  }
+
+  .section-subtitle {
+    @apply font-sans text-xs tracking-luxury uppercase text-or mb-4 block;
+  }
+
+  /* Container */
   .container-luxury {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Trait dégradé (séparateur) */
+  .gradient-line {
+    height: 2px;
+    background: var(--gradient-odyssee-h);
+  }
+
+  /* Texte dégradé */
+  .text-gradient {
+    background: var(--gradient-odyssee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Bordure dégradé */
+  .border-gradient {
+    position: relative;
+  }
+  .border-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-odyssee);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 }
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 35s linear infinite;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease forwards;
+  }
 }
