@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-sable: #F5EDD6;
+    --color-dore: #C9A84C;
+    --color-tropical: #2D6A4F;
+    --color-terracotta: #C45B3A;
+    --color-charcoal: #2C2C2C;
+    --color-warm-white: #FDFAF4;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-warm-white text-charcoal;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-charcoal text-warm-white font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-dore hover:text-charcoal;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 border border-charcoal text-charcoal font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-charcoal hover:text-warm-white;
+  }
+  
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-light italic text-charcoal leading-tight;
+  }
+  
+  .section-subtitle {
+    @apply font-sans text-xs tracking-luxury uppercase text-dore mb-4;
+  }
+
+  .container-luxury {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
