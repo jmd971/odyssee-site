@@ -45,7 +45,7 @@ export function Header() {
       {/* Bannière top info */}
       <div className="bg-charcoal text-warm-white text-center py-2 px-4">
         <p className="font-sans text-xs tracking-wide">
-          Showroom privé sur rendez-vous · Mardi–Samedi 10h–19h ·{' '}
+          Boutique de mode femme · Jarry, Baie-Mahault · Mardi–Samedi 10h–19h ·{' '}
           <a href={`tel:${SITE_CONFIG.phone}`} className="underline hover:text-dore transition-colors">
             {SITE_CONFIG.phoneDisplay}
           </a>
