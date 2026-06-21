@@ -65,34 +65,34 @@ export default function RobesSoireePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Breadcrumb */}
-      <nav className="container-luxury py-4 text-xs font-sans text-charcoal/50">
-        <Link href="/" className="hover:text-dore transition-colors">Accueil</Link>
+      <nav className="container-luxury py-4 text-xs font-sans text-blanc-casse/50">
+        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
         <span className="mx-2">/</span>
-        <Link href="/boutique" className="hover:text-dore transition-colors">Boutique</Link>
+        <Link href="/boutique" className="hover:text-or transition-colors">Boutique</Link>
         <span className="mx-2">/</span>
-        <span className="text-charcoal">Robes de soirée & cocktail</span>
+        <span className="text-blanc-casse">Robes de soirée & cocktail</span>
       </nav>
 
       {/* Hero page */}
       <section
         className="py-20 md:py-28 relative overflow-hidden"
-        style={{ backgroundColor: '#C45B3A', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='%23F5EDD6' stroke-width='1' opacity='0.2'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='%232D6A4F' stroke-width='1' opacity='0.2'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%23C9A84C' stroke-width='0.5' opacity='0.15'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%23C9A84C' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E\")" }}
+        style={{ background: 'linear-gradient(135deg, #E8572A, #D63578, #C4359A)' }}
       >
         <div className="relative container-luxury text-center">
-          <p className="section-subtitle text-warm-white/80">Boutique Guadeloupe</p>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-warm-white leading-tight">
+          <p className="section-subtitle text-blanc-casse/80">Boutique Guadeloupe</p>
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-blanc-casse leading-tight">
             Robes de soirée &amp;<br />
-            <span className="italic text-dore">de cocktail</span><br />
+            <span className="italic text-or">de cocktail</span><br />
             pour femme en Guadeloupe
           </h1>
-          <p className="font-sans text-warm-white/80 mt-6 max-w-xl mx-auto leading-relaxed">
+          <p className="font-sans text-blanc-casse/80 mt-6 max-w-xl mx-auto leading-relaxed">
             Pièces élégantes à Jarry, Baie-Mahault. Conseil personnalisé à Jarry, Baie-Mahault.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Essayer en showroom
             </a>
-            <a href={SITE_CONFIG.whatsapp} className="btn-outline border-warm-white/30 text-warm-white hover:bg-warm-white hover:text-charcoal">
+            <a href={SITE_CONFIG.whatsapp} className="btn-outline-white">
               WhatsApp {SITE_CONFIG.whatsappDisplay}
             </a>
           </div>
@@ -102,7 +102,7 @@ export default function RobesSoireePage() {
       {/* Intro SEO */}
       <section className="py-16">
         <div className="container-luxury max-w-3xl">
-          <p className="font-sans text-charcoal/70 leading-relaxed text-base md:text-lg">
+          <p className="font-sans text-blanc-casse/70 leading-relaxed text-base md:text-lg">
             À la recherche d&apos;une <strong>robe de soirée femme en Guadeloupe</strong> ? 
             Odyssée Showroom Privé, à <strong>Jarry, Baie-Mahault</strong>, vous propose une sélection 
             exclusive de robes élégantes pour toutes vos occasions : mariages, galas, soirées, cérémonies. 
@@ -135,23 +135,23 @@ export default function RobesSoireePage() {
               </div>
             ))}
           </div>
-          <p className="font-sans text-xs text-charcoal/40 mt-4 text-center">
+          <p className="font-sans text-xs text-blanc-casse/40 mt-4 text-center">
             Photos des collections disponibles en boutique — prenez RDV pour voir les pièces en vrai
           </p>
         </div>
       </section>
 
       {/* Grille robes cocktail */}
-      <section className="py-16 bg-sable/20">
+      <section className="py-16 bg-noir-alt">
         <div className="container-luxury">
           <h2 className="section-title mb-4">Nos robes de cocktail</h2>
-          <p className="font-sans text-charcoal/60 mb-10 max-w-xl">
+          <p className="font-sans text-blanc-casse/60 mb-10 max-w-xl">
             Robe de cocktail pour un mariage en Guadeloupe, une soirée d&apos;entreprise ou un événement festif.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[...Array(6)].map((_, i) => (
               <div key={i} className={`aspect-[3/4] relative overflow-hidden group cursor-pointer ${
-                i % 3 === 0 ? 'bg-sable' : i % 3 === 1 ? 'bg-charcoal/10' : 'bg-dore/20'
+                i % 3 === 0 ? 'bg-noir' : i % 3 === 1 ? 'bg-noir-alt' : 'bg-or/20'
               }`}>
                 <div className="absolute inset-0 flex items-end p-4">
                   <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer"
@@ -175,9 +175,9 @@ export default function RobesSoireePage() {
               { occasion: 'Gala & soirée de prestige', desc: 'Une robe longue avec une matière noble (satin, mousseline, dentelle) s\'impose. Misez sur un dos nu ou une encolure travaillée pour un effet saisissant. Béatrice vous guidera vers les pièces qui mettront en valeur votre silhouette.' },
               { occasion: 'Soirée & cocktail', desc: 'La robe de cocktail est la solution la plus polyvalente. Longueur genou à mi-mollet, elle convient aux soirées d\'entreprise, anniversaires et événements festifs. Optez pour une coupe ajustée ou une robe patineuse selon votre silhouette.' },
             ].map((item) => (
-              <div key={item.occasion} className="border-l-2 border-dore pl-6">
-                <h3 className="font-serif text-xl font-medium text-charcoal mb-2">{item.occasion}</h3>
-                <p className="font-sans text-sm text-charcoal/70 leading-relaxed">{item.desc}</p>
+              <div key={item.occasion} className="border-l-2 border-or pl-6">
+                <h3 className="font-serif text-xl font-medium text-blanc-casse mb-2">{item.occasion}</h3>
+                <p className="font-sans text-sm text-blanc-casse/70 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -185,21 +185,21 @@ export default function RobesSoireePage() {
       </section>
 
       {/* Conseil personnalisé */}
-      <section className="py-16 bg-charcoal">
+      <section className="py-16 bg-noir-alt">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="section-subtitle text-dore">L&apos;expérience Odyssée</p>
-              <h2 className="font-serif text-3xl md:text-4xl font-light text-warm-white mb-6">
+              <p className="section-subtitle text-or">L&apos;expérience Odyssée</p>
+              <h2 className="font-serif text-3xl md:text-4xl font-light text-blanc-casse mb-6">
                 Le conseil personnalisé<br />
-                <span className="italic text-dore">chez Odyssée</span>
+                <span className="italic text-or">chez Odyssée</span>
               </h2>
-              <p className="font-sans text-warm-white/60 leading-relaxed mb-6">
+              <p className="font-sans text-blanc-casse/60 leading-relaxed mb-6">
                 Béatrice vous reçoit pour un conseil personnalisé, sur place ou sur rendez-vous
                 selon votre disponibilité. Elle écoute vos besoins, votre occasion, votre style —
                 et sélectionne les pièces susceptibles de vous correspondre.
               </p>
-              <p className="font-sans text-warm-white/60 leading-relaxed mb-8">
+              <p className="font-sans text-blanc-casse/60 leading-relaxed mb-8">
                 Ce service personnalisé, ancré en Guadeloupe, fait toute la différence.
                 Profitez d&apos;une attention 100% dédiée dans notre boutique de Jarry.
               </p>
@@ -207,14 +207,14 @@ export default function RobesSoireePage() {
                 Réserver ma séance
               </a>
             </div>
-            <div className="bg-charcoal border border-warm-white/10 p-10">
-              <h3 className="font-serif text-2xl text-warm-white mb-6">En pratique</h3>
-              <ul className="space-y-4 font-sans text-sm text-warm-white/60">
-                <li className="flex gap-3"><span className="text-dore">✦</span> Prise de rendez-vous en ligne ou par WhatsApp</li>
-                <li className="flex gap-3"><span className="text-dore">✦</span> Temps dédié pour vous pendant 1h</li>
-                <li className="flex gap-3"><span className="text-dore">✦</span> Présélection de pièces selon votre occasion</li>
-                <li className="flex gap-3"><span className="text-dore">✦</span> Conseil morphologie et colorimétrie inclus</li>
-                <li className="flex gap-3"><span className="text-dore">✦</span> Parking gratuit à Jarry, Baie-Mahault</li>
+            <div className="bg-noir border border-blanc-casse/10 p-10">
+              <h3 className="font-serif text-2xl text-blanc-casse mb-6">En pratique</h3>
+              <ul className="space-y-4 font-sans text-sm text-blanc-casse/60">
+                <li className="flex gap-3"><span className="text-or">✦</span> Prise de rendez-vous en ligne ou par WhatsApp</li>
+                <li className="flex gap-3"><span className="text-or">✦</span> Temps dédié pour vous pendant 1h</li>
+                <li className="flex gap-3"><span className="text-or">✦</span> Présélection de pièces selon votre occasion</li>
+                <li className="flex gap-3"><span className="text-or">✦</span> Conseil morphologie et colorimétrie inclus</li>
+                <li className="flex gap-3"><span className="text-or">✦</span> Parking gratuit à Jarry, Baie-Mahault</li>
               </ul>
             </div>
           </div>
@@ -228,21 +228,21 @@ export default function RobesSoireePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4 font-sans text-sm">
               <p><strong className="font-medium">Odyssée Showroom Privé</strong></p>
-              <address className="not-italic text-charcoal/70 leading-relaxed">
+              <address className="not-italic text-blanc-casse/70 leading-relaxed">
                 {SITE_CONFIG.address.full}
               </address>
-              <p className="text-charcoal/70">{SITE_CONFIG.hours}</p>
+              <p className="text-blanc-casse/70">{SITE_CONFIG.hours}</p>
               <div className="flex gap-4 pt-2">
-                <a href={`tel:${SITE_CONFIG.phone}`} className="text-charcoal hover:text-dore transition-colors">
+                <a href={`tel:${SITE_CONFIG.phone}`} className="text-blanc-casse hover:text-or transition-colors">
                   {SITE_CONFIG.phoneDisplay}
                 </a>
-                <span className="text-charcoal/30">·</span>
-                <a href={SITE_CONFIG.whatsapp} className="text-charcoal hover:text-dore transition-colors">
+                <span className="text-blanc-casse/30">·</span>
+                <a href={SITE_CONFIG.whatsapp} className="text-blanc-casse hover:text-or transition-colors">
                   WhatsApp
                 </a>
               </div>
             </div>
-            <div className="bg-sable/40 p-6 flex items-center justify-center">
+            <div className="bg-noir-alt p-6 flex items-center justify-center">
               <a
                 href="https://maps.google.com/?q=Immeuble+Les+Lilas+Impasse+Guy+Cornely+Baie-Mahault+Guadeloupe"
                 target="_blank"
@@ -257,14 +257,14 @@ export default function RobesSoireePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-sable/20">
+      <section className="py-16 bg-noir-alt">
         <div className="container-luxury max-w-2xl">
           <h2 className="section-title mb-10">Questions fréquentes</h2>
           <div className="space-y-6">
             {faqItems.map((item, i) => (
-              <div key={i} className="border-b border-sable pb-6">
-                <h3 className="font-sans text-sm font-medium text-charcoal mb-2">{item.question}</h3>
-                <p className="font-sans text-sm text-charcoal/60 leading-relaxed">{item.answer}</p>
+              <div key={i} className="border-b border-or/20 pb-6">
+                <h3 className="font-sans text-sm font-medium text-blanc-casse mb-2">{item.question}</h3>
+                <p className="font-sans text-sm text-blanc-casse/60 leading-relaxed">{item.answer}</p>
               </div>
             ))}
           </div>
@@ -272,19 +272,19 @@ export default function RobesSoireePage() {
       </section>
 
       {/* CTA final */}
-      <section className="py-20 bg-dore">
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #E8572A, #D63578, #C4359A)' }}>
         <div className="container-luxury text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-charcoal mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-light text-blanc-casse mb-4">
             Prête à trouver votre robe ?
           </h2>
-          <p className="font-sans text-charcoal/70 mb-8 max-w-md mx-auto">
+          <p className="font-sans text-blanc-casse/70 mb-8 max-w-md mx-auto">
             Prenez rendez-vous dès maintenant pour une séance personnalisée dans notre showroom de Jarry.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary bg-charcoal text-warm-white">
+            <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Réserver en ligne
             </a>
-            <a href={SITE_CONFIG.whatsapp} className="btn-outline border-charcoal text-charcoal hover:bg-charcoal hover:text-warm-white">
+            <a href={SITE_CONFIG.whatsapp} className="btn-outline-white">
               WhatsApp {SITE_CONFIG.whatsappDisplay}
             </a>
           </div>
