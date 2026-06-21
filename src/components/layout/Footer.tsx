@@ -19,7 +19,7 @@ export function Footer() {
             </div>
             <p className="font-sans text-xs text-warm-white/60 leading-relaxed">
               Boutique de mode féminine en Guadeloupe. Prêt-à-porter chic, robes de soirée, 
-              accessoires et conseils personnalisés. Showroom privé sur rendez-vous à Jarry.
+              accessoires et conseils personnalisés. Boutique de mode femme à Jarry, Guadeloupe.
             </p>
             <div className="flex gap-4 mt-6">
               <a href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer" className="text-warm-white/60 hover:text-dore transition-colors">
