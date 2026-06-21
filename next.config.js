@@ -4,7 +4,13 @@ const nextConfig = {
     { source: '/accueil', destination: '/', permanent: true },
   ],
   images: {
-    domains: ['img.youtube.com', 'i.ytimg.com'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.leadconnectorhq.com' },
+      { protocol: 'https', hostname: 'assets.cdn.filesafe.space' },
+      { protocol: 'https', hostname: 'firebasestorage.googleapis.com' },
+      { protocol: 'https', hostname: 'img.youtube.com' },
+      { protocol: 'https', hostname: 'i.ytimg.com' },
+    ],
   },
 }
 module.exports = nextConfig
