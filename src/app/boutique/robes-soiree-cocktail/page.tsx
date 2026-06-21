@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/site-config'
 
 export const revalidate = 600
@@ -103,10 +104,10 @@ export default function RobesSoireePage() {
       <section className="py-16">
         <div className="container-luxury max-w-3xl">
           <p className="font-sans text-blanc-casse/70 leading-relaxed text-base md:text-lg">
-            À la recherche d&apos;une <strong>robe de soirée femme en Guadeloupe</strong> ? 
-            Odyssée Showroom Privé, à <strong>Jarry, Baie-Mahault</strong>, vous propose une sélection 
-            exclusive de robes élégantes pour toutes vos occasions : mariages, galas, soirées, cérémonies. 
-            Dans notre <strong>showroom privé</strong>, Béatrice vous accompagne personnellement pour 
+            À la recherche d&apos;une <strong>robe de soirée femme en Guadeloupe</strong> ?
+            Odyssée Showroom Privé, à <strong>Jarry, Baie-Mahault</strong>, vous propose une sélection
+            exclusive de robes élégantes pour toutes vos occasions : mariages, galas, soirées, cérémonies.
+            Dans notre <strong>showroom privé</strong>, Béatrice vous accompagne personnellement pour
             trouver la pièce qui vous ressemble.
           </p>
         </div>
@@ -117,19 +118,22 @@ export default function RobesSoireePage() {
         <div className="container-luxury">
           <h2 className="section-title mb-10">Nos robes de soirée</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {[...Array(8)].map((_, i) => (
-              <div
-                key={i}
-                className="aspect-[3/4] relative overflow-hidden group cursor-pointer"
-                style={{
-                  backgroundColor: i % 4 === 0 ? '#C45B3A' : i % 4 === 1 ? '#2D6A4F' : i % 4 === 2 ? '#F5EDD6' : '#C9A84C',
-                  backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cline x1='0' y1='0' x2='40' y2='40' stroke='%23C45B3A' stroke-width='1' opacity='0.3'/%3E%3Cline x1='40' y1='0' x2='0' y2='40' stroke='%232D6A4F' stroke-width='1' opacity='0.3'/%3E%3Cline x1='20' y1='0' x2='20' y2='40' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3Cline x1='0' y1='20' x2='40' y2='20' stroke='%23C9A84C' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E\")"
-                }}
-              >
-                <div className="absolute inset-0 flex items-end p-4">
+            {[
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/681e76c79a0ad3a8d627b0f0.jpeg', alt: 'Robe de soirée Odyssée Guadeloupe' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793f34d4ebc40b46c836b5.jpeg', alt: 'Robe élégante Odyssée Jarry' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793fb0d4ebc44b5fc836f5.jpeg', alt: 'Bijoux robe Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41e3eb4b49fac95520.jpeg', alt: 'Stylisme robe Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41eddaa35b2fe753f0.webp', alt: 'Relooking robe Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68df1a8785bf7917a235c32d.jpeg', alt: 'Shooting robe soirée Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41afed75df36e683b2.jpeg', alt: 'Robe anniversaire Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49edefcbcd641ae539f50.webp', alt: 'Robe conseils Odyssée' },
+            ].map(({ img, alt }) => (
+              <div key={img} className="relative aspect-[3/4] overflow-hidden group">
+                <Image src={img} alt={alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 25vw" />
+                <div className="absolute inset-0 bg-noir/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
                   <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer"
-                    className="w-full btn-primary text-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Essayer en showroom
+                    className="w-full text-center btn-primary text-xs py-2">
+                    Essayer en boutique
                   </a>
                 </div>
               </div>
@@ -149,11 +153,17 @@ export default function RobesSoireePage() {
             Robe de cocktail pour un mariage en Guadeloupe, une soirée d&apos;entreprise ou un événement festif.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className={`aspect-[3/4] relative overflow-hidden group cursor-pointer ${
-                i % 3 === 0 ? 'bg-noir' : i % 3 === 1 ? 'bg-noir-alt' : 'bg-or/20'
-              }`}>
-                <div className="absolute inset-0 flex items-end p-4">
+            {[
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/681e76c79a0ad3a8d627b0f0.jpeg', alt: 'Robe de soirée Odyssée Guadeloupe' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793f34d4ebc40b46c836b5.jpeg', alt: 'Robe élégante Odyssée Jarry' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793fb0d4ebc44b5fc836f5.jpeg', alt: 'Bijoux robe Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41e3eb4b49fac95520.jpeg', alt: 'Stylisme robe Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41eddaa35b2fe753f0.webp', alt: 'Relooking robe Odyssée' },
+              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68df1a8785bf7917a235c32d.jpeg', alt: 'Shooting robe soirée Odyssée' },
+            ].map(({ img, alt }) => (
+              <div key={img} className="relative aspect-[3/4] overflow-hidden group">
+                <Image src={img} alt={alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 50vw, 33vw" />
+                <div className="absolute inset-0 bg-noir/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
                   <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer"
                     className="w-full btn-primary text-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Voir en boutique
