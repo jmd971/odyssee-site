@@ -27,7 +27,7 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-3 bg-charcoal text-warm-white font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-dore hover:text-charcoal;
+    @apply inline-flex items-center justify-center px-8 py-3 bg-terracotta text-warm-white font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-dore hover:text-charcoal;
   }
   
   .btn-outline {
