@@ -41,7 +41,7 @@ export function PageHero({
   eyebrow,
   title,
   intro,
-  ctaLabel = 'Prendre rendez-vous',
+  ctaLabel = 'Réserver un essayage',
 }: {
   eyebrow: string
   title: React.ReactNode
@@ -67,6 +67,9 @@ export function PageHero({
             WhatsApp {SITE_CONFIG.whatsappDisplay}
           </a>
         </div>
+        <p className="font-sans text-xs text-blanc-casse/45 mt-6 max-w-xl mx-auto leading-relaxed">
+          Entrée libre du mardi au samedi, 10h–19h — Béatrice vous conseille et vous accompagne sur place. La réservation sert uniquement pour un essayage dédié ou une privatisation entre copines.
+        </p>
       </div>
     </section>
   )
@@ -184,12 +187,15 @@ export function CtaFinal({ titre, texte }: { titre: string; texte: string }) {
         <p className="font-sans text-blanc-casse/60 mb-8 max-w-lg mx-auto">{texte}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
-            Réserver en ligne
+            Réserver un essayage
           </a>
           <a href={SITE_CONFIG.whatsapp} className="btn-outline-white">
             WhatsApp {SITE_CONFIG.whatsappDisplay}
           </a>
         </div>
+        <p className="font-sans text-xs text-blanc-casse/45 mt-6 max-w-xl mx-auto leading-relaxed">
+          Entrée libre du mardi au samedi, 10h–19h — Béatrice vous conseille et vous accompagne sur place. La réservation sert uniquement pour un essayage dédié ou une privatisation entre copines.
+        </p>
       </div>
     </section>
   )

@@ -103,12 +103,18 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Prendre rendez-vous
+                Réserver un essayage
               </a>
               <Link href="/boutique" className="btn-outline-white">
                 Découvrir la boutique
               </Link>
             </div>
+
+            <p className="font-sans text-sm text-blanc-casse/45 mt-6 max-w-lg leading-relaxed">
+              Pas besoin de rendez-vous pour venir : la boutique est ouverte à toutes,
+              du mardi au samedi. Béatrice vous conseille et vous accompagne dans vos choix.
+              La réservation ne sert qu’à bloquer un créneau rien que pour vous.
+            </p>
 
             {/* Rating */}
             <div className="flex items-center gap-4 mt-12 pt-8 border-t border-blanc-casse/5">
@@ -396,8 +402,8 @@ export default function HomePage() {
             {/* Booking */}
             <div>
               <span className="section-subtitle">Réservation</span>
-              <h3 className="font-serif text-2xl text-blanc-casse mb-6">
-                Prendre rendez-vous<br /><span className="italic">en ligne</span>
+              <h3 className="font-serif text-2xl text-blanc-casse mb-3">
+                Réserver un créneau<br /><span className="italic">rien que pour vous</span>
               </h3>
               <div className="border border-blanc-casse/10 overflow-hidden relative">
                 <div className="gradient-line absolute top-0 left-0 right-0" />

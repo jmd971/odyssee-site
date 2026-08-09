@@ -94,7 +94,7 @@ export default function GaleriePage() {
         eyebrow="Galerie · Jarry, Guadeloupe"
         title={<>Tous nos looks<br /><span className="italic text-or">en un seul endroit</span></>}
         intro={`${TOTAL} tenues et pièces vues à la boutique. Le stock tourne : la meilleure façon de savoir ce qui est disponible reste de nous écrire.`}
-        ctaLabel="Prendre rendez-vous"
+        ctaLabel="Réserver un essayage"
       />
 
       {/* Sommaire — évite de faire défiler à l'aveugle sur mobile */}

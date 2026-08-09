@@ -124,9 +124,15 @@ export default function ContactPage() {
 
             <div>
               <span className="section-subtitle">Réservation en ligne</span>
-              <h2 className="font-serif text-2xl text-blanc-casse mb-6">
-                Prendre rendez-vous
+              <h2 className="font-serif text-2xl text-blanc-casse mb-3">
+                Réserver un créneau dédié
               </h2>
+              <p className="font-sans text-sm text-blanc-casse/50 mb-6 leading-relaxed">
+                Facultatif : la boutique est ouverte à toutes du mardi au samedi, sans rendez-vous.
+                Réservez seulement si vous voulez un créneau dédié — un essayage de cérémonie,
+                un relooking, un anniversaire entre copines.
+              </p>
+
               <div className="border border-blanc-casse/10 overflow-hidden relative">
                 <div className="gradient-line absolute top-0 left-0 right-0" />
                 <iframe

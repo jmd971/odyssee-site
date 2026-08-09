@@ -46,7 +46,7 @@ export function Header() {
       {/* Bandeau info */}
       <div className="border-b border-blanc-casse/5 py-2 px-4 text-center">
         <p className="font-sans text-[11px] tracking-wide text-blanc-casse/50">
-          Boutique de mode femme · Jarry, Baie-Mahault ·{' '}
+          <span className="text-or">Entrée libre</span> · Jarry, Baie-Mahault ·{' '}
           <span className="text-or">Mardi–Samedi 10h–19h</span>
           {' '}·{' '}
           <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-or transition-colors">
@@ -120,7 +120,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 className="btn-primary text-xs py-2.5 px-6 ml-2"
               >
-                Prendre RDV
+                Réserver un essayage
               </a>
             </nav>
 
@@ -171,7 +171,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="btn-primary w-full text-center mt-6 block"
             >
-              Prendre RDV
+              Réserver un essayage
             </a>
           </div>
         )}
