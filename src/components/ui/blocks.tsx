@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { SITE_CONFIG } from '@/lib/site-config'
+import { SITE_CONFIG, whatsappAvec } from '@/lib/site-config'
 import type { FaqItem } from '@/lib/schema'
 import type { Visuel } from '@/lib/images'
 
@@ -102,13 +102,15 @@ export function Galerie({
               </figcaption>
             )}
             <div className="absolute inset-0 bg-noir/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              {/* Vers WhatsApp, pas vers la reservation : a cet instant la question
+                  est « est-elle encore la, dans ma taille ? », pas « quel creneau ». */}
               <a
-                href={SITE_CONFIG.booking}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={whatsappAvec(
+                  `Bonjour Béatrice, j’ai vu cette pièce sur le site (${v.alt}). Est-elle encore disponible ?`,
+                )}
                 className="w-full text-center btn-primary text-xs py-2"
               >
-                Essayer en boutique
+                Est-elle disponible ?
               </a>
             </div>
           </figure>

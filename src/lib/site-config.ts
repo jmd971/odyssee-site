@@ -26,3 +26,12 @@ export const SITE_CONFIG = {
   geo: { latitude: 16.2650, longitude: -61.5770 },
   rating: { value: 4.9, count: 30 },
 }
+
+/**
+ * Lien WhatsApp avec message pre-rempli.
+ * Une cliente qui doit rediger son message depuis zero renonce souvent ;
+ * la phrase amorcee suffit a declencher l'envoi.
+ */
+export function whatsappAvec(message: string) {
+  return `${SITE_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`
+}

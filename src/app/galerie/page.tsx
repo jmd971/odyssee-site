@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { SITE_CONFIG } from '@/lib/site-config'
+import { SITE_CONFIG, whatsappAvec } from '@/lib/site-config'
 import { IMAGES, type Visuel } from '@/lib/images'
 import { breadcrumbSchema } from '@/lib/schema'
 import { Breadcrumb, CtaFinal, JsonLd, PageHero } from '@/components/ui/blocks'
@@ -141,7 +141,9 @@ export default function GaleriePage() {
                   )}
                   <div className="absolute inset-0 bg-noir/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
                     <a
-                      href={SITE_CONFIG.whatsapp}
+                      href={whatsappAvec(
+                        `Bonjour Béatrice, j’ai vu cette pièce sur le site (${v.alt}). Est-elle encore disponible ?`,
+                      )}
                       className="w-full text-center btn-primary text-[11px] py-2"
                     >
                       Est-elle disponible ?
