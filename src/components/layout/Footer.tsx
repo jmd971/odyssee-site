@@ -47,6 +47,7 @@ export function Footer() {
                 { label: 'Cérémonie & invitée de mariage', href: '/boutique/robes-ceremonie-invitee-mariage' },
                 { label: 'Vêtements femme', href: '/boutique/vetements-femme' },
                 { label: 'Accessoires & bijoux', href: '/boutique/accessoires-bijoux' },
+                { label: 'Galerie', href: '/galerie' },
                 { label: 'Carte cadeau', href: '/carte-cadeau' },
               ].map((link) => (
                 <li key={link.href}>

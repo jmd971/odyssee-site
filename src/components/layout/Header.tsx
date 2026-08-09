@@ -27,6 +27,7 @@ const navItems = [
       { label: 'Shopping anniversaire', href: '/services/shopping-anniversaire' },
     ],
   },
+  { label: 'Galerie', href: '/galerie' },
   { label: 'Carte cadeau', href: '/carte-cadeau' },
   { label: 'Événements', href: '/evenements' },
   { label: 'Blog', href: '/blog' },
