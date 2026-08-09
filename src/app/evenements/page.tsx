@@ -7,6 +7,10 @@ import { breadcrumbSchema, faqSchema, type FaqItem } from '@/lib/schema'
 import {
   Breadcrumb, CtaFinal, FaqSection, JsonLd, PageHero, PourAllerPlusLoin,
 } from '@/components/ui/blocks'
+import { VideoYouTube } from '@/components/ui/VideoYouTube'
+
+/** Short YouTube du défilé en boutique, déjà en ligne sur la chaîne Odyssée. */
+const VIDEO_DEFILE = 'TGvInnqqODY'
 
 const PATH = '/evenements'
 const TITLE = 'Défilés de mode & événements en Guadeloupe | Odyssée'
@@ -53,7 +57,11 @@ const EDITIONS: Edition[] = [
     lieu: 'Boutique Odyssée, immeuble Les Lilas, Jarry',
     visuel: IMAGES.lookJeanBoutique,
     recit:
-      'Un défilé monté dans la boutique elle-même, entre les portants. Format intime, une trentaine de personnes, avec la possibilité d’essayer les pièces juste après le passage. Plusieurs clientes fidèles ont accepté de monter sur le podium improvisé.',
+      'Un défilé monté dans la boutique elle-même, entre les portants — et une centaine de personnes venues y assister. Défiler dans son propre magasin change la soirée : les pièces qui viennent de passer sont à portée de main, et l’essayage suit immédiatement.',
+    details: [
+      'Une centaine de personnes réunies dans la boutique',
+      'Les pièces présentées disponibles à l’essayage dans la foulée',
+    ],
   },
   {
     titre: 'Soirée dégustation à la boutique',
@@ -111,12 +119,26 @@ const faqItems: FaqItem[] = [
   },
 ]
 
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'Défilé de mode Odyssée Showroom Privé à Jarry',
+  description:
+    'Grand défilé de mode organisé par Odyssée Showroom Privé dans sa boutique de Jarry, Baie-Mahault, en Guadeloupe.',
+  thumbnailUrl: `https://i.ytimg.com/vi/${VIDEO_DEFILE}/maxresdefault.jpg`,
+  uploadDate: '2024-11-28',
+  duration: 'PT30S',
+  embedUrl: `https://www.youtube.com/embed/${VIDEO_DEFILE}`,
+  contentUrl: `https://www.youtube.com/shorts/${VIDEO_DEFILE}`,
+  publisher: { '@id': `${SITE_CONFIG.url}/#boutique` },
+}
+
 export default function EvenementsPage() {
   const trail = [{ name: 'Événements', path: PATH }]
 
   return (
     <>
-      <JsonLd data={[breadcrumbSchema(trail), faqSchema(faqItems)]} />
+      <JsonLd data={[breadcrumbSchema(trail), faqSchema(faqItems), videoSchema]} />
       <Breadcrumb trail={trail} />
 
       <PageHero
@@ -134,6 +156,21 @@ export default function EvenementsPage() {
             opérations de communication : les pièces qui passent sont celles du rayon, et une partie
             des mannequins sont des clientes.
           </p>
+        </div>
+      </section>
+
+      <section className="pb-16">
+        <div className="container-luxury max-w-4xl">
+          <h2 className="section-title mb-4">Le défilé en vidéo</h2>
+          <p className="font-sans text-blanc-casse/60 mb-8 leading-relaxed">
+            Trente secondes tournées pendant le défilé à la boutique de Jarry, pour se faire une
+            idée de l’ambiance avant de venir à la prochaine édition.
+          </p>
+          <VideoYouTube
+            id={VIDEO_DEFILE}
+            titre="Défilé Odyssée Showroom Privé à Jarry"
+            legende="Défilé de mode Odyssée Showroom Privé — boutique de Jarry, Baie-Mahault"
+          />
         </div>
       </section>
 
