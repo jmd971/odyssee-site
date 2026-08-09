@@ -64,9 +64,13 @@ const SECTIONS: Section[] = [
   },
   {
     titre: 'La boutique & les coulisses',
-    intro: 'Jarry, immeuble Les Lilas. Les arrivages, les préparations de défilé, la carte cadeau.',
+    intro: 'Jarry, immeuble Les Lilas. Le mur à chevrons, les portants, le présentoir à bijoux — pour savoir à quoi ressemble l’endroit avant d’y entrer. Le mot « privé » ne veut pas dire fermé : on entre librement du mardi au samedi.',
     lien: { href: '/contact', label: 'Venir nous voir' },
-    visuels: [IMAGES.nouvellesPieces, IMAGES.miseEnBeaute, IMAGES.carteCadeau],
+    visuels: [
+      IMAGES.lookJeanBoutique, IMAGES.chemisesImprimees, IMAGES.vesteBlanchePatchwork,
+      IMAGES.robeSequinsArgent, IMAGES.robeLongueEte, IMAGES.nouvellesPieces,
+      IMAGES.miseEnBeaute, IMAGES.carteCadeau,
+    ],
   },
   {
     titre: 'Nos événements',
