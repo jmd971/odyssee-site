@@ -21,12 +21,12 @@
 
 @layer components {
   /* Bouton principal — dégradé signature */
+  /* Bouton principal — or du logo sur texte noir, le contraste de la marque */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center px-8 py-3 font-sans text-sm tracking-luxury uppercase text-blanc-casse overflow-hidden transition-all duration-300;
-    background: var(--gradient-odyssee);
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-sans text-sm tracking-luxury uppercase bg-or text-noir overflow-hidden transition-all duration-300;
   }
   .btn-primary:hover {
-    @apply opacity-90 scale-[1.02];
+    @apply bg-or-clair;
   }
 
   /* Bouton outline — bordure or */
@@ -60,11 +60,9 @@
   }
 
   /* Texte dégradé */
+  /* Conserve pour compatibilite : rendu en or plein, comme le logo */
   .text-gradient {
-    background: var(--gradient-odyssee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply text-or;
   }
 
   /* Bordure dégradé */

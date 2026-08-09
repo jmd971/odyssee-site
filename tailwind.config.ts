@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         noir: '#1A1A1A',
         'noir-alt': '#2A2A2A',
-        or: '#C9A84C',
-        'or-clair': '#E8C870',
+        or: '#CD9E63',
+        'or-clair': '#E0B884',
         creme: '#F8F3EC',
         'blanc-casse': '#FDFAF4',
         orange: '#E8572A',

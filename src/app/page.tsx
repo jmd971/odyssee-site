@@ -281,7 +281,7 @@ export default function HomePage() {
             </div>
 
             {/* Carte cadeau */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #E8572A 0%, #D63578 50%, #C4359A 100%)' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative overflow-hidden bg-noir-alt border border-or/25">
               <div className="relative aspect-square overflow-hidden hidden lg:block">
                 <Image src="/images/carte-cadeau.webp" alt="Carte cadeau Odyssée Showroom Privé" fill className="object-cover" sizes="50vw" />
               </div>

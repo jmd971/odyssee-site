@@ -4,8 +4,6 @@ import { SITE_CONFIG } from '@/lib/site-config'
 import type { FaqItem } from '@/lib/schema'
 import type { Visuel } from '@/lib/images'
 
-const GRADIENT = 'linear-gradient(135deg, #E8572A, #D63578, #C4359A)'
-
 export function JsonLd({ data }: { data: object | object[] }) {
   const blocks = Array.isArray(data) ? data : [data]
   return (
@@ -51,13 +49,14 @@ export function PageHero({
   ctaLabel?: string
 }) {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: GRADIENT }}>
+    <section className="py-20 md:py-28 relative overflow-hidden bg-noir border-b border-blanc-casse/10">
+      <div className="gradient-line absolute top-0 left-0 right-0" />
       <div className="relative container-luxury text-center">
-        <p className="section-subtitle text-blanc-casse/80">{eyebrow}</p>
+        <p className="section-subtitle">{eyebrow}</p>
         <h1 className="font-serif text-4xl md:text-6xl font-light text-blanc-casse leading-tight">
           {title}
         </h1>
-        <p className="font-sans text-blanc-casse/85 mt-6 max-w-2xl mx-auto leading-relaxed">
+        <p className="font-sans text-blanc-casse/60 mt-6 max-w-2xl mx-auto leading-relaxed">
           {intro}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
@@ -178,10 +177,11 @@ export function OuNousTrouver() {
 
 export function CtaFinal({ titre, texte }: { titre: string; texte: string }) {
   return (
-    <section className="py-20" style={{ background: GRADIENT }}>
+    <section className="py-20 bg-noir-alt relative">
+      <div className="gradient-line absolute top-0 left-0 right-0" />
       <div className="container-luxury text-center">
         <h2 className="font-serif text-3xl md:text-4xl font-light text-blanc-casse mb-4">{titre}</h2>
-        <p className="font-sans text-blanc-casse/80 mb-8 max-w-lg mx-auto">{texte}</p>
+        <p className="font-sans text-blanc-casse/60 mb-8 max-w-lg mx-auto">{texte}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
             Réserver en ligne
