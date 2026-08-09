@@ -36,7 +36,6 @@ const navItems = [
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   return (
     <header className="relative z-50 bg-noir">
@@ -61,32 +60,31 @@ export function Header() {
           <div className="flex items-center justify-between h-20 md:h-24">
 
             {/* Nav desktop gauche */}
-            <nav className="hidden lg:flex items-center gap-6 flex-1">
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-6 flex-1">
               {navItems.slice(0, 4).map((item) => (
-                <div
-                  key={item.href}
-                  className="relative"
-                  onMouseEnter={() => item.children && setActiveDropdown(item.href)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
+                <div key={item.href} className="relative group">
                   <Link
                     href={item.href}
-                    className="font-sans text-[11px] tracking-wide uppercase text-blanc-casse/60 hover:text-or transition-colors duration-200"
+                    className="font-sans text-[11px] tracking-wide uppercase whitespace-nowrap text-blanc-casse/60 hover:text-or focus-visible:text-or transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
-                  {item.children && activeDropdown === item.href && (
-                    <div className="absolute top-full left-0 mt-3 w-60 bg-noir-alt border border-blanc-casse/10 py-2 z-50">
-                      <div className="gradient-line w-full mb-2" />
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="block px-5 py-2.5 font-sans text-xs text-blanc-casse/60 hover:text-or hover:bg-blanc-casse/5 transition-colors"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                  {item.children && (
+                    /* pt-3 plutot que mt-3 : la zone de survol reste continue entre
+                       le libelle et le panneau, sinon le menu se ferme en chemin. */
+                    <div className="absolute top-full left-0 pt-3 z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity duration-150">
+                      <div className="w-64 bg-noir-alt border border-blanc-casse/10 py-2 shadow-xl">
+                        <div className="gradient-line w-full mb-2" />
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-5 py-2.5 font-sans text-xs text-blanc-casse/60 hover:text-or focus-visible:text-or hover:bg-blanc-casse/5 transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -94,7 +92,7 @@ export function Header() {
             </nav>
 
             {/* Logo centré */}
-            <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 text-center flex-shrink-0">
+            <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 text-center flex-shrink-0 lg:mx-6">
               <div className="font-serif text-3xl md:text-4xl font-light tracking-[0.25em] text-blanc-casse leading-none">
                 ODY<span className="text-or">SSÉE</span>
               </div>
@@ -104,12 +102,12 @@ export function Header() {
             </Link>
 
             {/* Nav desktop droite */}
-            <nav className="hidden lg:flex items-center gap-6 flex-1 justify-end">
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-6 flex-1 justify-end">
               {navItems.slice(4).map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="font-sans text-[11px] tracking-wide uppercase text-blanc-casse/60 hover:text-or transition-colors duration-200"
+                  className="font-sans text-[11px] tracking-wide uppercase whitespace-nowrap text-blanc-casse/60 hover:text-or transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -118,7 +116,7 @@ export function Header() {
                 href={SITE_CONFIG.booking}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-xs py-2.5 px-6 ml-2"
+                className="btn-primary text-[11px] py-2.5 px-5 ml-3 whitespace-nowrap"
               >
                 Réserver un essayage
               </a>
