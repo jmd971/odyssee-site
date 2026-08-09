@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X, Phone } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
@@ -93,12 +94,15 @@ export function Header() {
 
             {/* Logo centré */}
             <Link href="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 text-center flex-shrink-0 lg:mx-6">
-              <div className="font-serif text-3xl md:text-4xl font-light tracking-[0.25em] text-blanc-casse leading-none">
-                ODY<span className="text-or">SSÉE</span>
-              </div>
-              <div className="font-sans text-[9px] tracking-luxury uppercase mt-1">
-                <span className="text-gradient">showroom privé · by Béa</span>
-              </div>
+              <Image
+                src="/images/logo-odyssee.png"
+                alt="Odyssée Showroom Privé, boutique de mode femme à Jarry"
+                width={543}
+                height={600}
+                priority
+                className="h-14 md:h-16 w-auto mx-auto"
+              />
+              <span className="sr-only">Odyssée Showroom Privé — by Béa</span>
             </Link>
 
             {/* Nav desktop droite */}

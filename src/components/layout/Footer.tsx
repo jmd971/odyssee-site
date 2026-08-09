@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Instagram, Facebook, Youtube, Phone, MapPin, Clock } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 
@@ -12,12 +13,13 @@ export function Footer() {
 
           {/* Marque */}
           <div className="lg:col-span-1">
-            <div className="font-serif text-3xl tracking-[0.25em] font-light text-blanc-casse mb-1">
-              ODY<span className="text-or">SSÉE</span>
-            </div>
-            <div className="font-sans text-[9px] tracking-luxury uppercase mb-5">
-              <span className="text-gradient">showroom privé · by Béa</span>
-            </div>
+            <Image
+              src="/images/logo-odyssee.png"
+              alt="Odyssée Showroom Privé"
+              width={543}
+              height={600}
+              className="h-20 w-auto mb-5"
+            />
             <p className="font-sans text-xs text-blanc-casse/40 leading-relaxed mb-6">
               Boutique de mode femme à Jarry, Guadeloupe. Robes de soirée, 
               prêt-à-porter et accessoires. Conseil personnalisé par Béatrice.

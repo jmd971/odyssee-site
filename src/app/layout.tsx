@@ -39,6 +39,10 @@ export const metadata: Metadata = {
   },
   twitter: { card: 'summary_large_image' },
   alternates: { canonical: SITE_CONFIG.url },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-touch-icon.png',
+  },
   robots: { index: true, follow: true },
 }
 
