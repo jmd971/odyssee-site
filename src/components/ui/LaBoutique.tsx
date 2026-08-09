@@ -13,8 +13,9 @@ import { IMAGES } from '@/lib/images'
  * imposait une carte blanche, les mentions J'aime, un bouton pointant vers un
  * autre compte, et il exportait la visiteuse au lieu de lire sur place.
  *
- * Le fichier vient du défilé organisé dans la boutique — donc il montre
- * l'intérieur, rempli. preload="none" : rien ne se télécharge avant le clic.
+ * Le fichier est la vidéo d'ambiance de la boutique, retrouvée sur le stockage
+ * de l'ancien site où elle servait de fond aux pages à-propos, contact et
+ * services. preload="none" : rien ne se télécharge avant le clic.
  */
 const INTERIEUR = [IMAGES.lookJeanBoutique, IMAGES.vesteBlanchePatchwork, IMAGES.robeLongueEte]
 
@@ -84,11 +85,11 @@ export function LaBoutique() {
               poster={IMAGES.lookJeanBoutique.src}
               className="w-full aspect-[9/16] object-cover bg-noir"
             >
-              <source src="/videos/defile-boutique-jarry.mp4" type="video/mp4" />
+              <source src="/videos/boutique-jarry.mp4" type="video/mp4" />
               Votre navigateur ne peut pas lire cette vidéo.
             </video>
             <p className="font-sans text-xs text-blanc-casse/40 mt-3 text-center">
-              Défilé organisé dans la boutique de Jarry — une centaine de personnes ce soir-là.
+La boutique Odyssée, immeuble Les Lilas, à Jarry.
             </p>
           </div>
 
