@@ -20,8 +20,8 @@ import { IMAGES } from '@/lib/images'
 const REELS = [
   { code: 'DbOMCrmqVNj', titre: 'Look en boutique', visuel: IMAGES.lookJeanBoutique },
   { code: 'DbLMDqPKC_S', titre: 'Look en boutique', visuel: IMAGES.robeSequinsArgent },
-  { code: 'DbGXePPxvXj', titre: 'Look en boutique', visuel: IMAGES.chemisesImprimees },
   { code: 'Da8MCKQIxVZ', titre: 'Look en boutique', visuel: IMAGES.vesteBlanchePatchwork },
+  { code: 'DbLHcurKCoB', titre: 'Look en boutique', visuel: IMAGES.robeLongueEte },
 ]
 
 declare global {

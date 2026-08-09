@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Star, MapPin, Clock, Phone, Instagram, ArrowRight } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { InstagramLooks } from '@/components/ui/InstagramLooks'
+import { LaBoutique } from '@/components/ui/LaBoutique'
 
 export const revalidate = 600
 
@@ -253,6 +254,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <LaBoutique />
 
       <InstagramLooks />
 
