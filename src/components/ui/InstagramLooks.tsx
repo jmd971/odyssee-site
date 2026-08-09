@@ -1,21 +1,17 @@
-'use client'
-
-import { useEffect } from 'react'
 import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { IMAGES } from '@/lib/images'
 
 /**
- * Reels Instagram en intégration officielle, avec repli visible.
+ * Cartes vers les reels, sans le script d'intégration Instagram.
  *
- * Le script d'Instagram remplace chaque <blockquote> par une iframe. Mais un
- * bloqueur de pub ou une protection anti-pistage empêche souvent ce script de
- * se charger — et dans ce cas la section resterait vide.
+ * L'embed officiel imposait quatre cartes blanches sur fond noir, chacune avec
+ * son bandeau de profil, ses mentions J'aime et son champ commentaire — et il
+ * ne lisait rien sur place. Ces cartes-ci respectent la charte et annoncent
+ * clairement qu'elles ouvrent Instagram.
  *
- * D'où le contenu de repli placé À L'INTÉRIEUR du blockquote : une vraie carte
- * cliquable avec une photo. Si Instagram se charge, la carte est remplacée par
- * la vidéo ; sinon, la visiteuse voit une carte propre qui mène au reel.
- * Dans les deux cas, il y a toujours quelque chose à l'écran.
+ * Elles seront remplacées par des vidéos hébergées quand les fichiers seront
+ * disponibles, comme cela a été fait pour la section boutique.
  */
 const REELS = [
   { code: 'DbOMCrmqVNj', titre: 'Look en boutique', visuel: IMAGES.lookJeanBoutique },
@@ -24,27 +20,7 @@ const REELS = [
   { code: 'DbLHcurKCoB', titre: 'Look en boutique', visuel: IMAGES.robeLongueEte },
 ]
 
-declare global {
-  interface Window {
-    instgrm?: { Embeds: { process: () => void } }
-  }
-}
-
 export function InstagramLooks() {
-  useEffect(() => {
-    const ID = 'instagram-embed-script'
-    if (document.getElementById(ID)) {
-      window.instgrm?.Embeds.process()
-      return
-    }
-    const script = document.createElement('script')
-    script.id = ID
-    script.src = 'https://www.instagram.com/embed.js'
-    script.async = true
-    script.onload = () => window.instgrm?.Embeds.process()
-    document.body.appendChild(script)
-  }, [])
-
   return (
     <section className="py-16 bg-noir-alt">
       <div className="container-luxury">
@@ -69,15 +45,8 @@ export function InstagramLooks() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {REELS.map((reel) => (
-            <blockquote
+            <a
               key={reel.code}
-              className="instagram-media w-full"
-              data-instgrm-permalink={`https://www.instagram.com/reel/${reel.code}/`}
-              data-instgrm-version="14"
-              style={{ background: '#1A1A1A', border: 0, margin: 0, padding: 0, width: '100%' }}
-            >
-              {/* Repli : visible tant qu'Instagram n'a pas pris la main, ou s'il est bloqué */}
-              <a
                 href={`https://www.instagram.com/reel/${reel.code}/`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -101,14 +70,12 @@ export function InstagramLooks() {
                 <span className="absolute bottom-0 left-0 right-0 p-3 font-sans text-[11px] tracking-wide uppercase text-blanc-casse/90">
                   {reel.titre}
                 </span>
-              </a>
-            </blockquote>
+            </a>
           ))}
         </div>
 
         <p className="font-sans text-xs text-blanc-casse/35 mt-6 text-center">
-          Les vidéos sont hébergées sur Instagram. Si votre navigateur bloque les contenus
-          externes, les vignettes ci-dessus ouvrent directement le compte.
+          Ces vignettes ouvrent Instagram dans un nouvel onglet.
         </p>
       </div>
     </section>

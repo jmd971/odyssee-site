@@ -9,16 +9,13 @@ import { IMAGES } from '@/lib/images'
  * Une cliente qui lit « showroom privé » suppose qu'il faut être invitée.
  * Aucune phrase ne lève ce frein aussi bien qu'une vidéo de l'intérieur.
  *
- * L'intégration Instagram a été retirée d'ici : elle imposait une carte blanche
- * avec les mentions J'aime et un bouton « Voir le profil » pointant vers un autre
- * compte, et surtout elle ne lisait pas la vidéo sur place — elle exportait la
- * visiteuse vers Instagram, au moment précis où on cherche à la rassurer.
+ * La vidéo est hébergée sur le site, pas intégrée depuis Instagram : l'embed
+ * imposait une carte blanche, les mentions J'aime, un bouton pointant vers un
+ * autre compte, et il exportait la visiteuse au lieu de lire sur place.
  *
- * À remplacer par un MP4 court, muet, en boucle, dès que le fichier d'origine
- * sera fourni. En attendant, une carte sobre aux couleurs du site.
+ * Le fichier vient du défilé organisé dans la boutique — donc il montre
+ * l'intérieur, rempli. preload="none" : rien ne se télécharge avant le clic.
  */
-const REEL_BOUTIQUE = 'DbGXePPxvXj'
-
 const INTERIEUR = [IMAGES.lookJeanBoutique, IMAGES.vesteBlanchePatchwork, IMAGES.robeLongueEte]
 
 export function LaBoutique() {
@@ -78,31 +75,21 @@ export function LaBoutique() {
           </div>
 
           <div className="mx-auto w-full max-w-sm">
-            <a
-              href={`https://www.instagram.com/reel/${REEL_BOUTIQUE}/`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block relative aspect-[9/16] overflow-hidden"
-              >
-                <Image
-                  src={IMAGES.lookJeanBoutique.src}
-                  alt="Visite de la boutique Odyssée à Jarry, en vidéo"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 384px"
-                />
-                <span className="absolute inset-0 bg-noir/35 group-hover:bg-noir/15 transition-colors" />
-                <span className="absolute inset-0 flex items-center justify-center">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full border border-blanc-casse/70 bg-noir/50">
-                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor" className="ml-1 text-blanc-casse">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </span>
-                <span className="absolute bottom-0 left-0 right-0 p-4 font-sans text-xs tracking-wide uppercase text-blanc-casse/90">
-                  La boutique en vidéo
-                </span>
-              </a>
+            {/* Video hebergee : preload="none" + poster, donc aucun octet tant
+                qu'on ne clique pas, et surtout la lecture se fait ICI. */}
+            <video
+              controls
+              playsInline
+              preload="none"
+              poster={IMAGES.lookJeanBoutique.src}
+              className="w-full aspect-[9/16] object-cover bg-noir"
+            >
+              <source src="/videos/defile-boutique-jarry.mp4" type="video/mp4" />
+              Votre navigateur ne peut pas lire cette vidéo.
+            </video>
+            <p className="font-sans text-xs text-blanc-casse/40 mt-3 text-center">
+              Défilé organisé dans la boutique de Jarry — une centaine de personnes ce soir-là.
+            </p>
           </div>
 
         </div>
