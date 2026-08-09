@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     title: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
     description: SITE_CONFIG.description,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Odyssée Showroom Privé – Boutique mode femme en Guadeloupe' }],
+    images: [{ url: '/images/logo-odyssee.webp', width: 1080, height: 1080, alt: 'Odyssée Showroom Privé – Boutique mode femme à Jarry, Guadeloupe' }],
   },
   twitter: { card: 'summary_large_image' },
   alternates: { canonical: SITE_CONFIG.url },
@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(clothingStoreSchema()) }}
         />
       </head>
-      <body className="bg-warm-white text-charcoal font-sans antialiased">
+      <body className="bg-noir text-blanc-casse font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

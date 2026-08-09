@@ -12,6 +12,7 @@ const navItems = [
     href: '/boutique',
     children: [
       { label: 'Robes de soirée & cocktail', href: '/boutique/robes-soiree-cocktail' },
+      { label: 'Cérémonie & invitée de mariage', href: '/boutique/robes-ceremonie-invitee-mariage' },
       { label: 'Vêtements femme', href: '/boutique/vetements-femme' },
       { label: 'Accessoires & bijoux', href: '/boutique/accessoires-bijoux' },
     ],

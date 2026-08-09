@@ -4,10 +4,9 @@ const nextConfig = {
     { source: '/accueil', destination: '/', permanent: true },
   ],
   images: {
+    // Les photos de la boutique sont servies depuis /public/images.
+    // Les domaines YouTube restent autorisés pour les vignettes vidéo à venir.
     remotePatterns: [
-      { protocol: 'https', hostname: 'images.leadconnectorhq.com' },
-      { protocol: 'https', hostname: 'assets.cdn.filesafe.space' },
-      { protocol: 'https', hostname: 'firebasestorage.googleapis.com' },
       { protocol: 'https', hostname: 'img.youtube.com' },
       { protocol: 'https', hostname: 'i.ytimg.com' },
     ],

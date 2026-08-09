@@ -44,6 +44,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { label: 'Robes de soirée & cocktail', href: '/boutique/robes-soiree-cocktail' },
+                { label: 'Cérémonie & invitée de mariage', href: '/boutique/robes-ceremonie-invitee-mariage' },
                 { label: 'Vêtements femme', href: '/boutique/vetements-femme' },
                 { label: 'Accessoires & bijoux', href: '/boutique/accessoires-bijoux' },
                 { label: 'Carte cadeau', href: '/carte-cadeau' },
@@ -62,8 +63,8 @@ export function Footer() {
             <h3 className="font-sans text-[10px] tracking-luxury uppercase text-or mb-5">Services</h3>
             <ul className="space-y-2.5">
               {[
-                { label: 'Stylisme', href: '/services/stylisme' },
-                { label: 'Relooking', href: '/services/relooking' },
+                { label: 'Conseil en stylisme', href: '/services/stylisme' },
+                { label: 'Relooking vestimentaire', href: '/services/relooking' },
                 { label: 'Shooting photo', href: '/services/shooting-photo' },
                 { label: 'Shopping anniversaire', href: '/services/shopping-anniversaire' },
                 { label: 'Événements', href: '/evenements' },

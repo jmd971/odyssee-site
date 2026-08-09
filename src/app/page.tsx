@@ -17,33 +17,41 @@ const categories = [
     title: 'Robes de soirée',
     sub: '& cocktail',
     href: '/boutique/robes-soiree-cocktail',
-    desc: 'Pièces élégantes pour chaque grande occasion',
-    img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/681e76c79a0ad3a8d627b0f0.jpeg',
-    alt: 'Robes de soirée femme Guadeloupe – Odyssée Showroom Privé',
+    desc: 'Pour une soirée, un gala ou une sortie habillée',
+    img: '/images/vetements.webp',
+    alt: 'Robe imprimée bleue et blanche à volants portée en extérieur en Guadeloupe',
+  },
+  {
+    title: 'Cérémonie',
+    sub: '& invitée de mariage',
+    href: '/boutique/robes-ceremonie-invitee-mariage',
+    desc: 'Invitée, témoin ou mère des mariés : la tenue qui tient la journée',
+    img: '/images/total-look-blanc.webp',
+    alt: 'Total look blanc en broderie anglaise porté sur un ponton en Guadeloupe',
   },
   {
     title: 'Vêtements',
     sub: 'femme',
     href: '/boutique/vetements-femme',
-    desc: 'Prêt-à-porter chic et moderne',
-    img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793f34d4ebc40b46c836b5.jpeg',
-    alt: 'Vêtements femme Jarry Guadeloupe – Odyssée Showroom Privé',
+    desc: 'Prêt-à-porter du quotidien, en petites séries',
+    img: '/images/ensemble-imprime-tropical.webp',
+    alt: 'Ensemble long imprimé bleu et ocre avec pantalon large, porté en Guadeloupe',
   },
   {
     title: 'Accessoires',
     sub: '& bijoux',
     href: '/boutique/accessoires-bijoux',
-    desc: 'Pièces artisanales et bijoux uniques',
-    img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793fb0d4ebc44b5fc836f5.jpeg',
-    alt: 'Accessoires et bijoux artisanaux femme Guadeloupe – Odyssée',
+    desc: 'Boucles d’oreilles artisanales, sacs et pièces uniques',
+    img: '/images/bijoux.webp',
+    alt: 'Boucles d’oreilles artisanales à pompons de raphia turquoise et perles bleues',
   },
 ]
 
 const services = [
-  { title: 'Stylisme', href: '/services/stylisme', img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41e3eb4b49fac95520.jpeg', alt: 'Stylisme personnalisé Odyssée' },
-  { title: 'Relooking', href: '/services/relooking', img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41eddaa35b2fe753f0.webp', alt: 'Relooking sur mesure Odyssée' },
-  { title: 'Shooting photo', href: '/services/shooting-photo', img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68df1a8785bf7917a235c32d.jpeg', alt: 'Shooting photo mode Odyssée' },
-  { title: 'Shopping anniversaire', href: '/services/shopping-anniversaire', img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41afed75df36e683b2.jpeg', alt: 'Shopping anniversaire Odyssée' },
+  { title: 'Stylisme', href: '/services/stylisme', img: '/images/stylisme.webp', alt: 'Stylisme personnalisé Odyssée' },
+  { title: 'Relooking', href: '/services/relooking', img: '/images/relooking.webp', alt: 'Relooking sur mesure Odyssée' },
+  { title: 'Shooting photo', href: '/services/shooting-photo', img: '/images/shooting.webp', alt: 'Shooting photo mode Odyssée' },
+  { title: 'Shopping anniversaire', href: '/services/shopping-anniversaire', img: '/images/anniversaire.webp', alt: 'Shopping anniversaire Odyssée' },
 ]
 
 const testimonials = [
@@ -171,7 +179,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {categories.map((cat) => (
               <Link key={cat.href} href={cat.href} className="group relative border border-blanc-casse/5 hover:border-or/30 aspect-[3/4] flex flex-col justify-end overflow-hidden transition-all duration-300">
                 <Image
@@ -210,14 +218,14 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
             {[
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/681e76c79a0ad3a8d627b0f0.jpeg', alt: 'Look Odyssée – vêtements femme Guadeloupe' },
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793f34d4ebc40b46c836b5.jpeg', alt: 'Accessoires Odyssée Showroom Privé' },
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/67793fb0d4ebc44b5fc836f5.jpeg', alt: 'Bijoux artisanaux Odyssée' },
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41e3eb4b49fac95520.jpeg', alt: 'Séance stylisme Odyssée Jarry' },
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41eddaa35b2fe753f0.webp', alt: 'Relooking personnalisé Odyssée' },
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68df1a8785bf7917a235c32d.jpeg', alt: 'Shooting photo mode Odyssée' },
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/68a49a41afed75df36e683b2.jpeg', alt: 'Shopping anniversaire Odyssée' },
-              { img: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/674731740ff74c6394257543.webp', alt: 'Carte cadeau Odyssée Guadeloupe' },
+              { img: '/images/vetements.webp', alt: 'Robe imprimée bleue et blanche à volants portée en Guadeloupe' },
+              { img: '/images/total-look-blanc.webp', alt: 'Total look blanc en broderie anglaise porté sur un ponton' },
+              { img: '/images/ensemble-imprime-tropical.webp', alt: 'Ensemble long imprimé avec pantalon large en extérieur' },
+              { img: '/images/look-wax-moderne.webp', alt: 'Look wax moderne, haut en résille bordé de wax' },
+              { img: '/images/bijoux.webp', alt: 'Boucles d’oreilles artisanales à pompons de raphia turquoise' },
+              { img: '/images/accessoires.webp', alt: 'Bijoux et sandales ornées présentés en boutique à Jarry' },
+              { img: '/images/conseils.webp', alt: 'Conseil personnalisé de Béatrice dans le showroom de Jarry' },
+              { img: '/images/shooting.webp', alt: 'Shooting photo mode organisé par Odyssée en Guadeloupe' },
             ].map((item, i) => (
               <a key={i} href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer"
                 className="relative aspect-square overflow-hidden group">
@@ -272,7 +280,7 @@ export default function HomePage() {
             {/* Carte cadeau */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #E8572A 0%, #D63578 50%, #C4359A 100%)' }}>
               <div className="relative aspect-square overflow-hidden hidden lg:block">
-                <Image src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/dncJKbx7Rl49roapjRXd/media/674731740ff74c6394257543.webp" alt="Carte cadeau Odyssée Showroom Privé" fill className="object-cover" sizes="50vw" />
+                <Image src="/images/carte-cadeau.webp" alt="Carte cadeau Odyssée Showroom Privé" fill className="object-cover" sizes="50vw" />
               </div>
               <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute top-4 right-4 w-32 h-32 border border-blanc-casse/30 rounded-full" />

@@ -1,94 +1,115 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/site-config'
+import { ARTICLES } from '@/lib/blog'
+import { breadcrumbSchema, itemListSchema } from '@/lib/schema'
+import { Breadcrumb, CtaFinal, JsonLd } from '@/components/ui/blocks'
+
+const PATH = '/blog'
+const TITLE = 'Blog mode & conseils style en Guadeloupe | Odyssée'
+const DESC =
+  'Conseils mode, guides d’achat et astuces style en Guadeloupe par Odyssée Showroom Privé : quelle robe pour un mariage, tenue de soirée blanche, relooking.'
 
 export const metadata: Metadata = {
-  title: 'Blog mode & conseils style en Guadeloupe | Odyssée',
-  description: 'Conseils mode, tendances et astuces style en Guadeloupe par Odyssée Showroom Privé. Inspirations pour sublimer votre garde-robe.',
-  alternates: { canonical: 'https://odysseebybea.fr/blog' },
+  title: TITLE,
+  description: DESC,
+  alternates: { canonical: SITE_CONFIG.url + PATH },
+  openGraph: { title: TITLE, description: DESC, url: SITE_CONFIG.url + PATH },
 }
 
-const articles = [
-  {
-    slug: 'accessoiriser-tenue-chic-elegante',
-    titre: 'Comment accessoiriser une tenue pour un look chic et élégant ?',
-    date: '13 mars 2025',
-    resume: 'Découvrez les astuces incontournables pour sublimer votre style avec des bijoux, sacs et accessoires tendance.',
-    categorie: 'Conseils Mode',
-    auteur: 'Béatrice',
-  },
-  {
-    slug: 'tendances-mode-guadeloupe',
-    titre: 'Les 5 Tendances Mode Incontournables en Guadeloupe',
-    date: '13 mars 2025',
-    resume: 'Couleurs vibrantes, imprimés tropicaux, matières légères... Découvrez les tendances mode adaptées au style antillais.',
-    categorie: 'Conseils Mode',
-    auteur: 'Béatrice',
-  },
-  {
-    slug: 'trouver-tenue-ideale-boutique',
-    titre: '5 Conseils pour trouver la tenue idéale en boutique',
-    date: '27 janvier 2025',
-    resume: 'Des astuces mode et morpho pour dénicher la tenue parfaite, tout en gagnant du temps et en bénéficiant de conseils personnalisés.',
-    categorie: 'Conseils Mode',
-    auteur: 'Béatrice',
-  },
-]
-
 export default function BlogPage() {
+  const trail = [{ name: 'Blog', path: PATH }]
+  const [une, ...suite] = ARTICLES
+
   return (
     <>
-      <nav className="container-luxury py-4 text-xs font-sans text-blanc-casse/30">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
-        <span className="mx-2">/</span>
-        <span className="text-blanc-casse/60">Blog</span>
-      </nav>
+      <JsonLd
+        data={[
+          breadcrumbSchema(trail),
+          itemListSchema(
+            'Articles Odyssée',
+            ARTICLES.map((a) => ({ name: a.titre, path: `/blog/${a.slug}` })),
+          ),
+        ]}
+      />
+      <Breadcrumb trail={trail} />
 
       <section className="py-16 border-b border-blanc-casse/5">
         <div className="container-luxury">
-          <span className="section-subtitle">Conseils & inspirations</span>
+          <span className="section-subtitle">Conseils &amp; guides</span>
           <h1 className="section-title text-blanc-casse">
             Blog mode<br />
             <span className="italic text-gradient">by Béatrice</span>
           </h1>
+          <p className="font-sans text-blanc-casse/60 mt-6 max-w-2xl leading-relaxed">
+            Des réponses concrètes aux questions qu’on nous pose en boutique : quoi porter à un
+            mariage, comment réussir une tenue blanche, ce que coûte vraiment un relooking.
+          </p>
         </div>
       </section>
 
       <section className="py-16">
         <div className="container-luxury">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {articles.map((article) => (
-              <article key={article.slug} className="border border-blanc-casse/5 hover:border-or/20 transition-all duration-300 group">
-                <div className="aspect-[16/9] relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-odyssee opacity-20 group-hover:opacity-30 transition-opacity" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-serif italic text-4xl text-or/20">Odyssée</span>
-                  </div>
+          <Link href={`/blog/${une.slug}`} className="group grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={une.visuel.src}
+                alt={une.visuel.alt}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+            <div>
+              <p className="font-sans text-[11px] tracking-wide uppercase text-or mb-3">{une.categorie}</p>
+              <h2 className="font-serif text-3xl md:text-4xl font-light text-blanc-casse group-hover:text-or transition-colors leading-tight">
+                {une.titre}
+              </h2>
+              <p className="font-sans text-blanc-casse/60 leading-relaxed mt-4">{une.resume}</p>
+              <p className="font-sans text-xs text-blanc-casse/35 mt-6">
+                <time dateTime={une.dateISO}>{une.date}</time>
+              </p>
+            </div>
+          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {suite.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/blog/${article.slug}`}
+                className="group block border border-blanc-casse/10 hover:border-or transition-colors"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={article.visuel.src}
+                    alt={article.visuel.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="font-sans text-[10px] tracking-luxury uppercase text-or">{article.categorie}</span>
-                    <span className="text-blanc-casse/20">·</span>
-                    <span className="font-sans text-[10px] text-blanc-casse/30">{article.date}</span>
-                  </div>
-                  <h2 className="font-serif text-lg text-blanc-casse leading-snug mb-3 group-hover:text-or transition-colors">
+                  <p className="font-sans text-[11px] tracking-wide uppercase text-or mb-2">{article.categorie}</p>
+                  <h2 className="font-serif text-xl text-blanc-casse group-hover:text-or transition-colors leading-snug">
                     {article.titre}
                   </h2>
-                  <p className="font-sans text-xs text-blanc-casse/50 leading-relaxed mb-5">
-                    {article.resume}
+                  <p className="font-sans text-sm text-blanc-casse/55 leading-relaxed mt-3">{article.resume}</p>
+                  <p className="font-sans text-xs text-blanc-casse/35 mt-4">
+                    <time dateTime={article.dateISO}>{article.date}</time>
                   </p>
-                  <Link
-                    href={`/blog/${article.slug}`}
-                    className="font-sans text-xs tracking-wide uppercase text-or hover:text-or-clair transition-colors flex items-center gap-2"
-                  >
-                    Lire l&apos;article →
-                  </Link>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
       </section>
+
+      <CtaFinal
+        titre="Besoin d’un avis sur votre tenue ?"
+        texte="Les conseils du blog valent mieux essayés. Passez à Jarry du mardi au samedi."
+      />
     </>
   )
 }
