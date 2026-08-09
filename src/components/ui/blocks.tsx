@@ -86,7 +86,7 @@ export function Galerie({
     <>
       <div className={`grid grid-cols-2 ${cols} gap-3`}>
         {visuels.map((v) => (
-          <div key={v.src} className="relative aspect-[3/4] overflow-hidden group">
+          <figure key={v.src} className="relative aspect-[3/4] overflow-hidden group m-0">
             <Image
               src={v.src}
               alt={v.alt}
@@ -94,6 +94,11 @@ export function Galerie({
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, 33vw"
             />
+            {v.credit && (
+              <figcaption className="absolute top-0 left-0 bg-noir/70 px-2.5 py-1 font-sans text-[10px] tracking-wide text-or">
+                {v.credit}
+              </figcaption>
+            )}
             <div className="absolute inset-0 bg-noir/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <a
                 href={SITE_CONFIG.booking}
@@ -104,7 +109,7 @@ export function Galerie({
                 Essayer en boutique
               </a>
             </div>
-          </div>
+          </figure>
         ))}
       </div>
       {legende && (

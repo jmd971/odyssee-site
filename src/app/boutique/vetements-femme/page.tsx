@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { SITE_CONFIG } from '@/lib/site-config'
-import { GALERIE_PAP } from '@/lib/images'
+import { GALERIE_PAP, GALERIE_WAX } from '@/lib/images'
 import { breadcrumbSchema, faqSchema, type FaqItem } from '@/lib/schema'
 import {
   Breadcrumb, CtaFinal, FaqSection, Galerie, JsonLd, OuNousTrouver, PageHero, PourAllerPlusLoin,
@@ -142,6 +142,23 @@ export default function Page() {
       </section>
 
       <section className="py-16">
+        <div className="container-luxury">
+          <h2 className="section-title mb-4">Wax, batik et adiré</h2>
+          <p className="font-sans text-blanc-casse/60 mb-10 max-w-2xl leading-relaxed">
+            Pas le wax de cérémonie traditionnel, mais des pièces contemporaines : un empiècement
+            sur une veste unie, une jupe boule portée avec un short en jean, une combinaison en
+            batik qui se porte aussi bien à un vin d’honneur qu’à un dîner. Certaines viennent de
+            créateurs partenaires, et nous le disons.
+          </p>
+          <Galerie
+            visuels={GALERIE_WAX}
+            cols="md:grid-cols-5"
+            legende="Disponibilité variable — le wax n’est pas le cœur de la sélection, mais il passe régulièrement"
+          />
+        </div>
+      </section>
+
+      <section className="py-16 bg-noir-alt">
         <div className="container-luxury max-w-3xl">
           <h2 className="section-title mb-6">Venir depuis toute la Guadeloupe</h2>
           <p className="font-sans text-blanc-casse/70 leading-relaxed">

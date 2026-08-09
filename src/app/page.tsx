@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Star, MapPin, Clock, Phone, Instagram, ArrowRight } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
+import { InstagramLooks } from '@/components/ui/InstagramLooks'
 
 export const revalidate = 600
 
@@ -218,14 +219,14 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
             {[
-              { img: '/images/vetements.webp', alt: 'Robe imprimée bleue et blanche à volants portée en Guadeloupe' },
-              { img: '/images/total-look-blanc.webp', alt: 'Total look blanc en broderie anglaise porté sur un ponton' },
-              { img: '/images/ensemble-imprime-tropical.webp', alt: 'Ensemble long imprimé avec pantalon large en extérieur' },
-              { img: '/images/look-wax-moderne.webp', alt: 'Look wax moderne, haut en résille bordé de wax' },
-              { img: '/images/bijoux.webp', alt: 'Boucles d’oreilles artisanales à pompons de raphia turquoise' },
+              { img: '/images/look-jean-boutique.jpg', alt: 'Bustier en jean et boucles d’oreilles en denim, dans la boutique de Jarry' },
+              { img: '/images/robe-longue-imprimee-ete.jpg', alt: 'Robe longue bleue à imprimé cabines de plage, essayée en boutique' },
+              { img: '/images/chemises-imprimees-jean.jpg', alt: 'Chemises imprimées à motif perroquet portées avec des jeans' },
+              { img: '/images/veste-blanche-patchwork.jpg', alt: 'Veste blanche à empiècements patchwork portée avec un jean' },
+              { img: '/images/robe-sequins-argent.jpg', alt: 'Robe courte à sequins argentés portée dans la boutique' },
+              { img: '/images/duo-wax-jean.jpg', alt: 'Jupe boule en wax jaune et veste grise à empiècements wax' },
+              { img: '/images/nouvelles-pieces-boutique.jpg', alt: 'Nouvelles pièces arrivées à la boutique Odyssée à Jarry' },
               { img: '/images/accessoires.webp', alt: 'Bijoux et sandales ornées présentés en boutique à Jarry' },
-              { img: '/images/conseils.webp', alt: 'Conseil personnalisé de Béatrice dans le showroom de Jarry' },
-              { img: '/images/shooting.webp', alt: 'Shooting photo mode organisé par Odyssée en Guadeloupe' },
             ].map((item, i) => (
               <a key={i} href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer"
                 className="relative aspect-square overflow-hidden group">
@@ -246,6 +247,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <InstagramLooks />
 
       {/* ─── SERVICES + CARTE CADEAU ─── */}
       <section className="py-24">
