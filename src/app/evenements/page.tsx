@@ -55,7 +55,7 @@ const EDITIONS: Edition[] = [
     titre: 'Défilé à la boutique de Jarry',
     date: 'Dimanche 10 novembre 2024',
     lieu: 'Boutique Odyssée, immeuble Les Lilas, Jarry',
-    visuel: IMAGES.lookJeanBoutique,
+    visuel: IMAGES.robeRougeSequins,
     recit:
       'Un défilé monté dans la boutique elle-même, entre les portants — et une centaine de personnes venues y assister. Défiler dans son propre magasin change la soirée : les pièces qui viennent de passer sont à portée de main, et l’essayage suit immédiatement.',
     details: [
