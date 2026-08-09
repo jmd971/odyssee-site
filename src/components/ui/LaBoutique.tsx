@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/site-config'
@@ -12,35 +9,19 @@ import { IMAGES } from '@/lib/images'
  * Une cliente qui lit « showroom privé » suppose qu'il faut être invitée.
  * Aucune phrase ne lève ce frein aussi bien qu'une vidéo de l'intérieur.
  *
- * Le reel est intégré officiellement (les vidéos restent chez Meta), avec le
- * même repli que la section looks : si un bloqueur empêche le script, la carte
- * photo demeure et mène au reel. On ne se retrouve jamais avec un trou.
+ * L'intégration Instagram a été retirée d'ici : elle imposait une carte blanche
+ * avec les mentions J'aime et un bouton « Voir le profil » pointant vers un autre
+ * compte, et surtout elle ne lisait pas la vidéo sur place — elle exportait la
+ * visiteuse vers Instagram, au moment précis où on cherche à la rassurer.
+ *
+ * À remplacer par un MP4 court, muet, en boucle, dès que le fichier d'origine
+ * sera fourni. En attendant, une carte sobre aux couleurs du site.
  */
 const REEL_BOUTIQUE = 'DbGXePPxvXj'
 
 const INTERIEUR = [IMAGES.lookJeanBoutique, IMAGES.vesteBlanchePatchwork, IMAGES.robeLongueEte]
 
-declare global {
-  interface Window {
-    instgrm?: { Embeds: { process: () => void } }
-  }
-}
-
 export function LaBoutique() {
-  useEffect(() => {
-    const ID = 'instagram-embed-script'
-    if (document.getElementById(ID)) {
-      window.instgrm?.Embeds.process()
-      return
-    }
-    const script = document.createElement('script')
-    script.id = ID
-    script.src = 'https://www.instagram.com/embed.js'
-    script.async = true
-    script.onload = () => window.instgrm?.Embeds.process()
-    document.body.appendChild(script)
-  }, [])
-
   return (
     <section className="py-20 relative">
       <div className="gradient-line absolute top-0 left-0 right-0" />
@@ -97,14 +78,8 @@ export function LaBoutique() {
           </div>
 
           <div className="mx-auto w-full max-w-sm">
-            <blockquote
-              className="instagram-media w-full"
-              data-instgrm-permalink={`https://www.instagram.com/reel/${REEL_BOUTIQUE}/`}
-              data-instgrm-version="14"
-              style={{ background: '#1A1A1A', border: 0, margin: 0, padding: 0, width: '100%' }}
-            >
-              <a
-                href={`https://www.instagram.com/reel/${REEL_BOUTIQUE}/`}
+            <a
+              href={`https://www.instagram.com/reel/${REEL_BOUTIQUE}/`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block relative aspect-[9/16] overflow-hidden"
@@ -128,7 +103,6 @@ export function LaBoutique() {
                   La boutique en vidéo
                 </span>
               </a>
-            </blockquote>
           </div>
 
         </div>
