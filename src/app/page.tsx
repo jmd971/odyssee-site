@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Star, MapPin, Clock, Phone, Instagram, ArrowRight } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
+import { IMAGES } from '@/lib/images'
 import { InstagramLooks } from '@/components/ui/InstagramLooks'
 import { LaBoutique } from '@/components/ui/LaBoutique'
 
@@ -76,6 +77,16 @@ export default function HomePage() {
     <>
       {/* ─── HERO ─── */}
       <section className="relative min-h-[92vh] bg-noir flex items-center overflow-hidden">
+        {/* Un site de mode doit montrer un vetement des le premier ecran. */}
+        <Image
+          src={IMAGES.robeRougeSequins.src}
+          alt={IMAGES.robeRougeSequins.alt}
+          fill
+          priority
+          className="object-cover object-[70%_center] opacity-40 lg:opacity-55"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-noir via-noir/90 to-noir/40" />
         {/* Halo dégradé décoratif */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl"
           style={{ background: 'radial-gradient(circle, #E8572A 0%, #C4359A 60%, transparent 80%)' }} />
@@ -93,25 +104,26 @@ export default function HomePage() {
             </div>
 
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-blanc-casse leading-[1.05] mb-8">
-              La mode<br />
-              <span className="text-gradient">caribéenne</span><br />
-              <span className="italic text-blanc-casse/80 text-4xl md:text-5xl">à Jarry</span>
+              Robes de soirée<br />
+              <span className="text-or">&amp; de cérémonie</span><br />
+              <span className="italic text-blanc-casse/80 text-4xl md:text-5xl">à Jarry, Guadeloupe</span>
             </h1>
 
             <p className="font-sans text-blanc-casse/50 text-base md:text-lg max-w-lg leading-relaxed mb-10">
-              Vivez une expérience shopping unique en Guadeloupe : vêtements, accessoires et relooking dans notre showroom à Jarry
+              Des pièces choisies à l’unité, souvent en un seul exemplaire. Béatrice vous dit
+              franchement ce qui vous va — et la boutique est ouverte à toutes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Réserver un essayage
-              </a>
-              <Link href="/boutique" className="btn-outline-white">
+              <Link href="/boutique" className="btn-primary">
                 Découvrir la boutique
               </Link>
+              <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-outline-white">
+                Réserver un essayage
+              </a>
             </div>
 
-            <p className="font-sans text-sm text-blanc-casse/45 mt-6 max-w-lg leading-relaxed">
+            <p className="font-sans text-sm text-blanc-casse/75 mt-6 max-w-lg leading-relaxed">
               Pas besoin de rendez-vous pour venir : la boutique est ouverte à toutes,
               du mardi au samedi. Béatrice vous conseille et vous accompagne dans vos choix.
               La réservation ne sert qu’à bloquer un créneau rien que pour vous.

@@ -24,7 +24,10 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    template: '%s | Odyssée Showroom Privé',
+    /* Pas de suffixe : chaque page porte deja « | Odyssee » dans son titre,
+       et le gabarit ajoutait la marque une seconde fois — 30 caracteres
+       perdus par page, tronques par Google. */
+    template: '%s',
     default: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
   },
   description: SITE_CONFIG.description,
