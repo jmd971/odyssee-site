@@ -42,11 +42,14 @@ export function PageHero({
   title,
   intro,
   ctaLabel = 'Réserver un essayage',
+  ctaHref = SITE_CONFIG.booking,
 }: {
   eyebrow: string
   title: React.ReactNode
   intro: string
   ctaLabel?: string
+  /* Un bouton qui dit « venir » doit mener a un itineraire, pas a un agenda. */
+  ctaHref?: string
 }) {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden bg-noir border-b border-blanc-casse/10">
@@ -60,7 +63,7 @@ export function PageHero({
           {intro}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <a href={ctaHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
             {ctaLabel}
           </a>
           <a href={SITE_CONFIG.whatsapp} className="btn-outline-white">
@@ -166,7 +169,7 @@ export function OuNousTrouver() {
           </div>
           <div className="bg-noir-alt p-6 flex items-center justify-center">
             <a
-              href="https://maps.google.com/?q=Immeuble+Les+Lilas+Impasse+Guy+Cornely+Baie-Mahault+Guadeloupe"
+              href={SITE_CONFIG.maps}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

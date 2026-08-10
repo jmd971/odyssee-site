@@ -88,6 +88,7 @@ export default function Page() {
         title={<>Magasin de vêtements femme<br /><span className="italic text-or">à Jarry, en Guadeloupe</span></>}
         intro="Du prêt-à-porter choisi pièce par pièce, pour s’habiller ici — avec le climat, les occasions et les silhouettes d’ici."
         ctaLabel="Venir en boutique"
+        ctaHref={SITE_CONFIG.maps}
       />
 
       <section className="py-16">

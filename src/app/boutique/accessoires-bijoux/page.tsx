@@ -83,6 +83,7 @@ export default function Page() {
         title={<>Bijoux artisanaux<br /><span className="italic text-or">&amp; accessoires femme</span></>}
         intro="Des pièces faites main et sélectionnées à l’unité, à voir et à essayer à Jarry, Baie-Mahault."
         ctaLabel="Venir voir les pièces"
+        ctaHref={SITE_CONFIG.maps}
       />
 
       <section className="py-16">

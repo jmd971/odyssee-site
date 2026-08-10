@@ -69,9 +69,14 @@ export function LaBoutique() {
               <Link href="/galerie" className="btn-primary">
                 Voir toutes les pièces
               </Link>
-              <Link href="/contact" className="btn-outline">
-                Comment venir
-              </Link>
+              <a
+                href={SITE_CONFIG.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                Itinéraire
+              </a>
             </div>
           </div>
 

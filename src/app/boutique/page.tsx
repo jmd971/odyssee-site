@@ -70,6 +70,7 @@ export default function BoutiquePage() {
         title={<>La boutique<br /><span className="italic text-or">Odyssée</span></>}
         intro="Quatre univers, une même règle : des pièces choisies à l’unité, et quelqu’un pour vous dire honnêtement ce qui vous va."
         ctaLabel="Venir en boutique"
+        ctaHref={SITE_CONFIG.maps}
       />
 
       <section className="py-16">

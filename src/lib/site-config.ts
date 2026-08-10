@@ -18,6 +18,9 @@ export const SITE_CONFIG = {
   hours: 'Mardi–Samedi : 10h–19h',
   hoursSchema: ['Tu-Sa 10:00-19:00'],
   booking: 'https://link.siboard-consulting.fr/widget/booking/9GoysJn1UJxEaNb5qN2y',
+  /* Fiche Google par son identifiant : ouvre l'app Maps et lance l'itineraire
+     sur mobile, affiche la fiche complete (horaires, photos, avis) ailleurs. */
+  maps: 'https://maps.google.com/?cid=16138109044238278576',
   social: {
     instagram: 'https://instagram.com/odyssee.boutique',
     facebook: 'https://facebook.com/odysseebybea',
