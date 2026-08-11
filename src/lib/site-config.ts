@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Odyssée Showroom Privé',
   nameFull: 'Odyssée Showroom Privé – by Béa',
-  url: 'https://odysseebybea.fr',
+  url: 'https://www.odysseebybea.fr',
   description: 'Boutique de mode femme à Jarry, Guadeloupe. Robes de soirée, prêt-à-porter chic et accessoires. Conseil personnalisé par Béatrice.',
   address: {
     street: 'Immeuble Les Lilas, Impasse Guy Cornély',

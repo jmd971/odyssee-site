@@ -17,7 +17,7 @@ const PRIORITES = {
 }
 
 module.exports = {
-  siteUrl: 'https://odysseebybea.fr',
+  siteUrl: 'https://www.odysseebybea.fr',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],

@@ -23,7 +23,7 @@
   /* Bouton principal — dégradé signature */
   /* Bouton principal — or du logo sur texte noir, le contraste de la marque */
   .btn-primary {
-    @apply relative inline-flex items-center justify-center px-8 py-3 font-sans text-sm tracking-luxury uppercase bg-or text-noir overflow-hidden transition-all duration-300;
+    @apply relative inline-flex items-center justify-center px-8 py-3 font-sans text-sm tracking-luxury uppercase bg-or text-noir overflow-hidden transition-colors duration-300;
   }
   .btn-primary:hover {
     @apply bg-or-clair;
@@ -31,12 +31,12 @@
 
   /* Bouton outline — bordure or */
   .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-3 border border-or text-or font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:bg-or hover:text-noir;
+    @apply inline-flex items-center justify-center px-8 py-3 border border-or text-or font-sans text-sm tracking-luxury uppercase transition-colors duration-300 hover:bg-or hover:text-noir;
   }
 
   /* Bouton outline blanc — sur fond noir */
   .btn-outline-white {
-    @apply inline-flex items-center justify-center px-8 py-3 border border-blanc-casse/30 text-blanc-casse font-sans text-sm tracking-luxury uppercase transition-all duration-300 hover:border-or hover:text-or;
+    @apply inline-flex items-center justify-center px-8 py-3 border border-blanc-casse/30 text-blanc-casse font-sans text-sm tracking-luxury uppercase transition-colors duration-300 hover:border-or hover:text-or;
   }
 
   /* Titres de section */
@@ -91,6 +91,13 @@
   .animate-marquee {
     animation: marquee 35s linear infinite;
   }
+  /* Un mouvement continu doit pouvoir s'arreter : les WCAG l'exigent au-dela
+     de cinq secondes, et un defilement perpetuel gene reellement les personnes
+     sujettes au vertige. Pause au survol et au focus clavier. */
+  .marquee-zone:hover .animate-marquee,
+  .marquee-zone:focus-within .animate-marquee {
+    animation-play-state: paused;
+  }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -98,5 +105,21 @@
   }
   .animate-fade-up {
     animation: fadeUp 0.6s ease forwards;
+  }
+}
+
+/* Aucune animation pour qui a demande a en etre dispense au niveau systeme. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+    transform: none !important;
   }
 }

@@ -149,7 +149,10 @@ export default function HomePage() {
       </section>
 
       {/* ─── BANDEAU DÉFILANT ─── */}
-      <div className="relative py-3 overflow-hidden border-y border-blanc-casse/5">
+      <div
+        className="marquee-zone relative py-3 overflow-hidden border-y border-blanc-casse/5"
+        aria-hidden="true"
+      >
         <div className="gradient-line absolute top-0 left-0 right-0" />
         <div className="flex animate-marquee whitespace-nowrap">
           {['Robes de Soirée', 'Prêt-à-Porter', 'Accessoires', 'Bijoux Artisanaux', 'Relooking', 'Stylisme', 'Guadeloupe', 'Antilles', 'Jarry', 'Conseil Personnalisé', 'by Béatrice'].map((item, i) => (
