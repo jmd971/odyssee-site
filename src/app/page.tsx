@@ -274,66 +274,88 @@ export default function HomePage() {
 
       <InstagramLooks />
 
-      {/* ─── SERVICES + CARTE CADEAU ─── */}
+      {/* ─── SERVICES ─── */}
       <section className="py-24">
         <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <span className="section-subtitle">Nos expertises</span>
-              <h2 className="section-title text-blanc-casse mb-6">
-                Un accompagnement<br />
-                <span className="italic">sur mesure</span>
+          <div className="max-w-2xl mb-12">
+            <span className="section-subtitle">Nos expertises</span>
+            <h2 className="section-title text-blanc-casse mb-6">
+              Un accompagnement<br />
+              <span className="italic">sur mesure</span>
+            </h2>
+            <p className="font-sans text-blanc-casse/55 leading-relaxed">
+              Au-delà de la boutique, Béatrice vous accompagne pour révéler votre style :
+              conseil en stylisme, relooking vestimentaire, shooting photo, anniversaire
+              entre copines.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {services.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="group relative aspect-[3/4] overflow-hidden border border-blanc-casse/10 hover:border-or/40 transition-colors duration-300"
+              >
+                <Image
+                  src={s.img}
+                  alt={s.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-noir/55 group-hover:bg-noir/35 transition-colors duration-300" />
+                <div className="absolute inset-0 flex flex-col justify-end p-5">
+                  <span className="text-or text-sm mb-1" aria-hidden="true">✦</span>
+                  <span className="font-sans text-xs tracking-wide uppercase text-blanc-casse group-hover:text-or transition-colors">
+                    {s.title}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <Link href="/services" className="btn-outline mt-10 inline-flex">Tous nos services</Link>
+        </div>
+      </section>
+
+      {/* ─── CARTE CADEAU ─── */}
+      <section className="pb-24">
+        <div className="container-luxury">
+          {/* Deux colonnes de meme hauteur : l'image remplit sa moitie au lieu
+              de laisser un vide sous un carre trop petit. */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 border border-or/25 overflow-hidden">
+            <div className="relative min-h-[280px] lg:min-h-[420px]">
+              <Image
+                src={IMAGES.accessoires.src}
+                alt={IMAGES.accessoires.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="bg-noir-alt p-10 md:p-14 flex flex-col justify-center">
+              <span className="section-subtitle">Idée cadeau</span>
+              <h2 className="font-serif text-3xl md:text-4xl font-light text-blanc-casse mb-4">
+                La carte cadeau<br /><span className="italic text-or">Odyssée</span>
               </h2>
-              <p className="font-sans text-blanc-casse/50 leading-relaxed mb-10">
-                Au-delà de la boutique, Béatrice vous propose un accompagnement complet
-                pour révéler votre style — conseil personnalisé, relooking, shooting photo
-                et bien plus encore.
+              <p className="font-sans text-blanc-casse/65 text-sm leading-relaxed mb-8">
+                Offrez le choix plutôt qu’une pièce dont vous n’êtes pas sûre : vêtements,
+                accessoires, relooking ou shooting photo. Valable à la boutique de Jarry.
               </p>
-              <div className="grid grid-cols-2 gap-3">
-                {services.map((s) => (
-                  <Link key={s.href} href={s.href} className="group relative aspect-square overflow-hidden border border-blanc-casse/10 hover:border-or/30 transition-all duration-300">
-                    <Image src={s.img} alt={s.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="25vw" />
-                    <div className="absolute inset-0 bg-noir/60 group-hover:bg-noir/40 transition-all duration-300" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-5">
-                      <span className="text-or text-sm mb-1">✦</span>
-                      <span className="font-sans text-xs tracking-wide uppercase text-blanc-casse group-hover:text-or transition-colors">{s.title}</span>
-                    </div>
-                  </Link>
+              <div className="flex gap-3 mb-8 flex-wrap">
+                {[50, 100, 150, 200].map((montant) => (
+                  <span
+                    key={montant}
+                    className="font-sans text-xs border border-or/40 text-or px-3 py-1.5"
+                  >
+                    {montant} €
+                  </span>
                 ))}
               </div>
-              <Link href="/services" className="btn-outline mt-8 inline-flex">Tous nos services</Link>
-            </div>
-
-            {/* Carte cadeau */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative overflow-hidden bg-noir-alt border border-or/25">
-              <div className="relative aspect-square overflow-hidden hidden lg:block">
-                <Image src="/images/carte-cadeau.webp" alt="Carte cadeau Odyssée Showroom Privé" fill className="object-cover" sizes="50vw" />
-              </div>
-              <div className="absolute inset-0 opacity-10 pointer-events-none">
-                <div className="absolute top-4 right-4 w-32 h-32 border border-blanc-casse/30 rounded-full" />
-                <div className="absolute bottom-4 left-4 w-20 h-20 border border-blanc-casse/30 rounded-full" />
-              </div>
-              <div className="relative p-10 md:p-12">
-                <span className="font-sans text-[10px] tracking-luxury uppercase text-blanc-casse/70 mb-4 block">Idée cadeau</span>
-                <h3 className="font-serif text-3xl md:text-4xl font-light text-blanc-casse mb-4">
-                  La carte cadeau<br />
-                  <span className="italic">Odyssée</span>
-                </h3>
-                <p className="font-sans text-blanc-casse/70 text-sm leading-relaxed mb-8">
-                  Offrez le choix — vêtements, accessoires, relooking ou shooting photo.
-                  Disponible de 50 à 200€.
-                </p>
-                <div className="flex gap-3 mb-8 flex-wrap">
-                  {[50, 100, 150, 200].map((amount) => (
-                    <span key={amount} className="font-sans text-xs border border-blanc-casse/40 text-blanc-casse/80 px-3 py-1.5">
-                      {amount}€
-                    </span>
-                  ))}
-                </div>
-                <Link href="/carte-cadeau" className="inline-flex items-center justify-center px-8 py-3 bg-noir text-blanc-casse font-sans text-sm tracking-luxury uppercase hover:bg-blanc-casse hover:text-noir transition-all duration-300">
-                  Commander
-                </Link>
-              </div>
+              <Link href="/carte-cadeau" className="btn-primary self-start">
+                Commander une carte
+              </Link>
             </div>
           </div>
         </div>
