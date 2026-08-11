@@ -107,14 +107,15 @@ export default function HomePage() {
             </div>
 
             <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-blanc-casse leading-[1.05] mb-8">
-              Robes de soirée<br />
-              <span className="text-or">&amp; de cérémonie</span><br />
+              Boutique de mode<br />
+              <span className="text-or">femme</span><br />
               <span className="italic text-blanc-casse/80 text-4xl md:text-5xl">à Jarry, Guadeloupe</span>
             </h1>
 
             <p className="font-sans text-blanc-casse/50 text-base md:text-lg max-w-lg leading-relaxed mb-10">
-              Des pièces choisies à l’unité, souvent en un seul exemplaire. Béatrice vous dit
-              franchement ce qui vous va. Et la boutique est ouverte à toutes.
+              Prêt-à-porter, tenues de cérémonie, accessoires et bijoux. Des pièces choisies
+              à l’unité, souvent en un seul exemplaire. Béatrice vous dit franchement ce qui
+              vous va, et la boutique est ouverte à toutes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
