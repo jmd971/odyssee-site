@@ -15,16 +15,19 @@ export function VideoYouTube({
   id,
   titre,
   legende,
+  /* Les Shorts sont verticaux : les forcer en 16/9 ajoutait des bandes noires. */
+  ratio = 'aspect-video',
 }: {
   id: string
   titre: string
   legende?: string
+  ratio?: string
 }) {
   const [actif, setActif] = useState(false)
 
   return (
     <figure className="m-0">
-      <div className="relative aspect-video overflow-hidden bg-noir">
+      <div className={`relative ${ratio} overflow-hidden bg-noir`}>
         {actif ? (
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
@@ -41,7 +44,7 @@ export function VideoYouTube({
             aria-label={`Lire la vidéo : ${titre}`}
           >
             <Image
-              src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+              src={`https://i.ytimg.com/vi/${id}/hq720.jpg`}
               alt=""
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"

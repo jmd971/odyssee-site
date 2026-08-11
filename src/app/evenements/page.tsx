@@ -167,7 +167,9 @@ export default function EvenementsPage() {
             Odyssée avant de venir à la prochaine édition.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Les deux videos sont verticales : largeur bridee, sinon une colonne
+              de demi-page produit un bloc geant face au reste de la mise en page. */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start max-w-2xl">
             <figure className="m-0">
               {/* Teaser heberge sur le site : 22 Mo, donc preload="none" est
                   indispensable — rien ne part avant que la visiteuse ne clique. */}
@@ -175,24 +177,23 @@ export default function EvenementsPage() {
                 controls
                 playsInline
                 preload="none"
-                poster={IMAGES.miseEnBeaute.src}
+                poster={IMAGES.robeRougeSequins.src}
                 className="w-full aspect-[9/16] object-cover bg-noir"
               >
                 <source src="/videos/teaser-defile-10-novembre-2024.mp4" type="video/mp4" />
                 Votre navigateur ne peut pas lire cette vidéo.
               </video>
               <figcaption className="font-sans text-xs text-blanc-casse/40 mt-3">
-                Le teaser qui annonçait le show mode du 10 novembre 2024 — réalisation @gotm97
+                Teaser du show mode du 10 novembre 2024 — réalisation @gotm97
               </figcaption>
             </figure>
 
-            <div>
-              <VideoYouTube
-                id={VIDEO_DEFILE}
-                titre="Défilé Odyssée Showroom Privé à Jarry"
-                legende="Le défilé lui-même, à la boutique de Jarry, Baie-Mahault"
-              />
-            </div>
+            <VideoYouTube
+              id={VIDEO_DEFILE}
+              titre="Défilé Odyssée Showroom Privé à Jarry"
+              legende="Le défilé lui-même, à la boutique de Jarry, Baie-Mahault"
+              ratio="aspect-[9/16]"
+            />
           </div>
         </div>
       </section>
