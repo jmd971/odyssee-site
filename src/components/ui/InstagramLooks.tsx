@@ -1,6 +1,8 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useState } from 'react'
+import * as Dialog from '@radix-ui/react-dialog'
+import { X } from 'lucide-react'
 import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { IMAGES, type Visuel } from '@/lib/images'
@@ -16,6 +18,10 @@ import { IMAGES, type Visuel } from '@/lib/images'
  * Ici, la grille reste aux couleurs du site, et l'iframe d'Instagram n'est
  * chargée qu'à l'ouverture de la fenêtre — donc aucun poids ni requête tierce
  * tant qu'on ne clique pas, et la visiteuse ne quitte jamais odysseebybea.fr.
+ *
+ * La fenêtre s'appuie sur Radix Dialog : ma version écrite à la main n'avait ni
+ * piège de focus ni restauration du focus à la fermeture, si bien qu'au clavier
+ * on pouvait tabuler derrière l'overlay et se perdre dans la page masquée.
  */
 type Reel = { code: string; titre: string; visuel: Visuel }
 
@@ -28,19 +34,6 @@ const REELS: Reel[] = [
 
 export function InstagramLooks() {
   const [actif, setActif] = useState<Reel | null>(null)
-  const fermer = useCallback(() => setActif(null), [])
-
-  useEffect(() => {
-    if (!actif) return
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') fermer() }
-    document.addEventListener('keydown', onKey)
-    const overflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.removeEventListener('keydown', onKey)
-      document.body.style.overflow = overflow
-    }
-  }, [actif, fermer])
 
   return (
     <section className="py-16 bg-noir-alt">
@@ -88,46 +81,48 @@ export function InstagramLooks() {
         </div>
       </div>
 
-      {actif && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={actif.titre}
-          onClick={fermer}
-          className="fixed inset-0 z-[100] bg-noir/90 flex items-center justify-center p-4"
-        >
-          <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-[400px]">
-            <button
-              type="button"
-              onClick={fermer}
+      <Dialog.Root open={!!actif} onOpenChange={(o) => !o && setActif(null)}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-[100] bg-noir/90" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 z-[101] w-[calc(100%-2rem)] max-w-[400px] -translate-x-1/2 -translate-y-1/2 focus:outline-none">
+            <Dialog.Title className="sr-only">{actif?.titre ?? 'Vidéo'}</Dialog.Title>
+            <Dialog.Description className="sr-only">
+              Vidéo d’un look présenté à la boutique Odyssée, à Jarry.
+            </Dialog.Description>
+            <Dialog.Close
               aria-label="Fermer la vidéo"
-              className="absolute -top-11 right-0 text-blanc-casse/70 hover:text-or transition-colors font-sans text-sm tracking-wide uppercase"
+              className="absolute -top-11 right-0 flex items-center gap-2 font-sans text-sm uppercase tracking-wide text-blanc-casse/70 hover:text-or transition-colors"
             >
-              Fermer ✕
-            </button>
-            <iframe
-              src={`https://www.instagram.com/reel/${actif.code}/embed/`}
-              title={actif.titre}
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowFullScreen
-              scrolling="no"
-              className="w-full h-[80vh] max-h-[720px] bg-noir border-0"
-            />
-            <p className="font-sans text-xs text-blanc-casse/40 mt-3 text-center">
-              Vidéo hébergée sur Instagram. Si elle ne s’affiche pas, votre navigateur bloque les
-              contenus externes —{' '}
-              <a
-                href={`https://www.instagram.com/reel/${actif.code}/`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-or hover:underline"
-              >
-                l’ouvrir sur Instagram
-              </a>.
-            </p>
-          </div>
-        </div>
-      )}
+              Fermer <X size={16} aria-hidden="true" />
+            </Dialog.Close>
+            {actif && (
+              <>
+                <iframe
+                  src={`https://www.instagram.com/reel/${actif.code}/embed/`}
+                  title={actif.titre}
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                  scrolling="no"
+                  className="w-full h-[78vh] max-h-[700px] bg-noir border-0"
+                />
+                <p className="font-sans text-xs text-blanc-casse/40 mt-3 text-center">
+                  Vidéo hébergée sur Instagram. Si elle ne s’affiche pas, votre navigateur bloque
+                  les contenus externes —{' '}
+                  <a
+                    href={`https://www.instagram.com/reel/${actif.code}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-or hover:underline"
+                  >
+                    l’ouvrir sur Instagram
+                  </a>.
+                </p>
+              </>
+            )}
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
     </section>
   )
 }

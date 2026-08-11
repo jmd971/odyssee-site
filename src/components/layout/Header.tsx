@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import * as Dialog from '@radix-ui/react-dialog'
 import { Menu, X, Phone } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 
@@ -131,52 +132,56 @@ export function Header() {
               <a href={SITE_CONFIG.whatsapp} className="text-or">
                 <Phone size={18} />
               </a>
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="text-blanc-casse"
-                aria-label="Menu"
-              >
-                {menuOpen ? <X size={22} /> : <Menu size={22} />}
-              </button>
+              <Dialog.Root open={menuOpen} onOpenChange={setMenuOpen}>
+                <Dialog.Trigger className="text-blanc-casse" aria-label="Ouvrir le menu">
+                  <Menu size={22} />
+                </Dialog.Trigger>
+                <Dialog.Portal>
+                  <Dialog.Overlay className="fixed inset-0 z-[100] bg-noir/80 lg:hidden" />
+                  <Dialog.Content className="fixed inset-y-0 right-0 z-[101] w-[85%] max-w-sm overflow-y-auto bg-noir-alt px-6 pb-10 pt-6 lg:hidden focus:outline-none">
+                    <Dialog.Title className="sr-only">Menu</Dialog.Title>
+                    <div className="flex justify-end">
+                      <Dialog.Close aria-label="Fermer le menu" className="text-blanc-casse hover:text-or transition-colors">
+                        <X size={22} />
+                      </Dialog.Close>
+                    </div>
+                    <div className="gradient-line w-full my-4" />
+                    {navItems.map((item) => (
+                      <div key={item.href}>
+                        <Link
+                          href={item.href}
+                          onClick={() => setMenuOpen(false)}
+                          className="block py-3.5 font-sans text-sm tracking-wide uppercase text-blanc-casse/70 border-b border-blanc-casse/5 hover:text-or transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                        {item.children?.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="block py-2 pl-4 font-sans text-xs text-blanc-casse/40 hover:text-or transition-colors"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                    <a
+                      href={SITE_CONFIG.booking}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary w-full text-center mt-6 block"
+                    >
+                      Réserver un essayage
+                    </a>
+                  </Dialog.Content>
+                </Dialog.Portal>
+              </Dialog.Root>
             </div>
           </div>
         </div>
 
-        {/* Menu mobile */}
-        {menuOpen && (
-          <div className="lg:hidden bg-noir-alt border-t border-blanc-casse/5 px-4 pb-6">
-            <div className="gradient-line w-full mb-4" />
-            {navItems.map((item) => (
-              <div key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block py-3.5 font-sans text-sm tracking-wide uppercase text-blanc-casse/70 border-b border-blanc-casse/5 hover:text-or transition-colors"
-                >
-                  {item.label}
-                </Link>
-                {item.children?.map((child) => (
-                  <Link
-                    key={child.href}
-                    href={child.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block py-2 pl-4 font-sans text-xs text-blanc-casse/40 hover:text-or transition-colors"
-                  >
-                    {child.label}
-                  </Link>
-                ))}
-              </div>
-            ))}
-            <a
-              href={SITE_CONFIG.booking}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full text-center mt-6 block"
-            >
-              Réserver un essayage
-            </a>
-          </div>
-        )}
       </div>
     </header>
   )

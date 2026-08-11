@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { SITE_CONFIG, whatsappAvec } from '@/lib/site-config'
 import type { FaqItem } from '@/lib/schema'
 import type { Visuel } from '@/lib/images'
+import { FaqAccordion } from './FaqAccordion'
 
 export function JsonLd({ data }: { data: object | object[] }) {
   const blocks = Array.isArray(data) ? data : [data]
@@ -131,14 +132,7 @@ export function FaqSection({ items, titre = 'Questions fréquentes' }: { items: 
     <section className="py-16 bg-noir-alt">
       <div className="container-luxury max-w-2xl">
         <h2 className="section-title mb-10">{titre}</h2>
-        <div className="space-y-6">
-          {items.map((item) => (
-            <div key={item.question} className="border-b border-or/20 pb-6">
-              <h3 className="font-sans text-sm font-medium text-blanc-casse mb-2">{item.question}</h3>
-              <p className="font-sans text-sm text-blanc-casse/65 leading-relaxed">{item.answer}</p>
-            </div>
-          ))}
-        </div>
+        <FaqAccordion items={items} />
       </div>
     </section>
   )
