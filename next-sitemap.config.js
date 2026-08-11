@@ -9,6 +9,7 @@ const PRIORITES = {
   '/boutique/accessoires-bijoux': 0.8,
   '/services/relooking': 0.8,
   '/galerie': 0.8,
+  '/createurs': 0.8,
   '/boutique': 0.7,
   '/services': 0.7,
   '/carte-cadeau': 0.7,

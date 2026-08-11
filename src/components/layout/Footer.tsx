@@ -50,6 +50,7 @@ export function Footer() {
                 { label: 'Vêtements femme', href: '/boutique/vetements-femme' },
                 { label: 'Accessoires & bijoux', href: '/boutique/accessoires-bijoux' },
                 { label: 'Galerie', href: '/galerie' },
+                { label: 'Nos créateurs', href: '/createurs' },
                 { label: 'Carte cadeau', href: '/carte-cadeau' },
               ].map((link) => (
                 <li key={link.href}>

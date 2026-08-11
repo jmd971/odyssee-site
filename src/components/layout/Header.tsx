@@ -30,6 +30,7 @@ const navItems = [
     ],
   },
   { label: 'Galerie', href: '/galerie' },
+  { label: 'Créateurs', href: '/createurs' },
   { label: 'Carte cadeau', href: '/carte-cadeau' },
   { label: 'Événements', href: '/evenements' },
   { label: 'Blog', href: '/blog' },
