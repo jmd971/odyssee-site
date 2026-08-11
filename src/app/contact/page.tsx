@@ -6,7 +6,7 @@ import { SITE_CONFIG } from '@/lib/site-config'
 export const metadata: Metadata = {
   title: 'Contact & boutique à Jarry, Baie-Mahault | Odyssée',
   description: "Rendez-nous visite à l'immeuble Les Lilas, Jarry, Baie-Mahault. Horaires, plan, téléphone et réservation en ligne. Parking gratuit.",
-  alternates: { canonical: 'https://odysseebybea.fr/contact' },
+  alternates: { canonical: 'https://www.odysseebybea.fr/contact' },
 }
 
 const faqContact = [
@@ -23,8 +23,8 @@ export default function ContactPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://odysseebybea.fr' },
-      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://odysseebybea.fr/contact' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.odysseebybea.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.odysseebybea.fr/contact' },
     ],
   }
   const faqSchema = {

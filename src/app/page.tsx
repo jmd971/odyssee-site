@@ -12,7 +12,7 @@ export const revalidate = 600
 export const metadata: Metadata = {
   title: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
   description: 'Boutique de mode femme à Jarry, Guadeloupe. Robes de soirée, prêt-à-porter chic et accessoires. Conseil personnalisé par Béatrice.',
-  alternates: { canonical: 'https://odysseebybea.fr' },
+  alternates: { canonical: 'https://www.odysseebybea.fr' },
 }
 
 const categories = [
