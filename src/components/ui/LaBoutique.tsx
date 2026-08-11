@@ -33,13 +33,13 @@ export function LaBoutique() {
               <span className="italic text-or">c’est ouvert à toutes</span>
             </h2>
             <p className="font-sans text-blanc-casse/65 leading-relaxed mb-4">
-              « Showroom privé » fait parfois croire qu’il faut être invitée. Ce n’est pas le cas :
-              la boutique est ouverte à toutes, du mardi au samedi, et l’on peut simplement entrer
+              « Showroom privé » fait parfois croire qu’il faut être invitée. Pas du tout : la
+              boutique est ouverte à toutes, du mardi au samedi, et on peut simplement entrer
               regarder.
             </p>
             <p className="font-sans text-blanc-casse/65 leading-relaxed mb-8">
-              Ce qui est privé, c’est l’attention : Béatrice vous conseille, vous accompagne dans
-              vos choix, et prend le temps qu’il faut. Voilà l’endroit, filmé tel quel.
+              Ce qui est privé, c’est l’attention. Béatrice prend le temps qu’il faut avec
+              chaque cliente. Voilà l’endroit, filmé tel quel.
             </p>
 
             <div className="grid grid-cols-3 gap-2 mb-8">
@@ -94,7 +94,7 @@ export function LaBoutique() {
               Votre navigateur ne peut pas lire cette vidéo.
             </video>
             <p className="font-sans text-xs text-blanc-casse/40 mt-3 text-center">
-Une minute dans la boutique — immeuble Les Lilas, Jarry.
+Une minute dans la boutique, immeuble Les Lilas à Jarry.
             </p>
           </div>
 

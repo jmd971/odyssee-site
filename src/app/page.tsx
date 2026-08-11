@@ -114,7 +114,7 @@ export default function HomePage() {
 
             <p className="font-sans text-blanc-casse/50 text-base md:text-lg max-w-lg leading-relaxed mb-10">
               Des pièces choisies à l’unité, souvent en un seul exemplaire. Béatrice vous dit
-              franchement ce qui vous va — et la boutique est ouverte à toutes.
+              franchement ce qui vous va. Et la boutique est ouverte à toutes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -186,17 +186,17 @@ export default function HomePage() {
               <span className="section-subtitle">Notre histoire</span>
               <h2 className="section-title text-blanc-casse mb-6">
                 Béatrice,<br />
-                <span className="italic text-or">la patronne</span>
+                <span className="italic text-or">l’œil d’Odyssée</span>
               </h2>
               <p className="font-sans text-blanc-casse/65 leading-relaxed text-base md:text-lg mb-4">
-                Odyssée, c’est son univers. Une Guadeloupéenne qui choisit chaque pièce
-                elle-même, en petites quantités, et qui préfère vous dire qu’une robe ne
-                vous va pas plutôt que de vous la vendre.
+                Odyssée, c’est son univers. Béatrice choisit chaque pièce elle-même, en
+                petites quantités. Et quand une robe ne vous va pas, elle vous le dit plutôt
+                que de vous la vendre.
               </p>
               <p className="font-sans text-blanc-casse/55 leading-relaxed">
                 C’est elle que vous trouverez en boutique, à Jarry, du mardi au samedi.
-                C’est elle qui vous conseille, vous accompagne dans vos choix, et prend le
-                temps qu’il faut — c’est ça, le « privé » du showroom.
+                Elle vous conseille, elle prend le temps qu’il faut. Le « privé » du
+                showroom, c’est ça.
               </p>
             </div>
 
@@ -300,8 +300,8 @@ export default function HomePage() {
             </h2>
             <p className="font-sans text-blanc-casse/55 leading-relaxed">
               Au-delà de la boutique, Béatrice vous accompagne pour révéler votre style :
-              conseil en stylisme, relooking vestimentaire, shooting photo, anniversaire
-              entre copines.
+              conseil en stylisme, relooking vestimentaire, shooting photo, ou un après-midi
+              entre copines pour un anniversaire.
             </p>
           </div>
 
@@ -355,8 +355,9 @@ export default function HomePage() {
                 La carte cadeau<br /><span className="italic text-or">Odyssée</span>
               </h2>
               <p className="font-sans text-blanc-casse/65 text-sm leading-relaxed mb-8">
-                Offrez le choix plutôt qu’une pièce dont vous n’êtes pas sûre : vêtements,
-                accessoires, relooking ou shooting photo. Valable à la boutique de Jarry.
+                Offrez le choix plutôt qu’une pièce dont vous n’êtes pas sûre. Elle s’utilise
+                sur les vêtements, les accessoires, un relooking ou un shooting photo, à la
+                boutique de Jarry.
               </p>
               <div className="flex gap-3 mb-8 flex-wrap">
                 {[50, 100, 150, 200].map((montant) => (
