@@ -166,25 +166,40 @@ export default function HomePage() {
       </div>
 
       {/* ─── INTRO BÉATRICE ─── */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-28">
         <div className="container-luxury">
-          <div className="max-w-2xl mx-auto text-center">
-            <span className="section-subtitle">Notre histoire</span>
-            <h2 className="section-title text-blanc-casse mb-6">
-              Un showroom unique,<br />
-              <span className="italic text-gradient">une femme de caractère</span>
-            </h2>
-            <p className="font-sans text-blanc-casse/50 leading-relaxed text-base md:text-lg">
-              Odyssée, c&apos;est l&apos;univers mode de Béatrice — une Guadeloupéenne passionnée
-              qui sélectionne chaque pièce avec une exigence rare. Robes de soirée,
-              vêtements tendance et accessoires choisis pour la femme antillaise moderne :
-              élégante, assumée, singulière.
-            </p>
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <div className="h-px w-12" style={{ background: 'var(--gradient-odyssee-h)' }} />
-              <span className="font-serif italic text-or text-2xl">by Béa</span>
-              <div className="h-px w-12" style={{ background: 'var(--gradient-odyssee-h)' }} />
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,300px)_1fr] gap-12 lg:gap-16 items-center max-w-4xl mx-auto">
+
+            {/* preload metadata : le fichier ne pese que 1,5 Mo, on peut donc
+                afficher la premiere image sans attendre un clic. */}
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full aspect-[9/16] object-cover bg-noir"
+            >
+              <source src="/videos/beatrice-odyssee.mp4" type="video/mp4" />
+              Votre navigateur ne peut pas lire cette vidéo.
+            </video>
+
+            <div>
+              <span className="section-subtitle">Notre histoire</span>
+              <h2 className="section-title text-blanc-casse mb-6">
+                Béatrice,<br />
+                <span className="italic text-or">la patronne</span>
+              </h2>
+              <p className="font-sans text-blanc-casse/65 leading-relaxed text-base md:text-lg mb-4">
+                Odyssée, c’est son univers. Une Guadeloupéenne qui choisit chaque pièce
+                elle-même, en petites quantités, et qui préfère vous dire qu’une robe ne
+                vous va pas plutôt que de vous la vendre.
+              </p>
+              <p className="font-sans text-blanc-casse/55 leading-relaxed">
+                C’est elle que vous trouverez en boutique, à Jarry, du mardi au samedi.
+                C’est elle qui vous conseille, vous accompagne dans vos choix, et prend le
+                temps qu’il faut — c’est ça, le « privé » du showroom.
+              </p>
             </div>
+
           </div>
         </div>
       </section>
