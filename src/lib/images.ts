@@ -41,6 +41,10 @@ export const IMAGES = {
     src: '/images/haut-strass.jpg',
     alt: 'Haut parsemé de strass porté en soirée, sélection Odyssée Showroom Privé',
   },
+  egerie: {
+    src: '/images/egerie-robe-dentelle.webp',
+    alt: 'Robe midi en dentelle plumetis crème portée dans la boutique Odyssée à Jarry, devant le mur à chevrons',
+  },
   totalLookBlanc: {
     src: '/images/total-look-blanc.webp',
     alt: 'Total look blanc en broderie anglaise, épaules dénudées, porté sur un ponton en Guadeloupe',
@@ -161,6 +165,7 @@ export const GALERIE_SOIREE: Visuel[] = [
 
 /** Cérémonie & invitée de mariage — tenue longue, matières qui tiennent la journée. */
 export const GALERIE_CEREMONIE: Visuel[] = [
+  IMAGES.egerie,
   IMAGES.combinaisonBatik,
   IMAGES.totalLookBlanc,
   IMAGES.robeBatik,

@@ -37,8 +37,8 @@ const SECTIONS: Section[] = [
     intro: 'Ce qu’on porte quand la journée dure de l’église au vin d’honneur : matières qui respirent, coupes qui ne se réajustent pas.',
     lien: { href: '/boutique/robes-ceremonie-invitee-mariage', label: 'Voir la page cérémonie' },
     visuels: [
-      IMAGES.combinaisonBatik, IMAGES.totalLookBlanc, IMAGES.robeBatik,
-      IMAGES.ensembleImprime, IMAGES.robeImprimee,
+      IMAGES.egerie, IMAGES.combinaisonBatik, IMAGES.totalLookBlanc,
+      IMAGES.robeBatik, IMAGES.ensembleImprime, IMAGES.robeImprimee,
     ],
   },
   {

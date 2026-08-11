@@ -79,14 +79,17 @@ export default function HomePage() {
       <section className="relative min-h-[92vh] bg-noir flex items-center overflow-hidden">
         {/* Un site de mode doit montrer un vetement des le premier ecran. */}
         <Image
-          src={IMAGES.robeRougeSequins.src}
-          alt={IMAGES.robeRougeSequins.alt}
+          src={IMAGES.egerie.src}
+          alt={IMAGES.egerie.alt}
           fill
           priority
-          className="object-cover object-[70%_center] opacity-40 lg:opacity-55"
+          className="object-cover object-[62%_18%] opacity-45 lg:opacity-70"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-noir via-noir/90 to-noir/40" />
+        {/* La photo est claire — robe et murs blancs — donc l'assombrissement
+            doit etre plus franc que sur un visuel sombre pour garder le texte lisible. */}
+        <div className="absolute inset-0 bg-gradient-to-r from-noir via-noir/92 to-noir/45" />
+        <div className="absolute inset-0 bg-noir/25" />
         {/* Halo dégradé décoratif */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl"
           style={{ background: 'radial-gradient(circle, #E8572A 0%, #C4359A 60%, transparent 80%)' }} />
