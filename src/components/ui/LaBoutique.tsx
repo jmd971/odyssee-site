@@ -13,9 +13,9 @@ import { IMAGES } from '@/lib/images'
  * imposait une carte blanche, les mentions J'aime, un bouton pointant vers un
  * autre compte, et il exportait la visiteuse au lieu de lire sur place.
  *
- * Le fichier est la vidéo d'ambiance de la boutique, retrouvée sur le stockage
- * de l'ancien site où elle servait de fond aux pages à-propos, contact et
- * services. preload="none" : rien ne se télécharge avant le clic.
+ * Le fichier est la visite de la boutique fournie par la cliente — une minute
+ * qui parcourt les portants et la nouvelle sélection. preload="none" : les
+ * 7,8 Mo ne se téléchargent qu'au clic, la page reste légère.
  */
 const INTERIEUR = [IMAGES.lookJeanBoutique, IMAGES.vesteBlanchePatchwork, IMAGES.robeLongueEte]
 
@@ -94,7 +94,7 @@ export function LaBoutique() {
               Votre navigateur ne peut pas lire cette vidéo.
             </video>
             <p className="font-sans text-xs text-blanc-casse/40 mt-3 text-center">
-La boutique Odyssée, immeuble Les Lilas, à Jarry.
+Une minute dans la boutique — immeuble Les Lilas, Jarry.
             </p>
           </div>
 
