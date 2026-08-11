@@ -160,17 +160,40 @@ export default function EvenementsPage() {
       </section>
 
       <section className="pb-16">
-        <div className="container-luxury max-w-4xl">
+        <div className="container-luxury">
           <h2 className="section-title mb-4">Le défilé en vidéo</h2>
-          <p className="font-sans text-blanc-casse/60 mb-8 leading-relaxed">
-            Trente secondes tournées pendant le défilé à la boutique de Jarry, pour se faire une
-            idée de l’ambiance avant de venir à la prochaine édition.
+          <p className="font-sans text-blanc-casse/60 mb-10 max-w-2xl leading-relaxed">
+            L’annonce, puis la soirée elle-même. Deux façons de voir à quoi ressemble un défilé
+            Odyssée avant de venir à la prochaine édition.
           </p>
-          <VideoYouTube
-            id={VIDEO_DEFILE}
-            titre="Défilé Odyssée Showroom Privé à Jarry"
-            legende="Défilé de mode Odyssée Showroom Privé — boutique de Jarry, Baie-Mahault"
-          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <figure className="m-0">
+              {/* Teaser heberge sur le site : 22 Mo, donc preload="none" est
+                  indispensable — rien ne part avant que la visiteuse ne clique. */}
+              <video
+                controls
+                playsInline
+                preload="none"
+                poster={IMAGES.miseEnBeaute.src}
+                className="w-full aspect-[9/16] object-cover bg-noir"
+              >
+                <source src="/videos/teaser-defile-10-novembre-2024.mp4" type="video/mp4" />
+                Votre navigateur ne peut pas lire cette vidéo.
+              </video>
+              <figcaption className="font-sans text-xs text-blanc-casse/40 mt-3">
+                Le teaser qui annonçait le show mode du 10 novembre 2024 — réalisation @gotm97
+              </figcaption>
+            </figure>
+
+            <div>
+              <VideoYouTube
+                id={VIDEO_DEFILE}
+                titre="Défilé Odyssée Showroom Privé à Jarry"
+                legende="Le défilé lui-même, à la boutique de Jarry, Baie-Mahault"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
