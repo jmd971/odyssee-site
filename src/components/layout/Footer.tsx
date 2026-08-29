@@ -121,7 +121,7 @@ export function Footer() {
           </p>
           <p className="font-sans text-[11px] text-blanc-casse/20">
             Site créé par{' '}
-            <a href="https://siboard-consulting.fr" className="hover:text-or transition-colors">
+            <a href="https://www.siboard-consulting.fr" className="hover:text-or transition-colors">
               Siboard Consulting
             </a>
           </p>
