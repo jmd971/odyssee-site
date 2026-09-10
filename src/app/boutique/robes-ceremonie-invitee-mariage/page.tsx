@@ -48,6 +48,21 @@ const faqItems: FaqItem[] = [
       'Non, vous pouvez pousser la porte pendant les heures d’ouverture, du mardi au samedi de 10h à 19h. Le rendez-vous reste conseillé si vous voulez du temps dédié, par exemple à l’approche d’une grosse cérémonie.',
   },
   {
+    question: 'Les mariés imposent une couleur ou un thème, comment faire ?',
+    answer:
+      'C’est de plus en plus fréquent. Demandez la palette exacte plutôt que le nom d’une couleur : « bleu » ne veut rien dire, un nuancier ou une photo évite l’erreur. Si le thème est imposé au cortège seulement, vous n’êtes pas tenue de le suivre en tant qu’invitée. Venez avec la capture d’écran du faire-part, on part de là.',
+  },
+  {
+    question: 'Combien de temps avant la cérémonie faut-il s’y prendre ?',
+    answer:
+      'Trois semaines suffisent dans la plupart des cas, une seule après-midi si la pièce vous va telle quelle. Prévoyez plus large si une retouche est nécessaire ou si la cérémonie tombe en pleine saison des mariages, quand tout le monde cherche en même temps.',
+  },
+  {
+    question: 'Peut-on porter du madras à un mariage en Guadeloupe ?',
+    answer:
+      'Cela dépend du mariage. Le madras est une tenue de tradition, souvent portée par la famille ou le cortège dans un cadre précis, parfois pour un moment de la journée seulement. En tant qu’invitée, ne l’improvisez pas : demandez aux mariés. Nous ne vendons pas de madras, mais nous vous dirons franchement si votre tenue s’accorde ou détonne.',
+  },
+  {
     question: 'Vendez-vous des robes de mariée ?',
     answer:
       'Non. Odyssée habille les invitées, les témoins et les mères des mariés, pas la mariée elle-même. Pour une robe de mariée, plusieurs maisons spécialisées existent en Guadeloupe, dont certaines à Jarry.',
@@ -89,6 +104,48 @@ const saisons = [
   {
     q: 'Un mariage bohème ou champêtre',
     a: 'Coupes souples, imprimés végétaux, accessoires en matières naturelles. Le raphia et les perles de nos boucles d’oreilles artisanales collent parfaitement à cet esprit.',
+  },
+]
+
+const codes = [
+  {
+    titre: 'Le blanc, l’ivoire et le crème',
+    texte:
+      'Ils appartiennent à la mariée, sans exception. Cela vaut aussi pour une robe blanche à motifs et pour le total look blanc des soirées : dans une église, sur les photos, il vous place à côté d’elle. Si vous tenez au blanc, gardez-le pour une soirée blanche, c’est un autre exercice.',
+  },
+  {
+    titre: 'Le madras',
+    texte:
+      'C’est une tenue de tradition, pas un imprimé décoratif. Selon les familles, il est porté par le cortège, à un moment précis de la journée, ou pas du tout. Une invitée qui arrive en madras sans que ce soit prévu se retrouve mal placée. Demandez aux mariés, la réponse prend dix secondes.',
+  },
+  {
+    titre: 'Le noir intégral en journée',
+    texte:
+      'Il n’est plus interdit, mais il reste lourd sous le soleil de midi et il photographie mal en extérieur. Une touche de noir dans un ensemble, oui. Une robe noire de la tête aux pieds à une cérémonie de 11 h, on préfère vous le déconseiller.',
+  },
+  {
+    titre: 'Le dress code imposé par les mariés',
+    texte:
+      'Quand une palette est annoncée sur le faire-part, demandez le nuancier ou une photo plutôt que le nom de la couleur. Et vérifiez à qui elle s’applique : souvent au cortège seulement, rarement à toute la salle.',
+  },
+]
+
+const jourJ = [
+  {
+    q: 'La journée est longue, plus longue que prévu',
+    a: 'Mairie, église, photos, vin d’honneur, repas, soirée. Une tenue qu’il faut réajuster toutes les dix minutes devient insupportable dès le vin d’honneur. C’est le premier test qu’on fait en cabine : vous vous asseyez, vous levez les bras, vous marchez.',
+  },
+  {
+    q: 'On passe du climatisé au plein soleil',
+    a: 'L’église ou la salle sont souvent fraîches, l’extérieur non. Une matière qui respire vous sauve la journée, une doublure synthétique vous la gâche. C’est le critère qui compte le plus ici, avant la coupe et avant la couleur.',
+  },
+  {
+    q: 'Le sol n’est pas celui d’une salle de mariage métropolitaine',
+    a: 'Herbe, sable, gravier, dalles de jardin. Les talons fins s’y plantent. Les compensées, les blocs et les sandales plates habillées existent, et vous danserez encore à minuit.',
+  },
+  {
+    q: 'Les photos restent',
+    a: 'Les couleurs franches ressortent, les imprimés très petits se brouillent à distance, le brillant excessif renvoie le flash. On regarde toujours la tenue en photo avant de valider — le miroir et l’objectif ne racontent pas la même chose.',
   },
 ]
 
@@ -168,6 +225,54 @@ export default function Page() {
               quelle robe porter à un mariage en Guadeloupe
             </Link>{' '}
             détaille les cas de figure, saison par saison et morphologie par morphologie.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 bg-noir-alt">
+        <div className="container-luxury max-w-3xl">
+          <h2 className="section-title mb-4">Les codes à connaître ici</h2>
+          <p className="font-sans text-sm text-blanc-casse/55 leading-relaxed mb-8">
+            Ce sont les questions qu’on nous pose en cabine, et celles qu’aucun guide écrit
+            ailleurs ne traite. Un mariage en Guadeloupe a ses usages.
+          </p>
+          <div className="space-y-8">
+            {codes.map((item) => (
+              <div key={item.titre} className="border-l-2 border-or pl-6">
+                <h3 className="font-serif text-xl font-medium text-blanc-casse mb-2">{item.titre}</h3>
+                <p className="font-sans text-sm text-blanc-casse/70 leading-relaxed">{item.texte}</p>
+              </div>
+            ))}
+          </div>
+          <p className="font-sans text-sm text-blanc-casse/55 leading-relaxed mt-8">
+            Sur le blanc et ses exceptions, notre article{' '}
+            <Link href="/blog/tenue-soiree-blanche-femme" className="text-or hover:underline">
+              comment s’habiller pour une soirée blanche
+            </Link>{' '}
+            explique quand il devient au contraire la bonne réponse.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container-luxury max-w-3xl">
+          <h2 className="section-title mb-4">Ce qui se passe vraiment le jour J</h2>
+          <p className="font-sans text-sm text-blanc-casse/55 leading-relaxed mb-8">
+            Une tenue se choisit en cabine mais se vit pendant douze heures. Voilà ce qu’on
+            anticipe avec vous avant de valider.
+          </p>
+          <div className="space-y-6">
+            {jourJ.map((item) => (
+              <div key={item.q}>
+                <h3 className="font-sans text-sm font-medium text-or mb-2">{item.q}</h3>
+                <p className="font-sans text-sm text-blanc-casse/70 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="font-sans text-sm text-blanc-casse/55 leading-relaxed mt-8">
+            Comptez trois semaines avant la date pour être tranquille, une après-midi si la pièce
+            vous va telle quelle. En pleine saison des mariages, prenez de l’avance : tout le monde
+            cherche en même temps.
           </p>
         </div>
       </section>
