@@ -37,11 +37,15 @@ const ANCIENNES_URLS = [
   ['/caisse', '/boutique'],
   ['/checkout', '/boutique'],
 
-  // Programme de fidelite et parcours d'avis par QR code : plus rien
-  // derriere, on renvoie vers le seul endroit ou l'on peut ecrire
+  // Programme de fidelite : plus rien derriere
   ['/fidelite', '/contact'],
-  ['/avis-positif-4509-6601', '/contact'],
-  ['/avis-negatif-4475-4248', '/contact'],
+
+  // Parcours d'avis par QR code. Les deux pages d'arrivee de l'ancien
+  // funnel retrouvent leur destination : la branche positive va au
+  // formulaire d'avis Google, la branche negative a la page interne.
+  ['/avis-positif-4509-6601', 'https://g.page/r/CbBfVyCsFPbfEBM/review'],
+  ['/avis-negatif-4475-4248', '/demande-avis/nous-le-dire'],
+  ['/avis', '/demande-avis'],
 ]
 
 const nextConfig = {
