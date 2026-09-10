@@ -30,6 +30,7 @@ const ANCIENNES_URLS = [
 
   // Evenement date de 2024 : la page evenements le remplace
   ['/defile-mode-10-novembre-2024', '/evenements'],
+  ['/defile-gosier', '/evenements'],
 
   // Parcours d'achat GoHighLevel : le nouveau site ne vend pas en ligne,
   // la boutique est l'intention la plus proche
