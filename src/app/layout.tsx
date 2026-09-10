@@ -28,7 +28,7 @@ export const metadata: Metadata = {
        et le gabarit ajoutait la marque une seconde fois — 30 caracteres
        perdus par page, tronques par Google. */
     template: '%s',
-    default: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
+    default: 'Boutique vêtements femme à Jarry – essayage privé | Odyssée',
   },
   description: SITE_CONFIG.description,
   openGraph: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
-    title: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
+    title: 'Boutique vêtements femme à Jarry – essayage privé | Odyssée',
     description: SITE_CONFIG.description,
     images: [{ url: '/images/logo-odyssee.webp', width: 1080, height: 1080, alt: 'Odyssée Showroom Privé – Boutique mode femme à Jarry, Guadeloupe' }],
   },

@@ -9,9 +9,15 @@ import { LaBoutique } from '@/components/ui/LaBoutique'
 
 export const revalidate = 600
 
+/* Titre et description reecrits le 11/09/2026. Search Console : l'accueil
+   porte 9 295 des 10 400 impressions du site sur trois mois, pour 199 clics,
+   soit 2,1 %. L'ancien libelle decrivait une categorie — « boutique de mode
+   femme » — exactement comme les huit autres resultats de la page. Le nouveau
+   met en avant ce qu'aucun concurrent local ne propose : l'essayage prive et
+   accompagne. Le mot-cle reste en tete, c'est ce que les gens tapent. */
 export const metadata: Metadata = {
-  title: 'Odyssée Showroom Privé – Boutique vêtements femme à Jarry',
-  description: 'Boutique de mode femme à Jarry, Guadeloupe. Robes de soirée, prêt-à-porter chic et accessoires. Conseil personnalisé par Béatrice.',
+  title: 'Boutique vêtements femme à Jarry – essayage privé | Odyssée',
+  description: 'On prend le temps : essayage accompagné, conseil de Béatrice, tenues de cérémonie et de soirée. À Jarry, Baie-Mahault, du mardi au samedi, 10h-19h.',
   alternates: { canonical: 'https://www.odysseebybea.fr' },
 }
 
