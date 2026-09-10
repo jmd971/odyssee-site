@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Phone, Mail, MessageCircle } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 import { SITE_CONFIG, whatsappAvec } from '@/lib/site-config'
+import { BlocEmail } from './bloc-email'
 
 export const metadata: Metadata = {
   title: 'Dites-nous ce qui n’a pas été',
@@ -64,20 +65,7 @@ export default function NousLeDirePage() {
               </span>
             </a>
 
-            <a
-              href="mailto:odyssee.showroom@gmail.com?subject=Retour%20sur%20ma%20visite"
-              className="flex items-start gap-4 border border-blanc-casse/10 p-6 hover:border-or/40 transition-colors"
-            >
-              <Mail size={18} className="text-or mt-1 shrink-0" />
-              <span>
-                <span className="block font-sans text-xs font-medium tracking-wide uppercase text-blanc-casse mb-1">
-                  E-mail
-                </span>
-                <span className="block font-sans text-sm text-blanc-casse/50">
-                  odyssee.showroom@gmail.com — si vous préférez écrire posément
-                </span>
-              </span>
-            </a>
+            <BlocEmail />
 
             <p className="font-sans text-xs text-blanc-casse/30 pt-4">
               <Link href="/demande-avis" className="hover:text-or transition-colors">
