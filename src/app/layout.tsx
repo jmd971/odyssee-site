@@ -1,22 +1,33 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Manrope } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { clothingStoreSchema } from '@/lib/schema'
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
+/* Polices hebergees dans le depot, pas chargees chez Google au build.
+   Le 23/11/2026, trois builds de production de suite ont echoue parce que
+   Google Fonts renvoyait une adresse de police que next/font/google ne savait
+   pas lire. Avec des fichiers locaux, le build ne depend plus de personne.
+
+   Ce sont les fichiers variables de Google Fonts (sous-ensemble latin, qui
+   couvre le francais, l'apostrophe typographique et le signe euro), sous
+   licence SIL Open Font License. Un fichier couvre les graisses 300 a 700. */
+const cormorant = localFont({
+  src: [
+    { path: './fonts/cormorant-garamond-latin.woff2', weight: '300 700', style: 'normal' },
+    { path: './fonts/cormorant-garamond-italic-latin.woff2', weight: '300 700', style: 'italic' },
+  ],
   variable: '--font-cormorant',
   display: 'swap',
+  adjustFontFallback: 'Times New Roman',
 })
 
-const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+const manrope = localFont({
+  src: './fonts/manrope-latin.woff2',
+  weight: '300 700',
+  style: 'normal',
   variable: '--font-manrope',
   display: 'swap',
 })
