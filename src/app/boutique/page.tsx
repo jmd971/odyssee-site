@@ -90,20 +90,22 @@ export default function BoutiquePage() {
       <Nouveautes pieces={NOUVEAUTES} />
 
       <section className="py-20">
-        <div className="container-luxury grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="container-luxury grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-6">
           {categories.map((cat) => (
             <Link key={cat.href} href={cat.href} className="group block">
-              <div className="relative aspect-[4/3] overflow-hidden">
+              {/* Portrait et cadre par le haut : les photos sont verticales, un cadre
+                  paysage coupait la tete des mannequins. */}
+              <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
                   src={cat.visuel.src}
                   alt={cat.visuel.alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-noir/40 group-hover:bg-noir/20 transition-colors duration-300" />
               </div>
-              <h2 className="font-serif text-2xl text-blanc-casse mt-4 group-hover:text-or transition-colors">
+              <h2 className="font-serif text-lg md:text-xl leading-snug text-blanc-casse mt-4 group-hover:text-or transition-colors">
                 {cat.titre}
               </h2>
               <p className="font-sans text-sm text-blanc-casse/60 leading-relaxed mt-2">
