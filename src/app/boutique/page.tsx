@@ -3,8 +3,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { IMAGES } from '@/lib/images'
-import { breadcrumbSchema, itemListSchema } from '@/lib/schema'
+import { breadcrumbSchema, itemListSchema, productSchema } from '@/lib/schema'
 import { Breadcrumb, CtaFinal, JsonLd, OuNousTrouver, PageHero } from '@/components/ui/blocks'
+import { Nouveautes } from '@/components/ui/Nouveautes'
+import { NOUVEAUTES } from '@/lib/nouveautes'
 
 const PATH = '/boutique'
 const TITLE = 'Boutique mode femme à Jarry – Guadeloupe | Odyssée'
@@ -61,6 +63,7 @@ export default function BoutiquePage() {
             'Catégories de la boutique Odyssée',
             categories.map((c) => ({ name: c.titre, path: c.href })),
           ),
+          ...NOUVEAUTES.map((piece) => productSchema(piece, PATH)),
         ]}
       />
       <Breadcrumb trail={trail} />
@@ -84,7 +87,9 @@ export default function BoutiquePage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <Nouveautes pieces={NOUVEAUTES} />
+
+      <section className="py-20">
         <div className="container-luxury grid grid-cols-1 md:grid-cols-2 gap-6">
           {categories.map((cat) => (
             <Link key={cat.href} href={cat.href} className="group block">

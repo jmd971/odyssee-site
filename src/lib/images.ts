@@ -62,6 +62,17 @@ export const IMAGES = {
     alt: 'Robe longue en crochet argenté portée au bord de l’eau en Guadeloupe',
   },
 
+  // ── Nouveautés affichées avec leur prix (voir lib/nouveautes.ts) ───────────
+  robeFuchsiaGlamEthnik: {
+    src: '/images/robe-longue-fuchsia-glam-ethnik.jpg',
+    alt: 'Robe longue rose fuchsia à encolure américaine bordée d’un tissu imprimé bleu, portée dans une allée de jardin tropical',
+    credit: 'Pièce Glam Ethnik',
+  },
+  robeVichyBleue: {
+    src: '/images/robe-vichy-bleue-colliers-rouges.jpg',
+    alt: 'Robe ample en vichy bleu et blanc à épaules dénudées, portée avec un collier pompon et un sautoir rouges au bord d’une piscine',
+  },
+
   // ── Prêt-à-porter du quotidien ─────────────────────────────────────────────
   robeLongueEte: {
     src: '/images/robe-longue-imprimee-ete.jpg',
