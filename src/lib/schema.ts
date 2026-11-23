@@ -1,4 +1,5 @@
 import { SITE_CONFIG } from './site-config'
+import type { Piece } from './nouveautes'
 
 const OPEN_DAYS = ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -136,5 +137,29 @@ export function articleSchema(params: {
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_CONFIG.url}${params.path}` },
     author: { '@type': 'Person', name: 'Béatrice Populo' },
     publisher: { '@id': `${SITE_CONFIG.url}/#boutique` },
+  }
+}
+
+/**
+ * Pièce vendue en boutique avec un prix affiché.
+ * `InStoreOnly` : le site ne vend pas en ligne, il ne faut pas laisser croire
+ * à Google qu'on peut commander.
+ */
+export function productSchema(piece: Piece, path: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: piece.nom,
+    description: piece.description,
+    image: `${SITE_CONFIG.url}${piece.visuel.src}`,
+    ...(piece.createur ? { brand: { '@type': 'Brand', name: piece.createur } } : {}),
+    offers: {
+      '@type': 'Offer',
+      price: piece.prix,
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStoreOnly',
+      url: `${SITE_CONFIG.url}${path}#${piece.id}`,
+      seller: { '@id': `${SITE_CONFIG.url}/#boutique` },
+    },
   }
 }
