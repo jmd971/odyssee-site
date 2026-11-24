@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { whatsappAvec } from '@/lib/site-config'
+import Link from 'next/link'
+import { SITE_CONFIG, whatsappAvec } from '@/lib/site-config'
 import type { Piece } from '@/lib/nouveautes'
 
 /**
@@ -83,6 +84,76 @@ export function Nouveautes({ pieces }: { pieces: Piece[] }) {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+/**
+ * Version courte pour l'accueil : photo, nom, prix, tailles. Un clic mene a
+ * la fiche complete sur /boutique. Les prix sont donnes des l'entree pour
+ * qu'une visiteuse sache tout de suite a quoi s'attendre.
+ */
+export function NouveautesApercu({ pieces }: { pieces: Piece[] }) {
+  if (pieces.length === 0) return null
+
+  return (
+    <section className="py-16" aria-labelledby="nouveautes-accueil-titre">
+      <div className="container-luxury max-w-4xl">
+        <div className="flex items-end justify-between gap-6 mb-8">
+          <div>
+            <p className="section-subtitle">Arrivées en boutique</p>
+            <h2 id="nouveautes-accueil-titre" className="font-serif text-3xl md:text-4xl font-light text-blanc-casse">
+              Les dernières pièces
+            </h2>
+          </div>
+          <Link
+            href="/boutique#nouveautes-titre"
+            className="hidden sm:inline font-sans text-sm text-or hover:underline whitespace-nowrap"
+          >
+            Tout voir →
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 md:gap-8">
+          {pieces.map((piece) => (
+            <article key={piece.id}>
+              <Link href={`/boutique#${piece.id}`} className="group block">
+                <div className="relative aspect-[3/4] overflow-hidden">
+                  <Image
+                    src={piece.visuel.src}
+                    alt={piece.visuel.alt}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 400px"
+                  />
+                  {piece.visuel.credit && (
+                    <p className="absolute top-0 left-0 bg-noir/70 px-2.5 py-1 font-sans text-[10px] tracking-wide text-or">
+                      {piece.visuel.credit}
+                    </p>
+                  )}
+                </div>
+                <div className="flex items-baseline justify-between gap-3 mt-4">
+                  <h3 className="font-serif text-lg md:text-xl text-blanc-casse group-hover:text-or transition-colors">
+                    {piece.nom}
+                  </h3>
+                  <p className="font-serif text-lg md:text-xl text-or whitespace-nowrap">{piece.prix} €</p>
+                </div>
+                <p className="font-sans text-xs uppercase tracking-widest text-blanc-casse/50 mt-1">
+                  {piece.tailles}
+                </p>
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <p className="font-sans text-sm text-blanc-casse/60 mt-8 leading-relaxed">
+          Beaucoup de pièces n’existent qu’en un exemplaire.{' '}
+          <a href={SITE_CONFIG.whatsapp} className="text-or underline underline-offset-4 hover:text-or-clair">
+            Écrivez-nous sur WhatsApp
+          </a>{' '}
+          et on vous dit si elles sont encore là.
+        </p>
       </div>
     </section>
   )

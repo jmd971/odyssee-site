@@ -6,6 +6,8 @@ import { SITE_CONFIG } from '@/lib/site-config'
 import { IMAGES } from '@/lib/images'
 import { InstagramLooks } from '@/components/ui/InstagramLooks'
 import { LaBoutique } from '@/components/ui/LaBoutique'
+import { NouveautesApercu } from '@/components/ui/Nouveautes'
+import { NOUVEAUTES } from '@/lib/nouveautes'
 
 export const revalidate = 600
 
@@ -63,18 +65,25 @@ const services = [
   { title: 'Shopping anniversaire', href: '/services/shopping-anniversaire', img: '/images/anniversaire.webp', alt: 'Shopping anniversaire Odyssée' },
 ]
 
+/* Vrais avis Google, recopies mot pour mot depuis la fiche le 24/11/2026.
+   Les trois sont notes 5/5. Prenom et initiale du nom seulement. Pour en
+   changer : ouvrir la fiche, copier le texte sans le modifier, et garder la
+   note et le mois de visite tels que Google les affiche. */
 const testimonials = [
   {
-    text: 'Béatrice a un œil extraordinaire pour la mode. Elle m\'a trouvé la robe parfaite pour mon mariage. Service impeccable et vraiment personnel.',
-    author: 'Marie-Christine L.',
+    text: "J’ai passé près d’une heure à faire des essayages dans cette jolie boutique sans même voir le temps passer ! Merci Béa pour l’accueil chaleureux, les conseils, l'objectivité et le professionnalisme dont vous avez fait preuve !",
+    author: 'Céline R.',
+    visite: 'mai 2026',
   },
   {
-    text: 'Des pièces qu\'on ne trouve nulle part ailleurs en Guadeloupe, et un conseil vraiment personnalisé. Je recommande à 100%.',
-    author: 'Sandrine M.',
+    text: 'Un accueil très chaleureux, avec des articles de qualité. Béatrice est une personne très agréable, à l’écoute et de très bon conseil. On se sent vraiment bien accueilli et accompagné. Je recommande chaudement.',
+    author: 'Kelley K.',
+    visite: 'septembre 2026',
   },
   {
-    text: 'J\'ai découvert Odyssée pour un événement et je ne peux plus m\'en passer. L\'ambiance est incomparable.',
-    author: 'Nathalie P.',
+    text: 'Béatrice est un rayon de soleil\nJe suis repartie avec le cœur en joie\nMerci',
+    author: 'Rita E.',
+    visite: 'novembre 2026',
   },
 ]
 
@@ -118,25 +127,30 @@ export default function HomePage() {
               <span className="italic text-blanc-casse/80 text-4xl md:text-5xl">à Jarry, Guadeloupe</span>
             </h1>
 
-            <p className="font-sans text-blanc-casse/50 text-base md:text-lg max-w-lg leading-relaxed mb-10">
-              Prêt-à-porter, tenues de cérémonie, accessoires et bijoux. Des pièces choisies
-              à l’unité, souvent en un seul exemplaire. Béatrice vous dit franchement ce qui
-              vous va, et la boutique est ouverte à toutes.
+            {/* La promesse d'abord (ce qu'aucune autre boutique ne dit), la
+                liste des rayons ensuite. Le H1 garde le mot-cle que les gens tapent. */}
+            <p className="font-sans text-blanc-casse/70 text-base md:text-lg max-w-lg leading-relaxed mb-10">
+              Béatrice choisit chaque pièce elle-même, souvent en un seul exemplaire. Si une
+              robe ne vous va pas, elle vous le dit. Prêt-à-porter, tenues de cérémonie,
+              accessoires et bijoux : la boutique est ouverte à toutes.
             </p>
 
+            {/* Le geste voulu est de venir ou d'ecrire. Reserver n'est plus le
+                bouton principal : la boutique est en entree libre. */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/boutique" className="btn-primary">
-                Découvrir la boutique
-              </Link>
-              <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-outline-white">
-                Réserver un essayage
+              <a href={SITE_CONFIG.maps} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Venir en boutique
+              </a>
+              <a href={SITE_CONFIG.whatsapp} className="btn-outline-white">
+                Écrire sur WhatsApp
               </a>
             </div>
 
             <p className="font-sans text-sm text-blanc-casse/75 mt-6 max-w-lg leading-relaxed">
-              Pas besoin de rendez-vous pour venir : la boutique est ouverte à toutes,
-              du mardi au samedi. Béatrice vous conseille et vous accompagne dans vos choix.
-              La réservation ne sert qu’à bloquer un créneau rien que pour vous.
+              Entrée libre, sans rendez-vous. Pour un essayage rien que pour vous,{' '}
+              <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="text-or underline underline-offset-4 hover:text-or-clair">
+                réservez un créneau
+              </a>.
             </p>
 
             {/* Rating */}
@@ -174,6 +188,9 @@ export default function HomePage() {
         </div>
         <div className="gradient-line absolute bottom-0 left-0 right-0" />
       </div>
+
+      {/* ─── NOUVEAUTÉS ─── */}
+      <NouveautesApercu pieces={NOUVEAUTES} />
 
       {/* ─── INTRO BÉATRICE ─── */}
       <section className="py-24 md:py-28">
@@ -403,11 +420,12 @@ export default function HomePage() {
                     <Star key={j} size={13} className="fill-or text-or" />
                   ))}
                 </div>
-                <p className="font-serif italic text-blanc-casse/70 text-lg leading-relaxed mb-6">
+                <p className="font-serif italic text-blanc-casse/70 text-lg leading-relaxed mb-6 whitespace-pre-line">
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <p className="font-sans text-[10px] tracking-luxury uppercase text-blanc-casse/30">
-                  — {t.author}
+                <p className="font-sans text-xs text-blanc-casse/70">{t.author}</p>
+                <p className="font-sans text-[10px] tracking-luxury uppercase text-blanc-casse/40 mt-1">
+                  Avis Google, visite en {t.visite}
                 </p>
               </div>
             ))}
@@ -422,6 +440,16 @@ export default function HomePage() {
               <span className="font-sans text-sm text-or font-medium">{SITE_CONFIG.rating.value}/5</span>
               <span className="font-sans text-xs text-blanc-casse/30">· {SITE_CONFIG.rating.count} avis Google</span>
             </div>
+            <p className="mt-5">
+              <a
+                href={SITE_CONFIG.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-sm text-or underline underline-offset-4 hover:text-or-clair"
+              >
+                Lire tous les avis sur Google
+              </a>
+            </p>
           </div>
         </div>
       </section>
