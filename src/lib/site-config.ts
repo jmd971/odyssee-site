@@ -21,9 +21,13 @@ export const SITE_CONFIG = {
      `jusquAu` : instant ou elle disparait toute seule (ici la fin du lundi
      28 decembre 2026, heure de Guadeloupe). Mettre `null` pour ne rien afficher. */
   annonce: {
-    texte: 'Ouverture exceptionnelle : la boutique vous accueille aussi tous les lundis de décembre.',
+    texte: 'Ouverture exceptionnelle : la boutique vous accueille aussi tous les lundis de décembre, de 10h à 14h et de 15h à 19h.',
     jusquAu: '2026-12-29T04:00:00Z',
   } as { texte: string; jusquAu: string } | null,
+  /* Jours d'ouverture exceptionnelle, aux horaires du mardi au vendredi.
+     Transmis a Google dans les donnees structurees. Vider la liste une fois
+     les dates passees. */
+  ouverturesExceptionnelles: ['2026-12-07', '2026-12-14', '2026-12-21', '2026-12-28'],
   booking: 'https://link.siboard-consulting.fr/widget/booking/9GoysJn1UJxEaNb5qN2y',
   /* Fiche Google par son identifiant : ouvre l'app Maps et lance l'itineraire
      sur mobile, affiche la fiche complete (horaires, photos, avis) ailleurs. */

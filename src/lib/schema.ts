@@ -45,6 +45,18 @@ export function clothingStoreSchema() {
       '@type': 'OpeningHoursSpecification',
       ...creneau,
     })),
+    /* Lundis de decembre : memes plages que du mardi au vendredi. */
+    specialOpeningHoursSpecification: SITE_CONFIG.ouverturesExceptionnelles.flatMap((jour) =>
+      [
+        { opens: '10:00', closes: '14:00' },
+        { opens: '15:00', closes: '19:00' },
+      ].map((plage) => ({
+        '@type': 'OpeningHoursSpecification',
+        validFrom: jour,
+        validThrough: jour,
+        ...plage,
+      })),
+    ),
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: SITE_CONFIG.rating.value,
