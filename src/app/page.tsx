@@ -6,6 +6,8 @@ import { SITE_CONFIG } from '@/lib/site-config'
 import { IMAGES } from '@/lib/images'
 import { InstagramLooks } from '@/components/ui/InstagramLooks'
 import { LaBoutique } from '@/components/ui/LaBoutique'
+import { NouveautesApercu } from '@/components/ui/Nouveautes'
+import { NOUVEAUTES } from '@/lib/nouveautes'
 
 export const revalidate = 600
 
@@ -118,25 +120,30 @@ export default function HomePage() {
               <span className="italic text-blanc-casse/80 text-4xl md:text-5xl">à Jarry, Guadeloupe</span>
             </h1>
 
-            <p className="font-sans text-blanc-casse/50 text-base md:text-lg max-w-lg leading-relaxed mb-10">
-              Prêt-à-porter, tenues de cérémonie, accessoires et bijoux. Des pièces choisies
-              à l’unité, souvent en un seul exemplaire. Béatrice vous dit franchement ce qui
-              vous va, et la boutique est ouverte à toutes.
+            {/* La promesse d'abord (ce qu'aucune autre boutique ne dit), la
+                liste des rayons ensuite. Le H1 garde le mot-cle que les gens tapent. */}
+            <p className="font-sans text-blanc-casse/70 text-base md:text-lg max-w-lg leading-relaxed mb-10">
+              Béatrice choisit chaque pièce elle-même, souvent en un seul exemplaire. Si une
+              robe ne vous va pas, elle vous le dit. Prêt-à-porter, tenues de cérémonie,
+              accessoires et bijoux : la boutique est ouverte à toutes.
             </p>
 
+            {/* Le geste voulu est de venir ou d'ecrire. Reserver n'est plus le
+                bouton principal : la boutique est en entree libre. */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/boutique" className="btn-primary">
-                Découvrir la boutique
-              </Link>
-              <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="btn-outline-white">
-                Réserver un essayage
+              <a href={SITE_CONFIG.maps} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Venir en boutique
+              </a>
+              <a href={SITE_CONFIG.whatsapp} className="btn-outline-white">
+                Écrire sur WhatsApp
               </a>
             </div>
 
             <p className="font-sans text-sm text-blanc-casse/75 mt-6 max-w-lg leading-relaxed">
-              Pas besoin de rendez-vous pour venir : la boutique est ouverte à toutes,
-              du mardi au samedi. Béatrice vous conseille et vous accompagne dans vos choix.
-              La réservation ne sert qu’à bloquer un créneau rien que pour vous.
+              Entrée libre, sans rendez-vous. Pour un essayage rien que pour vous,{' '}
+              <a href={SITE_CONFIG.booking} target="_blank" rel="noopener noreferrer" className="text-or underline underline-offset-4 hover:text-or-clair">
+                réservez un créneau
+              </a>.
             </p>
 
             {/* Rating */}
@@ -174,6 +181,9 @@ export default function HomePage() {
         </div>
         <div className="gradient-line absolute bottom-0 left-0 right-0" />
       </div>
+
+      {/* ─── NOUVEAUTÉS ─── */}
+      <NouveautesApercu pieces={NOUVEAUTES} />
 
       {/* ─── INTRO BÉATRICE ─── */}
       <section className="py-24 md:py-28">
