@@ -30,7 +30,7 @@ export const NOUVEAUTES: Piece[] = [
     prix: 110,
     tailles: 'Tailles S, M et L',
     description:
-      'Une robe ample en vichy bleu et blanc, avec une encolure smockée qui se porte sur les épaules ou dénudée, et des manches ballon. Elle se porte seule en journée, avec des talons et un collier le soir.',
+      'Robe ample en vichy bleu et blanc.',
     accessoires: [
       { nom: 'Collier pompon', prix: 42 },
       { nom: 'Sautoir', prix: 45 },
@@ -42,8 +42,8 @@ export const NOUVEAUTES: Piece[] = [
     visuel: IMAGES.robeFuchsiaGlamEthnik,
     prix: 140,
     tailles: 'Taille unique',
-    createur: 'Glam Ethnik',
+    createur: 'GlamEthnik',
     description:
-      'Une robe longue et fluide, rose fuchsia, signée Glam Ethnik. L’encolure américaine est bordée d’un tissu imprimé bleu qui se noue sur la nuque, et le bas à volants suit le mouvement quand vous marchez.',
+      'Robe longue rose fuchsia, sans manches, de la marque GlamEthnik.',
   },
 ]
