@@ -38,7 +38,7 @@ export const SITE_CONFIG = {
     youtube: 'https://youtube.com/@odysseebybea',
   },
   geo: { latitude: 16.2650, longitude: -61.5770 },
-  rating: { value: 4.9, count: 30 },
+  rating: { value: 4.9, count: 33 },
 }
 
 /**
