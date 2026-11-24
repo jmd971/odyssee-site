@@ -133,14 +133,6 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href={SITE_CONFIG.booking}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-[11px] py-2.5 px-5 ml-3 whitespace-nowrap"
-              >
-                Réserver un essayage
-              </a>
             </nav>
 
             {/* Mobile */}
@@ -183,14 +175,6 @@ export function Header() {
                         ))}
                       </div>
                     ))}
-                    <a
-                      href={SITE_CONFIG.booking}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary w-full text-center mt-6 block"
-                    >
-                      Réserver un essayage
-                    </a>
                   </Dialog.Content>
                 </Dialog.Portal>
               </Dialog.Root>
