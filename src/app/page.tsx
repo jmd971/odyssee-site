@@ -121,18 +121,23 @@ export default function HomePage() {
               </span>
             </div>
 
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-blanc-casse leading-[1.05] mb-8">
-              Boutique de mode<br />
-              <span className="text-or">femme</span><br />
-              <span className="italic text-blanc-casse/80 text-4xl md:text-5xl">à Jarry, Guadeloupe</span>
+            {/* Le H1 garde le mot-cle que les gens tapent (Google lit le texte,
+                pas la taille), mais c'est la promesse qui occupe le regard :
+                c'est ce que disent les avis (« conseils », « objectivite »). */}
+            <h1 className="font-serif text-xl md:text-2xl font-light text-or leading-snug mb-5">
+              Boutique de mode femme à Jarry, Guadeloupe
             </h1>
 
-            {/* La promesse d'abord (ce qu'aucune autre boutique ne dit), la
-                liste des rayons ensuite. Le H1 garde le mot-cle que les gens tapent. */}
+            <p className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-blanc-casse leading-[1.05] mb-8">
+              Béatrice vous dit<br />
+              <span className="italic text-or">franchement</span><br />
+              ce qui vous va.
+            </p>
+
             <p className="font-sans text-blanc-casse/70 text-base md:text-lg max-w-lg leading-relaxed mb-10">
-              Béatrice choisit chaque pièce elle-même, souvent en un seul exemplaire. Si une
-              robe ne vous va pas, elle vous le dit. Prêt-à-porter, tenues de cérémonie,
-              accessoires et bijoux : la boutique est ouverte à toutes.
+              Elle choisit chaque pièce elle-même, souvent en un seul exemplaire.
+              Prêt-à-porter, tenues de cérémonie, accessoires et bijoux : la boutique
+              est ouverte à toutes.
             </p>
 
             {/* Le geste voulu est de venir ou d'ecrire. Reserver n'est plus le
