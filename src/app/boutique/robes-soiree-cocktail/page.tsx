@@ -8,9 +8,9 @@ import {
 } from '@/components/ui/blocks'
 
 const PATH = '/boutique/robes-soiree-cocktail'
-const TITLE = 'Robe de soirée & cocktail femme – Guadeloupe | Odyssée'
+const TITLE = 'Robe de soirée, robe de cocktail femme – Guadeloupe | Odyssée'
 const DESC =
-  'Robes de soirée et de cocktail pour femme en Guadeloupe. Sélection en petites séries à Jarry, Baie-Mahault, avec essayage et conseil personnalisé par Béatrice.'
+  'Robes de soirée et robes de cocktail pour femme en Guadeloupe. Petites séries à Jarry, Baie-Mahault, avec essayage et conseil personnalisé de Béatrice.'
 
 export const revalidate = 600
 
@@ -90,7 +90,7 @@ export default function RobesSoireePage() {
 
       <PageHero
         eyebrow="Boutique · Jarry, Guadeloupe"
-        title={<>Robes de soirée<br /><span className="italic text-or">&amp; de cocktail</span></>}
+        title={<>Robes de soirée<br /><span className="italic text-or">&amp; robes de cocktail</span></>}
         intro="Une sélection courte, en petites séries, à essayer tranquillement à Jarry, Baie-Mahault — avec quelqu’un pour vous dire franchement ce qui vous va."
         ctaLabel="Essayer en boutique"
       />

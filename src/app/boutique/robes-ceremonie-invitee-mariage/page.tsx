@@ -10,7 +10,7 @@ import {
 const PATH = '/boutique/robes-ceremonie-invitee-mariage'
 const TITLE = 'Robe invitée mariage & cérémonie femme – Guadeloupe | Odyssée'
 const DESC =
-  'Robes de cérémonie et tenues d’invitée de mariage pour femme en Guadeloupe. Essayage et conseil à Jarry, Baie-Mahault. Béatrice vous aide à choisir selon l’occasion.'
+  'Tenue d’invitée de mariage, robe de cérémonie ou ensemble pantalon pour femme en Guadeloupe. Essayage et conseil à Jarry, Baie-Mahault, avec Béatrice.'
 
 export const revalidate = 600
 
@@ -163,7 +163,7 @@ export default function Page() {
       <PageHero
         eyebrow="Boutique · Jarry, Guadeloupe"
         title={<>Robe d’invitée de mariage<br /><span className="italic text-or">&amp; tenue de cérémonie</span></>}
-        intro="Vous êtes invitée, témoin ou mère des mariés, et la date approche. Odyssée vous habille à Jarry, Baie-Mahault, avec un essayage tranquille et un avis franc sur ce qui vous va."
+        intro="Vous êtes invitée, témoin ou mère des mariés, et la date approche. Pour votre tenue d’invitée, en robe ou en ensemble pantalon, Odyssée vous habille à Jarry, Baie-Mahault, avec un essayage tranquille et un avis franc sur ce qui vous va."
         ctaLabel="Réserver un essayage"
       />
 

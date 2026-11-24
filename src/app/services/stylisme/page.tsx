@@ -9,7 +9,7 @@ import {
 const PATH = '/services/stylisme'
 const TITLE = 'Conseil en stylisme personnalisé – Guadeloupe | Odyssée'
 const DESC =
-  'Séance de conseil en stylisme à Jarry, Baie-Mahault. Composez des tenues qui vous ressemblent, avec l’avis d’une styliste et l’essayage sur place en Guadeloupe.'
+  'Séance de conseil en image et en stylisme à Jarry, avec une conseillère en image. Des tenues qui vous ressemblent, essayage sur place en Guadeloupe.'
 
 export const revalidate = 600
 
