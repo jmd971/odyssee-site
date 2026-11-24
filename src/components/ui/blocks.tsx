@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Star } from 'lucide-react'
 import { SITE_CONFIG, whatsappAvec } from '@/lib/site-config'
 import type { FaqItem } from '@/lib/schema'
 import type { Visuel } from '@/lib/images'
+import type { AvisClient } from '@/lib/avis'
 import { FaqAccordion } from './FaqAccordion'
 
 export function JsonLd({ data }: { data: object | object[] }) {
@@ -220,6 +222,73 @@ export function PourAllerPlusLoin({ liens }: { liens: { label: string; href: str
             </Link>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+/**
+ * Un vrai avis Google, place juste avant le bloc pratique : c'est la page ou
+ * la cliente se decide, la preuve doit etre sous ses yeux.
+ */
+export function AvisGoogle({ avis }: { avis: AvisClient }) {
+  return (
+    <section className="py-14">
+      <div className="container-luxury max-w-2xl text-center">
+        <div className="flex justify-center gap-1 mb-5" aria-hidden="true">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} size={14} className="fill-or text-or" />
+          ))}
+        </div>
+        <blockquote className="font-serif italic text-blanc-casse/80 text-xl md:text-2xl leading-relaxed m-0">
+          &ldquo;{avis.texte}&rdquo;
+        </blockquote>
+        <p className="font-sans text-xs text-blanc-casse/70 mt-5">{avis.auteur}</p>
+        <p className="font-sans text-[10px] tracking-luxury uppercase text-blanc-casse/40 mt-1">
+          Avis Google, visite en {avis.visite}
+        </p>
+        <p className="font-sans text-sm text-blanc-casse/60 mt-6">
+          <span className="text-or font-medium">{SITE_CONFIG.rating.value}/5</span> sur {SITE_CONFIG.rating.count} avis Google.{' '}
+          <a
+            href={SITE_CONFIG.maps}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-or underline underline-offset-4 hover:text-or-clair"
+          >
+            Lire tous les avis
+          </a>
+        </p>
+      </div>
+    </section>
+  )
+}
+
+/**
+ * Premier pas tres leger : un message deja redige, a completer. Une cliente
+ * qui a ecrit deux lignes revient plus facilement qu'une qui a seulement lu.
+ */
+export function ProposerOccasion({
+  titre,
+  texte,
+  message,
+  bouton,
+}: {
+  titre: string
+  texte: string
+  message: string
+  bouton: string
+}) {
+  return (
+    <section className="py-16 bg-noir-alt">
+      <div className="container-luxury max-w-2xl text-center">
+        <h2 className="section-title mb-4">{titre}</h2>
+        <p className="font-sans text-blanc-casse/60 mb-8 leading-relaxed">{texte}</p>
+        <a href={whatsappAvec(message)} className="btn-primary">
+          {bouton}
+        </a>
+        <p className="font-sans text-xs text-blanc-casse/45 mt-5 leading-relaxed">
+          Vous pouvez aussi simplement passer à la boutique, entrée libre.
+        </p>
       </div>
     </section>
   )

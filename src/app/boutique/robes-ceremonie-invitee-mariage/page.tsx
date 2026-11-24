@@ -4,8 +4,10 @@ import { SITE_CONFIG } from '@/lib/site-config'
 import { GALERIE_CEREMONIE } from '@/lib/images'
 import { breadcrumbSchema, faqSchema, type FaqItem } from '@/lib/schema'
 import {
-  Breadcrumb, CtaFinal, FaqSection, Galerie, JsonLd, OuNousTrouver, PageHero, PourAllerPlusLoin,
+  AvisGoogle, Breadcrumb, CtaFinal, FaqSection, Galerie, JsonLd, OuNousTrouver, PageHero, PourAllerPlusLoin,
+  ProposerOccasion,
 } from '@/components/ui/blocks'
+import { AVIS } from '@/lib/avis'
 
 const PATH = '/boutique/robes-ceremonie-invitee-mariage'
 const TITLE = 'Robe invitée mariage & cérémonie femme – Guadeloupe | Odyssée'
@@ -312,6 +314,15 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <ProposerOccasion
+        titre="Dites-nous où vous allez"
+        texte="Envoyez-nous la date, le lieu et votre rôle : invitée, témoin ou mère des mariés. Béatrice vous répond avec des idées de tenues adaptées, et vous venez les essayer quand vous voulez."
+        message="Bonjour Béatrice, je suis invitée à un mariage le [date], à [lieu]. Mon rôle : [invitée / témoin / mère des mariés]. Pouvez-vous me proposer des idées de tenues ?"
+        bouton="Envoyer ma date et mon lieu sur WhatsApp"
+      />
+
+      <AvisGoogle avis={AVIS.camille} />
 
       <OuNousTrouver />
       <FaqSection items={faqItems} />

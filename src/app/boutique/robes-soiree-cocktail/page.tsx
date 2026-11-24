@@ -4,8 +4,9 @@ import { SITE_CONFIG } from '@/lib/site-config'
 import { GALERIE_SOIREE, IMAGES } from '@/lib/images'
 import { breadcrumbSchema, faqSchema, type FaqItem } from '@/lib/schema'
 import {
-  Breadcrumb, CtaFinal, FaqSection, Galerie, JsonLd, OuNousTrouver, PageHero, PourAllerPlusLoin,
+  AvisGoogle, Breadcrumb, CtaFinal, FaqSection, Galerie, JsonLd, OuNousTrouver, PageHero, PourAllerPlusLoin,
 } from '@/components/ui/blocks'
+import { AVIS } from '@/lib/avis'
 
 const PATH = '/boutique/robes-soiree-cocktail'
 const TITLE = 'Robe de soirée, robe de cocktail femme – Guadeloupe | Odyssée'
@@ -197,6 +198,8 @@ export default function RobesSoireePage() {
           </div>
         </div>
       </section>
+
+      <AvisGoogle avis={AVIS.kelley} />
 
       <OuNousTrouver />
       <FaqSection items={faqItems} />
