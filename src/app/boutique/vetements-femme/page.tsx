@@ -4,8 +4,9 @@ import { SITE_CONFIG } from '@/lib/site-config'
 import { GALERIE_PAP, GALERIE_WAX } from '@/lib/images'
 import { breadcrumbSchema, faqSchema, type FaqItem } from '@/lib/schema'
 import {
-  Breadcrumb, CtaFinal, FaqSection, Galerie, JsonLd, OuNousTrouver, PageHero, PourAllerPlusLoin,
+  AvisGoogle, Breadcrumb, CtaFinal, FaqSection, Galerie, JsonLd, OuNousTrouver, PageHero, PourAllerPlusLoin,
 } from '@/components/ui/blocks'
+import { AVIS } from '@/lib/avis'
 
 const PATH = '/boutique/vetements-femme'
 const TITLE = 'Magasin de vêtements femme à Jarry – Guadeloupe | Odyssée'
@@ -175,6 +176,8 @@ export default function Page() {
           </p>
         </div>
       </section>
+
+      <AvisGoogle avis={AVIS.celineChoix} />
 
       <OuNousTrouver />
       <FaqSection items={faqItems} />
