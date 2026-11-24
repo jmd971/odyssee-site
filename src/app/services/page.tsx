@@ -9,7 +9,7 @@ import { Breadcrumb, CtaFinal, JsonLd, PageHero } from '@/components/ui/blocks'
 const PATH = '/services'
 const TITLE = 'Conseil en image, relooking & stylisme – Guadeloupe | Odyssée'
 const DESC =
-  'Relooking vestimentaire, conseil en stylisme, shooting photo mode et shopping anniversaire à Jarry, Baie-Mahault. Accompagnement personnalisé en Guadeloupe.'
+  'Conseillère en image à Jarry, Baie-Mahault : relooking, stylisme, shooting photo mode et shopping anniversaire. Accompagnement personnalisé en Guadeloupe.'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -64,7 +64,7 @@ export default function Page() {
       <PageHero
         eyebrow="Services · Guadeloupe"
         title={<>Conseil en image<br /><span className="italic text-or">&amp; accompagnement</span></>}
-        intro="Odyssée n’est pas qu’une boutique. C’est aussi quelqu’un qui prend le temps de regarder ce qui vous va, et de vous le dire franchement."
+        intro="Odyssée n’est pas qu’une boutique. Béatrice y est aussi conseillère en image : elle prend le temps de regarder ce qui vous va, et de vous le dire franchement."
       />
 
       <section className="py-16">
