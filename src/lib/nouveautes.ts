@@ -44,6 +44,6 @@ export const NOUVEAUTES: Piece[] = [
     tailles: 'Taille unique',
     createur: 'GlamEthnik',
     description:
-      'Robe longue rose fuchsia, sans manches, de la marque GlamEthnik.',
+      'Robe longue rose fuchsia, sans manches, de la marque GlamEthnik. Pièce unique.',
   },
 ]
