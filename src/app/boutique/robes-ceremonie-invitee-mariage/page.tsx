@@ -45,7 +45,7 @@ const faqItems: FaqItem[] = [
   {
     question: 'Faut-il prendre rendez-vous pour essayer ?',
     answer:
-      'Non, vous pouvez pousser la porte pendant les heures d’ouverture, du mardi au samedi de 10h à 19h. Le rendez-vous reste conseillé si vous voulez du temps dédié, par exemple à l’approche d’une grosse cérémonie.',
+      'Non, vous pouvez pousser la porte pendant les heures d’ouverture, du mardi au vendredi de 10h à 14h et de 15h à 19h, et le samedi de 9h à 14h. Le rendez-vous reste conseillé si vous voulez du temps dédié, par exemple à l’approche d’une grosse cérémonie.',
   },
   {
     question: 'Les mariés imposent une couleur ou un thème, comment faire ?',
@@ -303,7 +303,7 @@ export default function Page() {
           <div className="bg-noir border border-blanc-casse/10 p-10">
             <h3 className="font-serif text-2xl text-blanc-casse mb-6">En pratique</h3>
             <ul className="space-y-4 font-sans text-sm text-blanc-casse/65">
-              <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Ouvert du mardi au samedi, 10h–19h</li>
+              <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Mardi au vendredi 10h–14h et 15h–19h, samedi 9h–14h</li>
               <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Entrée libre, rendez-vous conseillé avant une cérémonie</li>
               <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Conseil morphologie et couleurs compris</li>
               <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Accessoires et bijoux assortis sur place</li>

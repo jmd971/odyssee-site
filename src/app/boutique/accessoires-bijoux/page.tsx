@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
   {
     question: 'Où acheter des bijoux artisanaux en Guadeloupe ?',
     answer:
-      'Odyssée sélectionne des bijoux faits main — boucles d’oreilles en raphia, perles, pièces à pompons — disponibles à la boutique de Jarry, Baie-Mahault, du mardi au samedi de 10h à 19h.',
+      'Odyssée sélectionne des bijoux faits main — boucles d’oreilles en raphia, perles, pièces à pompons — disponibles à la boutique de Jarry, Baie-Mahault, du mardi au vendredi de 10h à 14h et de 15h à 19h, et le samedi de 9h à 14h.',
   },
   {
     question: 'Vos bijoux sont-ils fabriqués localement ?',

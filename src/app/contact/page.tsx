@@ -79,7 +79,8 @@ export default function ContactPage() {
                 <Clock size={18} className="text-or mt-1 shrink-0" />
                 <div>
                   <h3 className="font-sans text-xs font-medium tracking-wide uppercase text-blanc-casse mb-2">Horaires</h3>
-                  <p className="font-sans text-sm text-blanc-casse/50">Mardi au samedi · 10h–19h</p>
+                  <p className="font-sans text-sm text-blanc-casse/50">Mardi au vendredi : 10h–14h et 15h–19h</p>
+                  <p className="font-sans text-sm text-blanc-casse/50">Samedi : 9h–14h</p>
                   <p className="font-sans text-xs text-blanc-casse/30 mt-1">Prise de rendez-vous disponible</p>
                 </div>
               </div>

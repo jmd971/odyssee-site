@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
   {
     question: 'Où trouver un magasin de vêtements femme à Jarry ?',
     answer:
-      'Odyssée Showroom Privé se trouve à l’immeuble Les Lilas, impasse Guy Cornély, dans la zone de Jarry à Baie-Mahault. Parking gratuit devant. Ouvert du mardi au samedi de 10h à 19h.',
+      'Odyssée Showroom Privé se trouve à l’immeuble Les Lilas, impasse Guy Cornély, dans la zone de Jarry à Baie-Mahault. Parking gratuit devant. Ouvert du mardi au vendredi de 10h à 14h et de 15h à 19h, et le samedi de 9h à 14h.',
   },
   {
     question: 'Faut-il un rendez-vous pour venir en boutique ?',
@@ -201,7 +201,7 @@ export default function Page() {
 
       <CtaFinal
         titre="Passez quand vous voulez"
-        texte="Du mardi au samedi, 10h–19h, à Jarry. Entrée libre, et un avis franc si vous le demandez."
+        texte="Du mardi au samedi, à Jarry. Entrée libre, et un avis franc si vous le demandez."
       />
     </>
   )

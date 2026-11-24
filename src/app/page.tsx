@@ -17,7 +17,7 @@ export const revalidate = 600
    accompagne. Le mot-cle reste en tete, c'est ce que les gens tapent. */
 export const metadata: Metadata = {
   title: 'Boutique vêtements femme à Jarry – essayage privé | Odyssée',
-  description: 'On prend le temps : essayage accompagné, conseil de Béatrice, tenues de cérémonie et de soirée. À Jarry, Baie-Mahault, du mardi au samedi, 10h-19h.',
+  description: 'On prend le temps : essayage accompagné, conseil de Béatrice, tenues de cérémonie et de soirée. À Jarry, Baie-Mahault, du mardi au samedi.',
   alternates: { canonical: 'https://www.odysseebybea.fr' },
 }
 

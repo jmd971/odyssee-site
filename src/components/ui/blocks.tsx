@@ -72,7 +72,7 @@ export function PageHero({
           </a>
         </div>
         <p className="font-sans text-xs text-blanc-casse/45 mt-6 max-w-xl mx-auto leading-relaxed">
-          Entrée libre du mardi au samedi, de 10h à 19h. Béatrice vous conseille et vous accompagne sur place. La réservation ne sert que pour un essayage dédié ou une privatisation entre copines.
+          Entrée libre du mardi au vendredi de 10h à 14h et de 15h à 19h, le samedi de 9h à 14h. Béatrice vous conseille et vous accompagne sur place. La réservation ne sert que pour un essayage dédié ou une privatisation entre copines.
         </p>
       </div>
     </section>
@@ -193,7 +193,7 @@ export function CtaFinal({ titre, texte }: { titre: string; texte: string }) {
           </a>
         </div>
         <p className="font-sans text-xs text-blanc-casse/45 mt-6 max-w-xl mx-auto leading-relaxed">
-          Entrée libre du mardi au samedi, de 10h à 19h. Béatrice vous conseille et vous accompagne sur place. La réservation ne sert que pour un essayage dédié ou une privatisation entre copines.
+          Entrée libre du mardi au vendredi de 10h à 14h et de 15h à 19h, le samedi de 9h à 14h. Béatrice vous conseille et vous accompagne sur place. La réservation ne sert que pour un essayage dédié ou une privatisation entre copines.
         </p>
       </div>
     </section>
