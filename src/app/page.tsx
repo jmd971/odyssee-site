@@ -111,10 +111,10 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-5 blur-3xl"
           style={{ background: 'radial-gradient(circle, #C9A84C 0%, transparent 70%)' }} />
 
-        <div className="container-luxury relative z-10 py-24">
+        <div className="container-luxury relative z-10 py-14 md:py-16">
           <div className="max-w-3xl">
             {/* Tag localisation */}
-            <div className="inline-flex items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-3 mb-6">
               <div className="gradient-line w-8" />
               <span className="font-sans text-[11px] tracking-luxury uppercase text-blanc-casse/50">
                 Jarry · Baie-Mahault · Guadeloupe
@@ -124,17 +124,17 @@ export default function HomePage() {
             {/* Le H1 garde le mot-cle que les gens tapent (Google lit le texte,
                 pas la taille), mais c'est la promesse qui occupe le regard :
                 c'est ce que disent les avis (« conseils », « objectivite »). */}
-            <h1 className="font-serif text-xl md:text-2xl font-light text-or leading-snug mb-5">
+            <h1 className="font-serif text-xl md:text-2xl font-light text-or leading-snug mb-4">
               Boutique de mode femme à Jarry, Guadeloupe
             </h1>
 
-            <p className="font-serif text-5xl md:text-7xl lg:text-8xl font-light text-blanc-casse leading-[1.05] mb-8">
+            <p className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-blanc-casse leading-[1.05] mb-6">
               Béatrice vous dit<br />
               <span className="italic text-or">franchement</span><br />
               ce qui vous va.
             </p>
 
-            <p className="font-sans text-blanc-casse/70 text-base md:text-lg max-w-lg leading-relaxed mb-10">
+            <p className="font-sans text-blanc-casse/70 text-base md:text-lg max-w-lg leading-relaxed mb-8">
               Elle choisit chaque pièce elle-même, souvent en un seul exemplaire.
               Prêt-à-porter, tenues de cérémonie, accessoires et bijoux : la boutique
               est ouverte à toutes.
