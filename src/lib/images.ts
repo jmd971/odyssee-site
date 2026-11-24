@@ -26,7 +26,7 @@ export const IMAGES = {
   combinaisonBatik: {
     src: '/images/combinaison-batik-cape.jpg',
     alt: 'Combinaison en batik ocre avec cape assortie orange, portée avec des sandales dorées',
-    credit: 'Pièce Glam Ethnik',
+    credit: 'Pièce GlamEthnik',
   },
   robePeplum: {
     src: '/images/robe-bustier-peplum-plage.jpg',
@@ -35,7 +35,7 @@ export const IMAGES = {
   robeBatik: {
     src: '/images/robe-batik.jpg',
     alt: 'Robe en batik portée en extérieur en Guadeloupe',
-    credit: 'Pièce Glam Ethnik',
+    credit: 'Pièce GlamEthnik',
   },
   hautStrass: {
     src: '/images/haut-strass.jpg',
@@ -66,7 +66,7 @@ export const IMAGES = {
   robeFuchsiaGlamEthnik: {
     src: '/images/robe-longue-fuchsia-glam-ethnik.jpg',
     alt: 'Robe longue rose fuchsia à encolure américaine bordée d’un tissu imprimé bleu, portée dans une allée de jardin tropical',
-    credit: 'Pièce Glam Ethnik',
+    credit: 'Pièce GlamEthnik',
   },
   robeVichyBleue: {
     src: '/images/robe-vichy-bleue-colliers-rouges.jpg',

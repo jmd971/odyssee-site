@@ -39,7 +39,7 @@ const CREATEURS: Createur[] = [
       'Le partenariat le plus établi. SAND’O travaille le cuir et la pièce d’art portable, et Odyssée est boutique partenaire de la maison à Jarry. C’est le genre d’accessoire qui tient une tenue entière sans rien lui ajouter d’autre.',
   },
   {
-    nom: 'Glam Ethnik',
+    nom: 'GlamEthnik',
     instagram: 'glamethnik',
     specialite: 'Wax, batik et adiré contemporains',
     visuel: IMAGES.combinaisonBatik,
