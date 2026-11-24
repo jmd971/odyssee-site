@@ -120,7 +120,7 @@ export default function BoutiquePage() {
 
       <CtaFinal
         titre="Envie de voir les pièces du moment ?"
-        texte="Entrée libre du mardi au samedi, 10h–19h. Ou écrivez-nous pour savoir ce qui est arrivé cette semaine."
+        texte="Entrée libre du mardi au samedi. Ou écrivez-nous pour savoir ce qui est arrivé cette semaine."
       />
     </>
   )

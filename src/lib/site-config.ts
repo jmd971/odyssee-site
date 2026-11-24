@@ -15,8 +15,19 @@ export const SITE_CONFIG = {
   phoneDisplay: '0590 98 18 81',
   whatsapp: 'https://wa.me/590690087377',
   whatsappDisplay: '0690 087 377',
-  hours: 'Mardi–Samedi : 10h–19h',
-  hoursSchema: ['Tu-Sa 10:00-19:00'],
+  hours: 'Mardi au vendredi : 10h–14h et 15h–19h, samedi : 9h–14h',
+  hoursSchema: ['Tu-Fr 10:00-14:00', 'Tu-Fr 15:00-19:00', 'Sa 09:00-14:00'],
+  /* Annonce temporaire affichee en bandeau tout en haut du site.
+     `jusquAu` : instant ou elle disparait toute seule (ici la fin du lundi
+     28 decembre 2026, heure de Guadeloupe). Mettre `null` pour ne rien afficher. */
+  annonce: {
+    texte: 'Ouverture exceptionnelle : la boutique vous accueille aussi tous les lundis de décembre, de 10h à 14h et de 15h à 19h.',
+    jusquAu: '2026-12-29T04:00:00Z',
+  } as { texte: string; jusquAu: string } | null,
+  /* Jours d'ouverture exceptionnelle, aux horaires du mardi au vendredi.
+     Transmis a Google dans les donnees structurees. Vider la liste une fois
+     les dates passees. */
+  ouverturesExceptionnelles: ['2026-12-07', '2026-12-14', '2026-12-21', '2026-12-28'],
   booking: 'https://link.siboard-consulting.fr/widget/booking/9GoysJn1UJxEaNb5qN2y',
   /* Fiche Google par son identifiant : ouvre l'app Maps et lance l'itineraire
      sur mobile, affiche la fiche complete (horaires, photos, avis) ailleurs. */

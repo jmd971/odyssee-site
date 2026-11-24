@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
   {
     question: 'Où acheter une robe de soirée en Guadeloupe ?',
     answer:
-      'Odyssée Showroom Privé, à Jarry (Baie-Mahault), propose une sélection de robes de soirée et de cocktail en petites séries. Entrée libre du mardi au samedi de 10h à 19h, avec essayage et conseil sur place.',
+      'Odyssée Showroom Privé, à Jarry (Baie-Mahault), propose une sélection de robes de soirée et de cocktail en petites séries. Entrée libre du mardi au vendredi de 10h à 14h et de 15h à 19h, et le samedi de 9h à 14h, avec essayage et conseil sur place.',
   },
   {
     question: 'Faut-il prendre rendez-vous pour essayer une robe ?',
@@ -188,7 +188,7 @@ export default function RobesSoireePage() {
           <div className="bg-noir border border-blanc-casse/10 p-10">
             <h3 className="font-serif text-2xl text-blanc-casse mb-6">En pratique</h3>
             <ul className="space-y-4 font-sans text-sm text-blanc-casse/65">
-              <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Ouvert du mardi au samedi, 10h–19h</li>
+              <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Mardi au vendredi 10h–14h et 15h–19h, samedi 9h–14h</li>
               <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Entrée libre, rendez-vous possible</li>
               <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Pièces à partir d’environ 80 €</li>
               <li className="flex gap-3"><span className="text-or" aria-hidden="true">✦</span> Bijoux et accessoires assortis sur place</li>

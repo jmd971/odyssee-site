@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { Menu, X, Phone } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
@@ -40,16 +40,31 @@ const navItems = [
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  /* L'annonce est dans le HTML des le depart (visible sans JavaScript), puis
+     retiree cote navigateur une fois sa date passee : les pages sont
+     statiques, on ne peut pas compter sur un nouveau build ce jour-la. */
+  const annonce = SITE_CONFIG.annonce
+  const [annonceVisible, setAnnonceVisible] = useState(annonce !== null)
+  useEffect(() => {
+    if (annonce && Date.now() > Date.parse(annonce.jusquAu)) setAnnonceVisible(false)
+  }, [annonce])
+
   return (
     <header className="relative z-50 bg-noir">
       {/* Barre dégradé signature */}
       <div className="gradient-line w-full" />
 
+      {annonce && annonceVisible && (
+        <div className="bg-or text-noir py-2 px-4 text-center">
+          <p className="font-sans text-xs md:text-sm font-medium">{annonce.texte}</p>
+        </div>
+      )}
+
       {/* Bandeau info */}
       <div className="border-b border-blanc-casse/5 py-2 px-4 text-center">
         <p className="font-sans text-[11px] tracking-wide text-blanc-casse/50">
           <span className="text-or">Entrée libre</span> · Jarry, Baie-Mahault ·{' '}
-          <span className="text-or">Mardi–Samedi 10h–19h</span>
+          <span className="text-or">Mar–Ven 10h–14h et 15h–19h, Sam 9h–14h</span>
           {' '}·{' '}
           <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-or transition-colors">
             {SITE_CONFIG.phoneDisplay}

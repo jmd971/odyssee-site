@@ -1,7 +1,13 @@
 import { SITE_CONFIG } from './site-config'
 import type { Piece } from './nouveautes'
 
-const OPEN_DAYS = ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+/* Mardi au vendredi : 10h-14h puis 15h-19h. Samedi : 9h-14h. */
+const SEMAINE = ['Tuesday', 'Wednesday', 'Thursday', 'Friday']
+const CRENEAUX = [
+  { dayOfWeek: SEMAINE, opens: '10:00', closes: '14:00' },
+  { dayOfWeek: SEMAINE, opens: '15:00', closes: '19:00' },
+  { dayOfWeek: ['Saturday'], opens: '09:00', closes: '14:00' },
+]
 
 export function clothingStoreSchema() {
   return {
@@ -35,14 +41,22 @@ export function clothingStoreSchema() {
       latitude: SITE_CONFIG.geo.latitude,
       longitude: SITE_CONFIG.geo.longitude,
     },
-    openingHoursSpecification: [
-      {
+    openingHoursSpecification: CRENEAUX.map((creneau) => ({
+      '@type': 'OpeningHoursSpecification',
+      ...creneau,
+    })),
+    /* Lundis de decembre : memes plages que du mardi au vendredi. */
+    specialOpeningHoursSpecification: SITE_CONFIG.ouverturesExceptionnelles.flatMap((jour) =>
+      [
+        { opens: '10:00', closes: '14:00' },
+        { opens: '15:00', closes: '19:00' },
+      ].map((plage) => ({
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: OPEN_DAYS,
-        opens: '10:00',
-        closes: '19:00',
-      },
-    ],
+        validFrom: jour,
+        validThrough: jour,
+        ...plage,
+      })),
+    ),
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: SITE_CONFIG.rating.value,

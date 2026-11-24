@@ -406,7 +406,7 @@ export const ARTICLES: Article[] = [
         href: '/boutique/robes-soiree-cocktail',
         avant: 'Odyssée Showroom Privé, à Jarry, travaille en petites séries avec essayage et conseil sur place. Vous pouvez voir la sélection de ',
         ancre: 'robes de soirée et de cocktail',
-        apres: ' et passer du mardi au samedi, de 10h à 19h, sans rendez-vous.',
+        apres: ' et passer du mardi au samedi, sans rendez-vous.',
       },
     ],
     faq: [
